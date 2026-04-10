@@ -8,13 +8,55 @@
         "type": "tabs",
         "children": [
           {
-            "id": "91535ec778166278",
+            "id": "1813d60992f0f6a6",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "9960470627c2a396",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "overview.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "overview"
+            }
+          },
+          {
+            "id": "cb260ce150d29ec6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "open-questions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "open-questions"
+            }
+          },
+          {
+            "id": "774723eb127eaccc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CLAUDE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CLAUDE"
             }
           }
         ]
@@ -74,7 +116,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "81a5542856afdb22",
@@ -176,23 +218,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "5be75460a5f12694",
+  "active": "1813d60992f0f6a6",
   "lastOpenFiles": [
-    "open-questions.md",
     "overview.md",
-    "log.md",
-    "index.md",
+    "open-questions.md",
     "CLAUDE.md",
-    "wiki/topics",
-    "wiki/sources",
-    "wiki/people",
-    "wiki/brain-regions",
-    "wiki/analyses",
-    "wiki",
-    "raw/papers",
-    "raw/books",
-    "raw/assets",
-    "raw/articles",
-    "Welcome.md"
+    "wiki/sources/brennan-2023-looper-computational-scaffold.md",
+    "wiki/people/alexander-proekt.md",
+    "wiki/topics/neural-manifolds.md",
+    "wiki/topics/degeneracy.md",
+    "wiki/sources/brennan-2019-conserved-macroscopic-dynamics.md",
+    "raw/papers/brennan-2023.pdf",
+    "raw/papers/brennan-2019.pdf",
+    "wiki/people/max-bennett.md",
+    "wiki/topics/neural-adaptation.md",
+    "wiki/topics/synapses.md",
+    "wiki/sources/bennett-2023-history-intelligence-ch1.md",
+    "wiki/sources/bennett-2023-history-intelligence-intro.md",
+    "source-a.md",
+    "wiki/topics/sparse-coding.md",
+    "wiki/brain-regions/hippocampus.md",
+    "wiki/topics/action-potential.md",
+    "wiki/sources/gerstner-neuronal-dynamics-ch2.md",
+    "wiki/people/markus-meister.md",
+    "wiki/people/gabriel-kreiman.md",
+    "wiki/people/athanassios-siapas.md",
+    "wiki/sources/gerstner-neuronal-dynamics-ch1.md",
+    "wiki/topics/divisive-normalization.md",
+    "raw/papers/meister-2022-transcript.md",
+    "wiki/topics/hebbian-learning.md",
+    "wiki/sources/meister-2022-learning-fast-slow.md",
+    "raw/papers/meister-2022.pdf",
+    "raw/books/a_brief_history_of_intelligence/chunk-1.pdf",
+    "raw/books/a_brief_history_of_intelligence/chunk-2.pdf",
+    "raw/books/a_brief_history_of_intelligence/chunk-3.pdf",
+    "raw/books/a_brief_history_of_intelligence/03_ch1b_world_before_brains_p041-052.pdf",
+    "raw/books/a_brief_history_of_intelligence/02_ch1a_world_before_brains_p029-040.pdf",
+    "raw/books/a_brief_history_of_intelligence/01_intro_p015-028.pdf",
+    "raw/books/untitled folder"
   ]
 }

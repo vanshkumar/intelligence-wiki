@@ -1,3 +1,4 @@
+The shape of this wiki is based on [[llm-wiki]].
 # Intelligence Wiki — Schema
 
 This wiki explores **how the brain learns** — the biological mechanisms of intelligence, learning, and memory. It is maintained by an LLM following the conventions below. The human curates sources, directs analysis, and asks questions. The LLM does all writing, cross-referencing, and maintenance.
