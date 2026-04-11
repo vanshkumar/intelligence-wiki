@@ -12,6 +12,8 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]] — Conserved macroscopic dynamics predict future motor commands in *C. elegans* despite inter-individual neuron variability
 - [[brennan-2023-looper-computational-scaffold|Brennan et al. (2023)]] — LOOPER extracts computational scaffolds from neural dynamics; same scaffold in monkey PFC and RNN despite different activity/strategy
 - [[bennett-2023-history-intelligence-intro|A Brief History of Intelligence — Intro]] — Evolutionary decomposition as methodology; five breakthroughs framework; triune brain debunked
+- [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — Burst-dependent plasticity + dendritic compartments + STP + inhibition ≈ backpropagation in spiking networks
+- [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — Single neurons with dendritic trees can solve complex classification tasks; point neuron models underestimate computational power
 
 ## Concepts
 
@@ -22,6 +24,8 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[Sparse Coding]] — Representations where few neurons are active per stimulus; enables fast Hebbian associative learning by eliminating interference
 - [[Degeneracy]] — Many-to-one mapping from microscopic neural configurations to macroscopic behavior; structurally different elements producing equivalent function
 - [[Neural Manifolds]] — Low-dimensional surfaces in neural state space along which population activity evolves; the geometry of collective dynamics
+- [[Credit Assignment]] — How neurons deep in a hierarchy determine which synapses to change; burst-dependent plasticity as a biological solution
+- [[Dendritic Computation]] — Information processing within the dendritic tree; apical vs basal compartments separate feedforward from feedback
 
 ## Mechanisms
 
@@ -52,6 +56,8 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[Athanassios Siapas]] — Caltech; hippocampal circuits, oscillatory dynamics, sleep
 - [[Markus Meister]] — Caltech; neural coding, retinal processing, learning rates and information theory
 - [[Alexander Proekt]] — UPenn; neural dynamics, macroscopic dynamical models, *C. elegans*
+- [[Ilenna Jones]] — UPenn; dendritic computation, single-neuron computational power
+- [[Konrad Kording]] — UPenn; computational neuroscience, machine learning, neural data science
 
 ## Analyses
 

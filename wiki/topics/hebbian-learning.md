@@ -3,7 +3,7 @@ title: "Hebbian Learning"
 type: theory
 aliases: ["Hebb's rule", "fire together wire together", "Hebbian plasticity"]
 tags: [learning-rule, plasticity, synapse, associative-learning]
-source_count: 1
+source_count: 3
 last_updated: 2026-04-10
 status: established
 ---
@@ -27,6 +27,10 @@ A synapse only "sees" whether its pre-synaptic and post-synaptic neurons are act
 
 [[Sparse Coding|Sparse codes]] solve this: each stimulus activates a unique set of neurons, so each synapse participates in at most one association. This makes Hebbian learning **fast** — a single exposure suffices. The learning rule itself is not the bottleneck; the representation is.
 
+## LTP Grows Architecture, Not Just Weights
+
+LTP doesn't only strengthen existing synaptic connections — it can **replicate** them. Multi-synaptic boutons (MSBs), where the same presynaptic axon contacts the same postsynaptic dendrite at multiple points, increase 6-fold after LTP induction (Toni et al. 1999). [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] show that repeated synaptic inputs across dendritic branches directly increase a neuron's computational capacity — a 32-subtree neuron approaches the performance of a 2-layer fully connected network. This means Hebbian learning doesn't just tune parameters; it grows the single-neuron architecture, adding computational power where it's needed.
+
 ## Speed of Hebbian Plasticity
 
 A common misconception is that synaptic plasticity is slow. In fact, Hebbian modification can occur in a single trial:
@@ -42,6 +46,7 @@ Hebbian learning maps onto several known biological mechanisms:
 - **Long-term potentiation (LTP)** — sustained strengthening of synapses following correlated activity, especially at NMDA receptor-containing synapses
 - **Spike-timing-dependent plasticity (STDP)** — a refinement where the precise timing between pre and post spikes determines whether strengthening or weakening occurs
 - **Neuromodulation** — dopamine and other neuromodulators gate or modulate Hebbian plasticity, potentially determining *which* co-active pairs get strengthened (three-factor learning rules)
+- **Burst-dependent plasticity** — [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] show that whether a pyramidal neuron fires a burst or an isolated spike determines the sign of plasticity (burst → LTP, isolated spike → LTD). The rule is fundamentally Hebbian — it depends only on local pre/post activity — but the "post" signal is enriched by [[Dendritic Computation|dendritic computation]]: top-down feedback via apical dendrites modulates burst probability, embedding hierarchical [[Credit Assignment|credit assignment]] information into a local learning rule
 
 ### The Calcium Bridge
 
@@ -52,10 +57,12 @@ The critical distinction is between **calcium-as-state-variable** (transient ada
 ## Relationship to Other Learning Frameworks
 
 - **[[Predictive Coding]]**: Local prediction error minimization can be seen as a generalized form of Hebbian learning — weight updates depend on local activity and local error signals.
-- **Backpropagation**: Requires non-local error signals propagated through the network — biologically implausible in its standard form. Predictive coding and related frameworks attempt to approximate backprop with local Hebbian-like rules.
+- **Backpropagation**: Requires non-local error signals propagated through the network — biologically implausible in its standard form. Predictive coding and related frameworks attempt to approximate backprop with local Hebbian-like rules. [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] show that burst-dependent plasticity — a Hebbian rule enriched by dendritic computation — can approximate backpropagation gradients at the ensemble level, bridging the gap between Hebbian locality and deep, error-driven learning.
 - **[[li-2024-prediction-noise-reward|PaN]]**: Uses local energy gradients for both activity and weight updates, consistent with Hebbian locality. The weight update rule is ∂E/∂W, which depends only on the activities of the two layers the weight connects.
 
 ## Sources
 
 - [[meister-2022-learning-fast-slow|Meister (2022)]] — Hebbian learning is fast; the bottleneck is the representation, not the plasticity
 - [[gerstner-neuronal-dynamics-ch2|Gerstner et al., Neuronal Dynamics Ch. 2]] — calcium as bridge between electrical activity and synaptic plasticity; NMDA as coincidence detector
+- [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — burst-dependent plasticity as a Hebbian rule that approximates backpropagation via dendritic computation
+- [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — LTP-induced MSBs grow single-neuron computational architecture
