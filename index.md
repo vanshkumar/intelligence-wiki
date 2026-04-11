@@ -14,6 +14,8 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[bennett-2023-history-intelligence-intro|A Brief History of Intelligence — Intro]] — Evolutionary decomposition as methodology; five breakthroughs framework; triune brain debunked
 - [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — Burst-dependent plasticity + dendritic compartments + STP + inhibition ≈ backpropagation in spiking networks
 - [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — Single neurons with dendritic trees can solve complex classification tasks; point neuron models underestimate computational power
+- [[reinert-2021-pfc-categorization|Reinert et al. (2021)]] — Category-selective neurons in mouse mPFC emerge gradually during learning; flexible remapping during rule switches
+- [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] — Directional spike timing from hippocampus to PFC during SWS, driven by sharp-wave ripples; abolished during REM
 
 ## Concepts
 
@@ -26,9 +28,14 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[Neural Manifolds]] — Low-dimensional surfaces in neural state space along which population activity evolves; the geometry of collective dynamics
 - [[Credit Assignment]] — How neurons deep in a hierarchy determine which synapses to change; burst-dependent plasticity as a biological solution
 - [[Dendritic Computation]] — Information processing within the dendritic tree; apical vs basal compartments separate feedforward from feedback
+- [[Dopamine|Dopamine & Neuromodulation]] — Diffuse chemical signals that gate, bias, and steer learning; reward prediction error, three-factor rules
+- [[Inhibitory Circuits]] — GABAergic interneuron types (PV+, SST+, VIP+) implementing gain control, sparse coding, and credit signal linearization
+- [[Memory Consolidation]] — Hippocampus-to-cortex memory transfer during sleep via SWR-driven reactivation; SWS vs REM dissociation
 
 ## Mechanisms
 
+- [[Long-Term Potentiation|LTP / LTD]] — Sustained strengthening or weakening of synapses; the cellular basis of Hebbian learning
+- [[Calcium Signaling]] — Ca²⁺ as bridge between electrical activity and lasting synaptic change; NMDA coincidence detection
 - [[Attractor Dynamics]] — Neural computation understood through stable states and transitions between them in dynamical systems
 - [[Theta Oscillations]] — 4–10 Hz hippocampal rhythm; travelling wave structure enables segment encoding of space
 - [[Phase Precession]] — Place cell firing shifts to earlier theta phases as animal traverses the field; converts position to spike timing code
@@ -49,6 +56,7 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 ## Brain Regions
 
 - [[Hippocampus]] — Medial temporal lobe structure critical for spatial navigation, episodic memory, and learning
+- [[Prefrontal Cortex]] — Frontal cortex region for categorization, rule learning, decision-making, and cognitive flexibility
 
 ## People
 
@@ -58,6 +66,7 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[Alexander Proekt]] — UPenn; neural dynamics, macroscopic dynamical models, *C. elegans*
 - [[Ilenna Jones]] — UPenn; dendritic computation, single-neuron computational power
 - [[Konrad Kording]] — UPenn; computational neuroscience, machine learning, neural data science
+- [[Pieter Goltstein]] — Max Planck; prefrontal cortex, category learning, two-photon imaging
 
 ## Analyses
 

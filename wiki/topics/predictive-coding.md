@@ -3,7 +3,7 @@ title: "Predictive Coding"
 type: theory
 aliases: ["prediction error minimization", "predictive processing"]
 tags: [learning-rule, prediction, cortex, perception]
-source_count: 1
+source_count: 2
 last_updated: 2026-04-10
 status: established
 ---
@@ -43,6 +43,10 @@ The real brain likely uses **both directions** simultaneously — the cortex has
 
 A fundamental challenge for predictive coding as a theory of behavior: if the brain minimizes prediction error, the easiest solution is to seek out maximally predictable environments — sitting in a dark room doing nothing. See [[Dark Room Problem]].
 
+## Relationship to Neural Adaptation
+
+Predictive coding at the network level is structurally similar to [[Neural Adaptation]] at the single-neuron level — both encode deviations from an expected baseline rather than absolute values. Adaptation adjusts a neuron's input-output mapping based on recent stimulus history; predictive coding adjusts a layer's representation based on predictions from other layers. The burst-dependent plasticity threshold P̄ in [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] is formally analogous to adaptation — learning is driven by deviations of burst probability from a slowly moving average, not by absolute burst rate.
+
 ## Biological Plausibility
 
 Predictive coding is considered more biologically plausible than backpropagation because:
@@ -53,3 +57,4 @@ Predictive coding is considered more biologically plausible than backpropagation
 ## Sources
 
 - [[li-2024-prediction-noise-reward|Li et al. (2024)]] — extends predictive coding to closed-loop behavior via PaN
+- [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — burst probability deviation from adaptive baseline as prediction-error-like signal

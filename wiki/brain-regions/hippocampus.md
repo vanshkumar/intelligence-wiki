@@ -3,8 +3,8 @@ title: "Hippocampus"
 type: brain-region
 aliases: ["hippocampal formation", "HPC"]
 tags: [limbic-system, memory, spatial-navigation, theta, learning]
-source_count: 1
-last_updated: 2026-04-10
+source_count: 2
+last_updated: 2026-04-11
 ---
 
 The hippocampus is a bilateral structure in the medial temporal lobe critical for spatial navigation, episodic memory formation, and learning. It is one of the most studied brain regions in neuroscience and a primary site for investigating biological learning mechanisms.
@@ -43,8 +43,9 @@ The travelling wave's spatial wavelength (~11–15 mm) matches the hippocampal l
 The hippocampus is central to:
 - **Spatial memory** — encoding and retrieving spatial maps via place cells
 - **Episodic memory** — forming memories of specific events in context
-- **Memory consolidation** — transferring information to cortical long-term storage (systems consolidation), involving sharp-wave ripples during sleep and rest
+- **[[Memory Consolidation]]** — transferring information to cortical long-term storage (systems consolidation), involving sharp-wave ripples during sleep and rest. [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] show that during SWS, CA1 cells fire 0-100 ms before [[Prefrontal Cortex|mPFC]] cells in an SWR-driven, directional pattern — timing compatible with spike-timing-dependent [[Long-Term Potentiation|plasticity]]. These interactions are nearly abolished during REM sleep, suggesting distinct consolidation mechanisms across sleep stages.
 
 ## Sources
 
 - [[lubenov-2009-theta-travelling-waves|Lubenov & Siapas (2009)]] — theta oscillations are travelling waves along the septotemporal axis
+- [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] — SWR-driven directional spike timing from CA1 to mPFC during SWS

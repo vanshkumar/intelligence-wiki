@@ -18,7 +18,9 @@ Research gaps, unresolved debates, and questions to guide future source selectio
 
 - How do different brain regions coordinate during learning?
 - What determines whether a memory is consolidated into long-term storage or forgotten?
+  - *Partially addressed*: [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] show that SWR-driven hippocampus→PFC spike timing during SWS falls within the STDP window, providing a candidate mechanism. But what determines which memories get replayed (and thus consolidated) vs. which are lost remains unknown.
 - How does the hippocampus interact with cortical regions during systems consolidation?
+  - *Partially addressed*: [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] demonstrate directional CA1→mPFC spike timing during SWS, driven by SWR events. This is direct single-cell-pair evidence for hippocampus-to-cortex communication during sleep. However, whether this timing actually induces plasticity (vs. merely falling in the right window) has not been shown causally.
 - Is the travelling wave property of [[Theta Oscillations|hippocampal theta]] **causally necessary** for spatial behavior, or would synchronized theta work just as well? ([[lubenov-2009-theta-travelling-waves|Lubenov & Siapas, 2009]] — causal experiment not yet done)
 - What is the computational advantage of segment over point spatial encoding in the [[Hippocampus]]? Does it support planning, prediction, or multi-scale spatial reasoning?
 - When should travelling-wave structure in neural oscillations be interpreted as part of the computation vs. a geometric side effect of coordinated activity?
@@ -32,10 +34,12 @@ Research gaps, unresolved debates, and questions to guide future source selectio
 ## Representations & Learning Speed
 *(New — added from Meister 2022)*
 
-- Does passive exposure to 2AFC task stimuli (without reinforcement) build [[Sparse Coding|sparse codes]] that accelerate subsequent reinforced learning? ([[meister-2022-learning-fast-slow|Meister, 2022]] — proposed but untested)
+- Does passive exposure to 2AFC task stimuli (without reinforcement) build [[Sparse Coding|sparse codes]] that accelerate subsequent reinforced learning? ([[meister-2022-learning-fast-slow|Meister, 2022]] — proposed but untested). [[reinert-2021-pfc-categorization|Reinert et al. (2021)]] show gradual emergence of category selectivity in mPFC during reinforced training, but never separate passive exposure from reinforced learning — the specific passive pre-exposure experiment remains undone.
 - What are the specific unsupervised learning mechanisms that build sparse codes in cortex? How do they relate to [[Predictive Coding]]?
 - How do neuromodulatory systems (dopamine, norepinephrine) interact with the sparse code framework — do they modulate which codes get built, which associations form on existing codes, or both?
 - Are lab 2AFC tasks studying the brain's learning machinery, or mostly studying representation formation — a process that may be irrelevant to how the animal actually learns in the wild?
+- Is the gradual emergence of category selectivity in [[Prefrontal Cortex|mPFC]] driven by slow building of upstream sensory representations, slow rule learning in PFC itself, or both? Simultaneous imaging of sensory cortex and PFC during learning would be needed to distinguish these. ([[reinert-2021-pfc-categorization|Reinert et al., 2021]])
+- Why do Go-preferring and NoGo-preferring PFC neurons show asymmetric dynamics during rule switching (remapping vs replacement)? What determines which mechanism a neuron uses?
 
 ## Neural Dynamics & Manifolds
 *(New — added from Brennan & Proekt 2019)*
@@ -82,6 +86,16 @@ Research gaps, unresolved debates, and questions to guide future source selectio
 - How does burst-dependent plasticity interact with neuromodulatory systems (dopamine, norepinephrine)? The model abstracts all neuromodulation into a gating term M(t) — what fills that role biologically?
 - Can the mechanism support unsupervised learning, or does it require a supervised teaching signal? Could bursting + NMDA cooperativity + feedforward inhibition be adapted for unsupervised sequence learning?
 - Does the STP polarization prediction hold across cortical areas — STD at feedforward synapses, STF at feedback synapses along the sensory hierarchy? Current evidence is mixed. ([[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]])
+
+## Sleep & Memory Consolidation
+*(New — added from Wierzynski et al. 2009)*
+
+- Does the SWR-driven hippocampus→PFC spike timing during SWS **actually induce synaptic plasticity**, or does it merely fall within the STDP window without producing lasting change? Causal evidence (e.g., blocking SWR replay and measuring consolidation deficit) is needed. ([[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al., 2009]])
+- What information is carried in SWR-driven hippocampal replay? Is it a faithful reinstatement of waking experience, a compressed/edited version, or a generative recombination? This determines whether consolidation is "copying" or "distilling."
+- What explains the biphasic prefrontal response to hippocampal input — early excitation (0-100 ms) followed by late inhibition (100-200 ms)? Is the inhibitory phase a gating signal, a reset mechanism, or something else?
+- Does hippocampal-prefrontal coupling strength change with learning? If SWR-driven consolidation builds cortical representations gradually ([[reinert-2021-pfc-categorization|Reinert et al., 2021]]), coupling should be stronger during active learning and weaker once consolidation is complete.
+- What is the functional role of REM sleep in the two-stage model? Wierzynski shows hippocampal-prefrontal coupling is abolished during REM — but does REM perform cortical-internal reorganization (strengthening, pruning, integrating), and how?
+- The 3 cell pairs with REM-correlated timing (out of 90) may be noise or may indicate a small subpopulation with a distinct consolidation role during REM. Is there a REM-specific hippocampal-cortical pathway?
 
 ## Emergent Behavior & Autonomy
 *(New — added from Li et al. 2024)*
