@@ -9,6 +9,14 @@ This wiki explores **how the brain learns** — the biological mechanisms of int
 
 **Out of scope**: Pure AI/ML (reference only as analogy to biological systems), clinical neurology/psychiatry, philosophy of mind (unless directly relevant to a biological mechanism).
 
+### Organizing principle
+
+The wiki is organized around a specific thesis: **the most biologically grounded route to understanding intelligence begins with closed-loop sensorimotor control.** Memory, learning, and cognition are understood as extensions that improve control over longer timescales, more latent variables, and more counterfactual worlds — not as separate faculties bolted on top.
+
+When ingesting sources or synthesizing across pages, ask: *what does this tell us about control, and how does it extend the reach of that control?* Sources that speak to sensorimotor loops, feedback control, or the progression from immediate reactive control to longer-horizon planning and abstraction are central. Sources about plasticity, memory, or representation should be connected back to how they serve the organism's ability to act effectively.
+
+A related working hypothesis motivates the evolutionary dimension: genes encode behavior not by specifying circuits directly, but by modifying neurons' nonlinear feedback control algorithms, producing conserved macroscopic dynamical structures (e.g., limit cycle attractors for locomotion) with high probability despite unique microscopic configurations. This is the control-theoretic reading of [[Degeneracy]].
+
 ---
 
 ## Directory Layout

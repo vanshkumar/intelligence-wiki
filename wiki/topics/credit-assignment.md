@@ -10,6 +10,8 @@ confidence: established
 
 The credit assignment problem asks: how can a neuron deep in a hierarchical circuit determine whether to strengthen or weaken its synapses in order to improve the organism's behavior? The neuron cannot directly observe the behavioral outcome — it only has access to local signals (its own inputs and outputs). Yet somehow, learning in cortex produces hierarchical representations that require coordinated changes across multiple layers.
 
+Credit assignment is what allows the sensorimotor control loop to tune its own internal processing hierarchy. Without it, only the final output layer can learn from behavioral outcomes — deeper layers are locked. With it, the entire processing pipeline (from early sensory representations to motor output) can be shaped by whether the organism's actions succeed, extending the control loop's reach over more complex, multi-step sensory-to-motor transformations.
+
 ## Two Forms
 
 **Structural (spatial) credit assignment**: Which synapses in a multi-layer network should change, and in which direction, to reduce output error? This is the problem backpropagation solves in machine learning.

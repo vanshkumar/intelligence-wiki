@@ -31,6 +31,12 @@ The three-phase behavioral cycle: sit on reward attractor (exploit) → noise ca
 
 Stability is formally analyzed via the Jacobian of the stochastic differential equation (SDE) approximation of the discrete PaN dynamics.
 
+## Attractors as Control Structures
+
+From a control-theoretic perspective, attractors are the dynamical structures through which the nervous system implements sensorimotor control. The *C. elegans* limit cycle loops ([[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt, 2019]]) are locomotion control programs — not descriptions of behavior but the mechanism by which the nervous system produces it. The [[Degeneracy|degeneracy]] observation (conserved attractor structure despite variable neurons) follows naturally: if genes encode behavior by shaping neurons' local control algorithms, the attractor landscape is what evolution selects on.
+
+In PaN ([[li-2024-prediction-noise-reward|Li et al. (2024)]]), the attractor landscape organizes reward-seeking behavior in a closed sensorimotor loop — the agent doesn't compute a policy and then act, it *is* the attractor dynamics. Learning (weight changes) reshapes the attractor landscape, and memory, planning, and representation-building can all be understood as machinery that extends the reach of these control structures over longer timescales and more latent variables.
+
 ## Broader Context
 
 Attractor dynamics are a major framework in computational neuroscience, used to model:

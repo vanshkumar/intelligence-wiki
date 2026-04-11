@@ -54,6 +54,14 @@ Neural manifolds and [[Attractor Dynamics]] are complementary descriptions:
 
 In *C. elegans*, the manifold loops are limit cycle attractors. The manifold framework adds the spatial structure — how loops are arranged relative to each other, where they merge, and how the flow varies along them. In trial-based tasks (working memory, theory of mind), the trajectories are not cyclic but sequential — the scaffold's branching structure captures the task's computational demands.
 
+## Manifolds as the Geometry of Control
+
+The neural manifold is the space in which the organism's control dynamics play out. In *C. elegans*, different loops on the manifold correspond to different motor commands — the manifold literally *is* the locomotion control system's state space. Behavioral transitions at merge points are control decisions, driven by [[Neural Noise|noise]] when the system reaches a dynamical ambiguity.
+
+This framing connects manifolds to the [[Degeneracy|degeneracy]] observation: if genes encode behavior by constraining neurons' nonlinear control algorithms, then what's conserved across individuals is the manifold (the control landscape), not the neuronal activations. The manifold is what evolution sees and selects on.
+
+For more complex systems, the manifold framework extends naturally. The computational scaffold ([[brennan-2023-looper-computational-scaffold|Brennan et al., 2023]]) captures not just motor control but any task requiring information storage and decision-making — working memory, categorization, theory of mind. Each of these can be understood as the control loop operating over increasingly abstract state spaces, with the scaffold's branching/merging structure revealing when information enters and leaves the loop.
+
 ## Implications
 
 The manifold perspective suggests that the right level of description for neural computation is neither individual neurons nor bulk averages, but the **geometry of population dynamics**. This connects to [[Degeneracy]]: many different microscopic configurations (individual neuron activations) can produce the same manifold structure, because the manifold is a property of the collective dynamics, not of any individual element. The computational scaffold extends this further — architecturally distinct systems (monkey PFC vs. RNN) can share the same scaffold structure despite having nothing in common at the unit level.

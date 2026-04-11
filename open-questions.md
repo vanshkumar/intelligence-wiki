@@ -2,6 +2,18 @@
 
 Research gaps, unresolved debates, and questions to guide future source selection. Updated as sources are ingested — questions get added when a paper raises them, and marked resolved (with links) when answered.
 
+These questions are organized by level but unified by the wiki's organizing principle: intelligence begins with closed-loop sensorimotor control, and learning/memory extend that control over longer timescales, more latent variables, and more counterfactual worlds.
+
+---
+
+## Control & Sensorimotor Foundations
+
+- What is the minimal closed-loop sensorimotor system that exhibits learning? [[li-2024-prediction-noise-reward|Li et al. (2024)]] shows prediction + noise suffices for reward-seeking in a toy network — but what is the simplest *biological* system where this can be tested?
+- How does the transition from reactive control (immediate sensorimotor loop) to model-based control (planning, counterfactual reasoning) happen across evolution and development? Is it a continuum or are there discrete architectural innovations?
+- If genes encode behavior by constraining neurons' nonlinear feedback control algorithms (rather than specifying circuits), what are the specific molecular-to-dynamical mappings? Ion channel expression → membrane dynamics → network-level attractor structure is the rough chain, but the intermediate steps are poorly characterized.
+- The [[Degeneracy|degeneracy]] observation — conserved macroscopic dynamics despite variable microscopic configurations ([[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt, 2019]]) — is predicted by a control-theoretic view of genes. Can this be made quantitative: given a distribution over neuronal parameters set by gene expression, what is the probability of the target macroscopic structure emerging?
+- How do memory systems (hippocampal consolidation, cortical sparse codes) feed back into the sensorimotor loop? Is the right framing that memory *serves* control — building internal models that allow the loop to operate over longer horizons and more latent variables?
+
 ---
 
 ## Molecular & Cellular

@@ -1,14 +1,15 @@
 # Overview
 
-This wiki explores a central question in neuroscience: **how does the brain learn?**
+This wiki investigates biological intelligence through a specific lens: **intelligence begins with closed-loop sensorimotor control.** Memory, learning, and cognition are not separate faculties — they are extensions that improve an organism's control over progressively longer timescales, more latent variables, and more counterfactual worlds.
 
-The scope spans the biological mechanisms that allow nervous systems to acquire, store, and retrieve information — from molecular events at individual synapses to large-scale circuit dynamics that support cognition. Key areas include:
+The simplest nervous systems already close the loop: sense, predict, act, update. Everything more complex — synaptic plasticity, memory consolidation, hierarchical representations, planning — can be understood as machinery that extends this basic loop's reach. The wiki traces this progression across levels:
 
-- **Synaptic plasticity** — the molecular and cellular mechanisms by which connections between neurons strengthen or weaken
-- **Memory systems** — how different types of memory (working, episodic, procedural, semantic) are formed, consolidated, and retrieved
-- **Neural circuits** — how interconnected brain regions coordinate to support learning
-- **Development** — how the brain's learning capacity emerges, including critical periods, pruning, and neurogenesis
-- **Cognitive processes** — attention, metacognition, transfer, and abstraction as they relate to learning
+- **The immediate loop** — sensorimotor prediction and control at the timescale of milliseconds to seconds (reflexes, oscillatory dynamics, motor commands)
+- **Extending in time** — plasticity mechanisms (LTP/LTD, Hebbian learning) that let past experience modify the loop's parameters, and sleep-dependent consolidation that transfers learned contingencies from fast hippocampal storage to slow cortical models
+- **Extending over latent variables** — sparse representations that carve the sensory world into categories the control system can act on, and hierarchical credit assignment that tunes deep processing pipelines to serve downstream action
+- **Extending over counterfactuals** — internal models that support planning, imagination, and generalization beyond direct experience
+
+A related hypothesis motivates the evolutionary dimension: genes encode behavior not by specifying circuits, but by shaping neurons' nonlinear feedback control algorithms, producing conserved macroscopic dynamical structures (e.g., limit cycle attractors) with high probability despite unique microscopic configurations. This is the control-theoretic reading of [[Degeneracy]].
 
 ---
 

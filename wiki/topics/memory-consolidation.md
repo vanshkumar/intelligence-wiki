@@ -10,6 +10,8 @@ confidence: established
 
 Memory consolidation is the process by which initially labile memories, dependent on the [[Hippocampus]], are gradually transferred to neocortical circuits for long-term storage. This transfer is thought to occur primarily during sleep, mediated by coordinated reactivation of hippocampal and cortical circuits.
 
+From a control perspective, consolidation extends the temporal reach of sensorimotor control. The hippocampus provides fast, one-shot storage of recent contingencies — what happened, where, what was nearby. Consolidation transfers this into cortical models that can inform action over days, weeks, and lifetimes. The organism's control loop gains access to a longer past, enabling it to act on regularities that span timescales far beyond the immediate sensory present.
+
 ## Sharp-Wave/Ripple Events
 
 Sharp-wave/ripple (SWR) events are brief (50-100 ms), high-frequency (80-250 Hz) bursts of synchronized activity in hippocampal CA1 that occur during slow-wave sleep (SWS) and quiet wakefulness. During SWRs, hippocampal neurons replay compressed versions of activity sequences experienced during prior waking behavior. SWR events are thought to be the vehicle by which the hippocampus broadcasts stored memories to cortical targets.

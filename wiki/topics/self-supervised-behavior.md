@@ -10,6 +10,8 @@ status: emerging
 
 Self-supervised behavior (SSB) is a framework proposed by [[li-2024-prediction-noise-reward|Li et al. (2024)]] to describe agents whose goal-directed behavior emerges from internal dynamics rather than optimization of an external objective. It is positioned as distinct from both reinforcement learning and [[Active Inference]].
 
+SSB is fundamentally a theory of closed-loop sensorimotor control: the agent senses, predicts, acts, and updates — continuously, with no separation between learning and behaving. Goal-directed behavior is not layered on top of a control loop; it *is* the control loop operating under noise. This makes SSB a natural starting point for understanding how more complex cognitive capacities (memory, planning, abstraction) might emerge as extensions of basic sensorimotor dynamics.
+
 ## Defining Features
 
 1. **Internal, local loss with no environmentally defined global utility function** — the agent's updates are driven entirely by local prediction errors. The environment never provides a reward signal.

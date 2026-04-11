@@ -38,6 +38,12 @@ Natural selection operates on behavior (the macroscopic level), not on the activ
 
 Notably, the monkey and RNN achieve the same scaffold structure via **different computational strategies**: the monkey learns the general algorithm (compare F1 to F2), while the RNN exploits dataset-specific statistics. The scaffold predicts the specific errors the RNN makes on novel stimuli.
 
+## Control-Theoretic Interpretation
+
+Degeneracy is predicted if genes encode behavior by constraining neurons' nonlinear feedback control algorithms rather than specifying circuits directly. Genes set ion channel expression, receptor densities, and growth factor gradients — parameters that shape each neuron's local dynamical repertoire. If these parameters are tuned so that certain macroscopic dynamical structures (e.g., limit cycle attractors for locomotion) emerge with high probability from the collective dynamics, then the microscopic configuration is free to vary as long as the target structure appears. The conserved 2D manifold loops in *C. elegans* ([[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt, 2019]]) are exactly the kind of structure this predicts: a locomotion control pattern that evolution selects for, implemented by whatever neuronal configuration happens to produce it.
+
+This reframes the "simple rules, complex architecture" theme: the "rules" are local control algorithms (neurons' input-output dynamics shaped by gene expression), and the "architecture" is not the wiring diagram but the macroscopic dynamical structure that emerges — the control landscape the organism actually uses to act.
+
 ## Implications for Modeling
 
 Degeneracy poses a fundamental challenge to bottom-up neural modeling: if the microscopic parameters that must be specified (channel densities, synaptic weights) vary across individuals in ways that cannot be meaningfully averaged, then biophysically detailed models are inherently non-generalizable. This motivates phenomenological approaches that model dynamics directly rather than building up from components — the [[Neural Manifolds|computational scaffold]] being one such approach.

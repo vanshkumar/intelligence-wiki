@@ -24,7 +24,7 @@ Historically treated as a limitation that the brain must compensate for. Three p
 2. **Noise as regularizer** — analogous to dropout or noise injection in machine learning, preventing overfitting
 3. **Noise as computational resource** — noise actively enables behaviors that deterministic systems cannot produce
 
-The third perspective is supported by [[li-2024-prediction-noise-reward|Li et al. (2024)]], which shows that noise is **necessary** (not just tolerable) for reward-seeking behavior to emerge in predictive networks. Specifically:
+The third perspective is supported by [[li-2024-prediction-noise-reward|Li et al. (2024)]], which shows that noise is **necessary** (not just tolerable) for reward-seeking behavior to emerge in predictive networks. In a closed sensorimotor loop, noise is what prevents the control system from getting stuck — it destabilizes suboptimal attractors and drives transitions that a deterministic controller would never make. Specifically:
 
 - Noise destabilizes unrewarding states (where sensory signal is zero, noise flips actions randomly) while leaving rewarding states stable (nonzero signal provides structure that resists perturbation)
 - The relationship between noise level and performance follows an **inverted-U**: too little noise causes fixation, too much causes random behavior, intermediate noise is optimal

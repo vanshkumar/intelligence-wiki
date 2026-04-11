@@ -10,6 +10,8 @@ status: emerging
 
 Active inference is a theoretical framework proposing that living organisms follow a single imperative: **minimizing the surprise of their sensory observations**. It extends [[Predictive Coding]] from perception to action — when there's a discrepancy between prediction and observation, the organism can either change its beliefs (update internal model) or change the world (take an action that produces input matching its prediction).
 
+Active inference is the closest existing theoretical framework to a control-first view of intelligence: it treats perception and action as two sides of the same closed-loop process. However, its implementations tend to require modular architecture (separate components for planning, action selection, etc.), which limits the "emergent from simple rules" character that [[li-2024-prediction-noise-reward|PaN]] demonstrates. PaN achieves closed-loop control behavior from simpler ingredients — local prediction + noise — without the additional apparatus active inference typically requires.
+
 ## Relation to Predictive Coding
 
 Active inference is often described as the action-oriented extension of predictive coding. Where predictive coding explains perception (updating beliefs to match sensory input), active inference explains behavior (acting on the world to make sensory input match beliefs).

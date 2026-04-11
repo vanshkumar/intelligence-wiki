@@ -44,6 +44,10 @@ The combination of high dimensionality and sparseness means each event is repres
 
 Meister argues that the Bayesian and neural explanations for learning speed are the same thing at different levels: lacking a sparse code for a contingency IS what makes it seem "implausible" (low prior). The sparse code literally determines what correlations the brain can efficiently detect.
 
+## Sparse Codes Extend the Reach of Control
+
+From a control perspective, sparse codes determine what the sensorimotor loop can "see" and act on. A sparse code for a stimulus category means the control system can discriminate it, associate it with actions, and learn contingencies involving it in a single trial. Without a sparse code, the category is invisible to fast associative learning — the control loop cannot leverage it. Building sparse codes (whether through evolution or unsupervised experience) is thus equivalent to extending the organism's control over more latent variables in its environment. The slow timescale of representation building ([[reinert-2021-pfc-categorization|Reinert et al., 2021]]) reflects the cost of expanding the control loop's state space.
+
 ## Relationship to Predictive Coding
 
 The progressive construction of sparse codes in cortical hierarchies is consistent with [[Predictive Coding]] — each level learns to predict and explain away patterns in the level below, which decorrelates and sparsifies the representation. Sparse coding and predictive coding may be two views of the same hierarchical feature extraction process.

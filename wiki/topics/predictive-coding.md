@@ -8,7 +8,7 @@ last_updated: 2026-04-10
 status: established
 ---
 
-Predictive coding is a theory of neural computation proposing that the brain continuously generates predictions about its sensory input and updates its internal model by minimizing **prediction errors** — the discrepancy between predicted and actual neural activity.
+Predictive coding is a theory of neural computation proposing that the brain continuously generates predictions about its sensory input and updates its internal model by minimizing **prediction errors** — the discrepancy between predicted and actual neural activity. When embedded in a closed sensorimotor loop (as in [[li-2024-prediction-noise-reward|PaN]]), prediction is not just a perceptual mechanism but the core operation of a control system — the organism predicts, acts, and updates, with prediction error driving both model refinement and action selection.
 
 ## Core Idea
 

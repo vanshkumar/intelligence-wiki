@@ -9,6 +9,8 @@ last_updated: 2026-04-11
 
 The prefrontal cortex (PFC) is a region of frontal cortex involved in cognitive functions including categorization, rule learning, decision-making, and cognitive flexibility. In primates, PFC neurons rapidly and flexibly represent learned categories. In rodents, the medial prefrontal cortex (mPFC) — including anterior cingulate cortex (ACC), prelimbic cortex (PL), and medial orbital cortex (MO) — plays an analogous role, though the functional and anatomical homology across species is still debated.
 
+From a control perspective, PFC extends the sensorimotor loop over abstract, rule-governed, and counterfactual variables. Where sensory cortex provides immediate stimulus representations and hippocampus provides spatial/episodic context, PFC builds category-level representations and flexible rules that allow the control system to act on latent structure — "this stimulus is a member of the Go category" rather than "this stimulus has these specific visual features."
+
 ## Category Representations in mPFC
 
 [[reinert-2021-pfc-categorization|Reinert et al. (2021)]] used chronic two-photon calcium imaging to track mPFC neurons across the entire course of visual category learning in mice. Key findings:

@@ -54,6 +54,10 @@ The physical implementation of Hebbian coincidence detection relies on **calcium
 
 The critical distinction is between **calcium-as-state-variable** (transient adaptation effects that vanish when calcium is pumped out) and **calcium-as-trigger** (calcium initiates self-sustaining downstream changes — CaMKII phosphorylation, structural synaptic modification — that persist after calcium is removed). The same ion, same concentration-sensing logic, but **genetically encoded downstream readers** determine whether the effect is transient or lasting. This is how DNA bridges evolutionary timescales to learning rules.
 
+## Role in the Control Loop
+
+Hebbian learning is the mechanism by which the sensorimotor control loop modifies its own parameters based on experience. Each Hebbian update adjusts the loop's response to a particular input pattern — strengthening sensory-motor associations that co-occur, weakening those that don't. The dependence on [[Sparse Coding|sparse codes]] translates directly: the control loop can only learn to act on stimulus categories it can discriminate, and it can only discriminate categories for which it has non-overlapping neural representations. Building representations and tuning the control loop are thus two aspects of the same process.
+
 ## Relationship to Other Learning Frameworks
 
 - **[[Predictive Coding]]**: Local prediction error minimization can be seen as a generalized form of Hebbian learning — weight updates depend on local activity and local error signals.

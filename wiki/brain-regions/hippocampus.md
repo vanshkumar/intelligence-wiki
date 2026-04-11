@@ -40,9 +40,11 @@ The travelling wave's spatial wavelength (~11–15 mm) matches the hippocampal l
 
 ## Role in Learning and Memory
 
+The hippocampus extends the sensorimotor control loop's temporal and spatial reach. Where basic control operates on the immediate sensory present, hippocampal circuits enable the organism to act on spatial context (where am I relative to where I've been?) and recent episodic history (what happened here before?).
+
 The hippocampus is central to:
-- **Spatial memory** — encoding and retrieving spatial maps via place cells
-- **Episodic memory** — forming memories of specific events in context
+- **Spatial memory** — encoding and retrieving spatial maps via place cells, giving the control loop access to allocentric spatial structure beyond the current sensory view
+- **Episodic memory** — forming memories of specific events in context, extending control over contingencies that require remembering unique past episodes
 - **[[Memory Consolidation]]** — transferring information to cortical long-term storage (systems consolidation), involving sharp-wave ripples during sleep and rest. [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] show that during SWS, CA1 cells fire 0-100 ms before [[Prefrontal Cortex|mPFC]] cells in an SWR-driven, directional pattern — timing compatible with spike-timing-dependent [[Long-Term Potentiation|plasticity]]. These interactions are nearly abolished during REM sleep, suggesting distinct consolidation mechanisms across sleep stages.
 
 ## Sources
