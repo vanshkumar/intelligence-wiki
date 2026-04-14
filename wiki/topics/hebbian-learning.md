@@ -3,8 +3,8 @@ title: "Hebbian Learning"
 type: theory
 aliases: ["Hebb's rule", "fire together wire together", "Hebbian plasticity"]
 tags: [learning-rule, plasticity, synapse, associative-learning]
-source_count: 3
-last_updated: 2026-04-10
+source_count: 4
+last_updated: 2026-04-14
 status: established
 ---
 
@@ -70,3 +70,4 @@ Hebbian learning is the mechanism by which the sensorimotor control loop modifie
 - [[gerstner-neuronal-dynamics-ch2|Gerstner et al., Neuronal Dynamics Ch. 2]] — calcium as bridge between electrical activity and synaptic plasticity; NMDA as coincidence detector
 - [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — burst-dependent plasticity as a Hebbian rule that approximates backpropagation via dendritic computation
 - [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — LTP-induced MSBs grow single-neuron computational architecture
+- [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — plain Hebbian learning rules across three synapse populations (map-cell recurrence, goal-cell convergence, point-cell habituation) suffice for cognitive-map acquisition, one-shot homing, and efficient patrolling

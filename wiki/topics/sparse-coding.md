@@ -3,8 +3,8 @@ title: "Sparse Coding"
 type: concept
 aliases: ["sparse representations", "sparse code", "sparse neural codes", "overcomplete representations"]
 tags: [neural-representations, learning, information-theory, cortex]
-source_count: 3
-last_updated: 2026-04-11
+source_count: 4
+last_updated: 2026-04-14
 confidence: established
 ---
 
@@ -64,9 +64,20 @@ The progressive construction of sparse codes in cortical hierarchies is consiste
 
 Sparsity operates not only at the population level (which neurons fire) but also at the *intra-neuronal* level. [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] model a single neuron's dendritic tree as a sparse binary tree ANN — each node connects to exactly 2 inputs, which is far more constrained than a fully connected network. Despite this extreme structural sparsity, the biologically structured tree topology performs surprisingly well on classification tasks, approaching a parameter-matched dense network. This suggests that the tree structure of real dendrites is not arbitrary but computationally advantageous — a form of **structured sparsity** that the brain exploits at the single-neuron level.
 
+## The Sparse → Dense Convergent Hebbian Motif
+
+The structural value of sparse codes is realized in a recurring circuit motif: a **large, sparsely-selective input population** converging onto a **small readout population** via plastic synapses. This motif implements one-shot associative learning by the mechanism described above — no interference, one Hebbian event suffices.
+
+Two instantiations:
+- **Insect [[Mushroom Body]]**: Kenyon cells (sparse, stimulus-selective) → mushroom body output neurons (MBONs). Neuromodulatory gating by dopaminergic neurons implements three-factor learning.
+- **Vertebrate [[Hippocampus]]** (proposed): point-cell-like sparse place representations → goal-cell readout. The [[Endotaxis]] model ([[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. 2024]]) proposes this motif underlies cognitive navigation.
+
+The same motif appearing independently across deeply divergent lineages is evidence that it is a near-optimal solution to the associative-learning problem under the constraint of local Hebbian plasticity.
+
 ## Sources
 
 - [[meister-2022-learning-fast-slow|Meister (2022)]] — sparse codes as the determinant of learning speed
 - [[gerstner-neuronal-dynamics-ch1|Gerstner et al., Neuronal Dynamics Ch. 1]] — biophysical basis of inhibitory gain control that shapes sparseness
 - [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — dendritic tree as structured sparse network; biologically constrained sparsity at the single-neuron level
 - [[reinert-2021-pfc-categorization|Reinert et al. (2021)]] — gradual emergence of sparse category representations in mPFC during visual rule learning
+- [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — sparse→dense convergent Hebbian motif realized in both mushroom body (Kenyon cells → MBONs) and proposed hippocampal endotaxis circuit

@@ -109,6 +109,42 @@ These questions are organized by level but unified by the wiki's organizing prin
 - What is the functional role of REM sleep in the two-stage model? Wierzynski shows hippocampal-prefrontal coupling is abolished during REM — but does REM perform cortical-internal reorganization (strengthening, pruning, integrating), and how?
 - The 3 cell pairs with REM-correlated timing (out of 90) may be noise or may indicate a small subpopulation with a distinct consolidation role during REM. Is there a REM-specific hippocampal-cortical pathway?
 
+## Cognitive Navigation & Endotaxis
+*(New — added from Zhang et al. 2024)*
+
+- Is [[Endotaxis]] actually the computation used in the hippocampus? The goal-cell signature (very large place field, sudden single-event emergence) is testable with current imaging. Are the three predicted cell populations (point, map, goal) dissociable in recordings?
+- How is the mode switch — which selects among goal signals (food, water, home, neglect) and routes the chosen one to the chemotaxis module — implemented biologically? [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] treats it as given; circuit tracing to a module receiving convergent goal inputs and projecting to the taxis controller is the experimental entry point.
+- Can endotaxis be extended to continuous (non-graph) environments? Point cells with overlapping receptive fields should generalize, but the monotonicity theorem is proved only for discrete graphs.
+- The critical gain γ_c depends on graph topology via λ_max(A). Can neurons tune γ automatically based on environmental connectivity statistics, so the same circuit works across structurally different environments?
+- Endotaxis is trial-and-error at each decision. How does it compose with sequence-level planning (chaining actions into motifs, internal forward models as in Kay et al. 2020 / Nyberg et al. 2022)? Is there a natural extension of the endotaxis circuit that supports prospective rollout?
+- Is the [[Mushroom Body]] → [[Hippocampus]] motif correspondence **deep homology** (pre-bilaterian origin) or **convergent evolution**? Either way, what does the shared motif tell us about the optimality landscape of associative-learning architectures?
+- The formal overlap between endotaxis and the [[Successor Representation]] suggests a single underlying "resolvent-of-connectivity" primitive that can be read out as value function or as goal gradient depending on downstream circuits. Is there biological evidence for both readouts coexisting?
+- Does endotaxis interact with [[Memory Consolidation]] — is the learned map subsequently consolidated to cortical long-term storage, and if so, how does the goal-signal machinery persist or transfer?
+- [[Bittner et al. (2017)]] observed sudden CA1 place-field formation via dendritic calcium plateaus over seconds-long windows. Is this the mechanism by which endotaxis goal cells write their synapses? The timescale of the plasticity rule endotaxis needs matches behavioral-time-scale plasticity observed experimentally.
+
+## Ethology, Exploration & Sudden Insight
+*(New — added from Rosenberg et al. 2021)*
+
+- What is the neural substrate of the four local turning biases ([[rosenberg-2021-labyrinth-learning|Rosenberg et al. 2021]])? Are they implemented in a dedicated navigation circuit (entorhinal-hippocampal) or in a more general action-selection structure?
+- What is the mechanism of **sudden insight**? Candidate accounts — attractor phase transitions, representational switching via sparse-code emergence, consolidation-driven reorganization, control-hierarchy threshold crossings — are not mutually exclusive, and none are yet experimentally distinguished.
+- Can the cross-animal consistency of turning biases (SD ~0.03 across 19 mice) be traced to specific genes or developmental parameters? What is the control-theoretic mapping from gene expression to these four bias parameters? This is the sharpest available test of the genes→control→structure hypothesis.
+- Do inbred vs. outbred mouse strains differ in the four bias parameters? Outbred strains would directly test how tightly the biases are genetically constrained.
+- Why does exploration remain the dominant behavioral mode (~75–95%) even in rewarded animals after learning? Is it hedging, intrinsic reward, or that reward simply does not suppress the default mode?
+- Is one-shot home-path learning dependent on hippocampal [[Place Cells|place cell]] formation during the inbound traversal, or does it rely primarily on path-integration machinery? Rotation-robust navigation favors the former but does not distinguish them.
+- Does intrinsic exploration have a neuromodulatory signature (locus coeruleus / norepinephrine tone)? This connects the [[Explore-Exploit Tradeoff]] mechanism to the observed dominance of exploration in [[intrinsic-exploration|intrinsic exploration]].
+
+## Circuit-Behavior Mapping & State-Dependent Reconfiguration
+*(New — added from Banerjee et al. 2023)*
+
+- What other *C. elegans* sensorimotor circuits show life-stage-dependent reconfiguration? Is CO₂ chemotaxis an outlier, or is stage-dependent circuit identity the norm? ([[banerjee-2023-life-stage-chemosensation|Banerjee et al., 2023]])
+- What is the molecular mechanism by which daf-2 insulin/IGF signaling gates AIB's recruitment into the dauer CO₂ circuit? Does it alter innexin composition (CHE-7 abundance or phosphorylation), receptor expression, or intrinsic excitability — or all three?
+- Are there analogous state-dependent gap-junction reconfigurations in mammalian circuits? Electrical synapses are present throughout vertebrate nervous systems; whether they are similarly gated by systemic signals (insulin, cortisol, sex hormones) at the level of effective connectivity is largely unexplored.
+- Does the same sensory neuron (BAG) carry different information in the two life stages, or does the downstream divergence transform a common signal differently? The reduced BAG response amplitude in dauers hints at the former, but calcium imaging resolution is insufficient to settle it.
+- Is there a principled way to read off the effective connectome from a physiological state vector? Connectomics currently yields a static wiring diagram; a framework for computing the state-dependent active subset is missing.
+- Does the [[Successor Representation]] / [[Endotaxis]] formal overlap generalize in the presence of circuit reconfiguration? If the same sensory gradient is routed through different interneurons in different states, does that correspond to different "value functions" implemented over the same anatomical substrate?
+- How widespread is neuromodulation-via-electrical-synapse-recruitment as a mechanism? Classical neuromodulation (dopamine, serotonin, norepinephrine) operates on chemical synapse gain; Banerjee shows a systemic endocrine signal acting on electrical synapse composition. Is this a distinct class of neuromodulation or a widely distributed one that has been under-measured?
+- Do analogous *intra-stage* state reconfigurations exist (feeding vs. sated, arousal state, circadian phase), or is the life-stage case special? Crustacean stomatogastric literature suggests the former; the Banerjee-level genetic precision has not been applied.
+
 ## Emergent Behavior & Autonomy
 *(New — added from Li et al. 2024)*
 

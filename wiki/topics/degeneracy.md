@@ -3,12 +3,14 @@ title: "Degeneracy"
 type: concept
 aliases: ["neural degeneracy", "many-to-one mapping"]
 tags: [dynamical-systems, evolution, robustness, neural-circuits]
-source_count: 2
-last_updated: 2026-04-10
+source_count: 4
+last_updated: 2026-04-14
 confidence: established
 ---
 
 Degeneracy is the property whereby structurally different elements (neurons, circuits, parameter configurations) can produce the same functional output. In neuroscience, it refers to the many-to-one mapping from microscopic neural configurations to macroscopic behavior — multiple distinct activation patterns can give rise to equivalent dynamics and behavior.
+
+Degeneracy is one of two complementary ways the mapping between neural implementation and behavior can be decoupled. Its complement is [[Context-Dependent Circuit Reconfiguration]] — the *same* substrate producing *different* behaviors depending on state. See [[Circuit-Behavior Mapping]] for the umbrella framing that links the two directions.
 
 ## Degeneracy vs. Redundancy
 
@@ -44,11 +46,23 @@ Degeneracy is predicted if genes encode behavior by constraining neurons' nonlin
 
 This reframes the "simple rules, complex architecture" theme: the "rules" are local control algorithms (neurons' input-output dynamics shaped by gene expression), and the "architecture" is not the wiring diagram but the macroscopic dynamical structure that emerges — the control landscape the organism actually uses to act.
 
+### Behavioral-Level Degeneracy
+
+[[rosenberg-2021-labyrinth-learning|Rosenberg et al. (2021)]] extend this logic one level up. In 19 mice exploring a labyrinth, efficient exploration is governed largely by four local turning biases at T-junctions, and those biases are strikingly consistent across animals (SD ~0.03). This is what a control-theoretic degeneracy prediction looks like at the behavioral level: microscopic implementations presumably vary (no two mice have the same neural coordinate system), but the macroscopic structure — the four-parameter decision rule that produces efficient tree-coverage — is conserved. Genes constrain local decision rules; efficient global behavior emerges as a high-probability consequence, without genes needing to specify "explore the whole maze."
+
 ## Implications for Modeling
 
 Degeneracy poses a fundamental challenge to bottom-up neural modeling: if the microscopic parameters that must be specified (channel densities, synaptic weights) vary across individuals in ways that cannot be meaningfully averaged, then biophysically detailed models are inherently non-generalizable. This motivates phenomenological approaches that model dynamics directly rather than building up from components — the [[Neural Manifolds|computational scaffold]] being one such approach.
+
+### The Complementary Direction: Same Substrate, Different Behavior
+
+[[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] establish the complement to classical degeneracy. In *C. elegans* CO₂ chemotaxis, the *same* genome and the *same* anatomical connectome produce *different effective circuits* in starved adults vs. dauer larvae — different interneuron polarities, different motor programs — despite shared behavioral valence (attraction). BAG–AIB gap junctions (via the CHE-7 innexin) and daf-2 insulin/IGF signaling gate the reconfiguration.
+
+Where classical degeneracy decouples behavior from implementation *across* individuals (many implementations → one behavior), context-dependent reconfiguration decouples them *within* an individual *across states* (one substrate → many behaviors). Both establish that implementation is not a stable reference frame for behavior. The full framing is in [[Circuit-Behavior Mapping]] and the specific phenomenon in [[Context-Dependent Circuit Reconfiguration]].
 
 ## Sources
 
 - [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]] — conserved macroscopic dynamics despite variable individual neuron activation in *C. elegans*
 - [[brennan-2023-looper-computational-scaffold|Brennan et al. (2023)]] — same computational scaffold across monkey PFC and RNN despite completely different neuronal activity
+- [[rosenberg-2021-labyrinth-learning|Rosenberg et al. (2021)]] — behavioral-level degeneracy: four local turning biases consistent across 19 mice (SD ~0.03) produce efficient labyrinth exploration
+- [[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] — complementary direction: same substrate, different effective circuit across life stages in *C. elegans* CO₂ chemotaxis

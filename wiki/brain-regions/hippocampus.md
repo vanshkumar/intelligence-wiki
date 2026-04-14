@@ -3,8 +3,8 @@ title: "Hippocampus"
 type: brain-region
 aliases: ["hippocampal formation", "HPC"]
 tags: [limbic-system, memory, spatial-navigation, theta, learning]
-source_count: 2
-last_updated: 2026-04-11
+source_count: 3
+last_updated: 2026-04-14
 ---
 
 The hippocampus is a bilateral structure in the medial temporal lobe critical for spatial navigation, episodic memory formation, and learning. It is one of the most studied brain regions in neuroscience and a primary site for investigating biological learning mechanisms.
@@ -47,7 +47,12 @@ The hippocampus is central to:
 - **Episodic memory** — forming memories of specific events in context, extending control over contingencies that require remembering unique past episodes
 - **[[Memory Consolidation]]** — transferring information to cortical long-term storage (systems consolidation), involving sharp-wave ripples during sleep and rest. [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] show that during SWS, CA1 cells fire 0-100 ms before [[Prefrontal Cortex|mPFC]] cells in an SWR-driven, directional pattern — timing compatible with spike-timing-dependent [[Long-Term Potentiation|plasticity]]. These interactions are nearly abolished during REM sleep, suggesting distinct consolidation mechanisms across sleep stages.
 
+## Candidate Algorithm: Endotaxis
+
+[[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] propose that the hippocampus implements [[Endotaxis]] — a circuit that computes an internal "virtual odor" signal monotonic in graph distance to a chosen target, then feeds it into the ancient chemotaxis controller. In this view, the [[Place Cells|place-field size gradient]] along the septotemporal axis reflects functional differentiation: small-field point cells for location encoding, medium-field map cells for learned connectivity, and very-large-field goal cells for target proximity. The circuit motif — sparse place-selective population → convergent Hebbian readout — is the same motif realized in the insect [[Mushroom Body]], suggesting a shared computational solution for cognitive navigation across deeply divergent lineages.
+
 ## Sources
 
 - [[lubenov-2009-theta-travelling-waves|Lubenov & Siapas (2009)]] — theta oscillations are travelling waves along the septotemporal axis
 - [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] — SWR-driven directional spike timing from CA1 to mPFC during SWS
+- [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — endotaxis as candidate computation for hippocampal cognitive navigation

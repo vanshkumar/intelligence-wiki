@@ -3,8 +3,8 @@ title: "Synapses"
 type: concept
 aliases: ["synapse", "synaptic transmission", "synaptic connection"]
 tags: [neuron, plasticity, learning, hebbian-learning, evolution]
-source_count: 4
-last_updated: 2026-04-10
+source_count: 5
+last_updated: 2026-04-14
 confidence: established
 ---
 
@@ -61,6 +61,12 @@ A single presynaptic axon can contact the same postsynaptic neuron at **multiple
 
 [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] show that repeated synaptic inputs across dendritic branches directly increase a neuron's computational capacity — modeling repeated inputs as a *k*-tree, performance monotonically improves with *k* and approaches a parameter-matched fully connected network. This reframes MSBs not as redundancy but as a mechanism by which learning **grows the computational architecture** of individual neurons.
 
+## Electrical Synapses and State-Gated Coupling
+
+Alongside chemical synapses, nervous systems also use **electrical synapses** (gap junctions) — direct cytoplasmic channels between neurons formed from innexin subunits (invertebrates) or connexins (vertebrates). Electrical synapses pass ions and small molecules with sub-millisecond delay, supporting fast synchronization and bidirectional coupling.
+
+A notable finding from [[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] is that electrical synapses are not always functionally active wherever they are anatomically present. In *C. elegans* CO₂ chemotaxis, the BAG–AIB gap junction (mediated by the CHE-7 innexin) is anatomically present in both adults and dauer larvae but **functionally active only in dauers**, gated by daf-2 insulin/IGF signaling. This is a concrete instance of the effective connectome being a state-dependent subset of the anatomical one — see [[Context-Dependent Circuit Reconfiguration]].
+
 ## Evolutionary Significance
 
 Individual computational primitives (excitation, inhibition, thresholding, adaptation) all predate neurons — they exist in unicellular signaling cascades. What neurons added was the **network architecture** (massive fan-in/fan-out, reconfigurable graph) and the synapse's unique capacity for pairwise activity-dependent modification. The synapse is what makes networks **learnable**, not just configurable.
@@ -73,3 +79,4 @@ Evolutionary biologists identify a bundle of synaptic innovations — speed, spa
 - [[gerstner-neuronal-dynamics-ch2|Gerstner et al., Neuronal Dynamics Ch. 2]] — NMDA coincidence detection, calcium-plasticity bridge
 - [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — STP multiplexing: STD at feedforward synapses transmits event rate, STF at feedback synapses transmits burst rate
 - [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — multi-synaptic boutons as computational architecture; LTP-induced MSBs increase single-neuron capacity
+- [[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] — electrical synapses as state-gated substrate for circuit reconfiguration; BAG–AIB gap junction (CHE-7) functionally active only in dauer larvae

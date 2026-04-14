@@ -16,6 +16,9 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — Single neurons with dendritic trees can solve complex classification tasks; point neuron models underestimate computational power
 - [[reinert-2021-pfc-categorization|Reinert et al. (2021)]] — Category-selective neurons in mouse mPFC emerge gradually during learning; flexible remapping during rule switches
 - [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] — Directional spike timing from hippocampus to PFC during SWS, driven by sharp-wave ripples; abolished during REM
+- [[rosenberg-2021-labyrinth-learning|Rosenberg et al. (2021)]] — Overnight labyrinth exposes few-shot learning, sudden insight, one-shot home-path learning, and efficient exploration from 4 genetically-consistent local turning biases
+- [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — Endotaxis: a 3-layer Hebbian circuit that computes a "virtual odor" (monotonic in graph distance) to repurpose the ancient chemotaxis module for cognitive navigation
+- [[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] — Same CO₂ cue, same valence, different microcircuits in *C. elegans* adults vs. dauer larvae; BAG–AIB gap junctions and daf-2 insulin signaling gate the reconfiguration
 
 ## Concepts
 
@@ -31,6 +34,12 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[Dopamine|Dopamine & Neuromodulation]] — Diffuse chemical signals that gate, bias, and steer learning; reward prediction error, three-factor rules
 - [[Inhibitory Circuits]] — GABAergic interneuron types (PV+, SST+, VIP+) implementing gain control, sparse coding, and credit signal linearization
 - [[Memory Consolidation]] — Hippocampus-to-cortex memory transfer during sleep via SWR-driven reactivation; SWS vs REM dissociation
+- [[Sudden Insight]] — Discontinuous transitions in behavior during learning; challenges purely gradient-based accounts
+- [[intrinsic-exploration|Intrinsic Exploration]] — Exploration as default behavioral mode, not a fraction traded off against exploitation
+- [[ethological-paradigms|Ethological Paradigms]] — Naturalistic task designs that expose learning dynamics invisible in trial-based paradigms
+- [[Cognitive Map]] — Internal representation of environmental structure supporting navigation to arbitrary goals; substrate for extending sensorimotor control over space
+- [[Circuit-Behavior Mapping]] — Umbrella: the mapping between neural implementation and behavior is many-to-many; links degeneracy and context-dependent reconfiguration
+- [[Context-Dependent Circuit Reconfiguration]] — Same substrate, different effective circuits depending on state; complement to degeneracy
 
 ## Mechanisms
 
@@ -48,6 +57,8 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[Active Inference]] — Extension of predictive coding to action; organisms minimize surprise of sensory observations
 - [[Self-Supervised Behavior]] — Framework for agents whose goals emerge from internal dynamics without external reward (proposed by Li et al. 2024)
 - [[Hebbian Learning]] — "Fire together, wire together" — local synaptic plasticity rule; fast but constrained by representation quality
+- [[Endotaxis]] — Neuromorphic algorithm that repurposes chemotaxis for cognitive navigation via an internally computed "virtual odor" gradient
+- [[Successor Representation]] — Predictive state representation encoding expected future occupancy; formally similar to endotaxis but with different interpretation
 
 ## Methods
 
@@ -57,6 +68,8 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 
 - [[Hippocampus]] — Medial temporal lobe structure critical for spatial navigation, episodic memory, and learning
 - [[Prefrontal Cortex]] — Frontal cortex region for categorization, rule learning, decision-making, and cognitive flexibility
+- [[Mushroom Body]] — Insect associative learning center; sparse→dense Hebbian convergence motif; candidate substrate for insect cognitive navigation via endotaxis
+- [[C. elegans Chemotaxis Circuit]] — Compact CO₂-responsive sensorimotor circuit (BAG, AIY, AIB, RIG, AVE); clearest case of life-stage-dependent circuit reconfiguration
 
 ## People
 
@@ -67,6 +80,11 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[Ilenna Jones]] — UPenn; dendritic computation, single-neuron computational power
 - [[Konrad Kording]] — UPenn; computational neuroscience, machine learning, neural data science
 - [[Pieter Goltstein]] — Max Planck; prefrontal cortex, category learning, two-photon imaging
+- [[Matthew Rosenberg]] — Caltech (Meister lab); ethological behavior, labyrinth navigation, unsupervised mouse behavior
+- [[Tony Zhang]] — Caltech (Meister lab); computational neuroscience, endotaxis circuit model for cognitive navigation
+- [[Elissa Hallem]] — UCLA; nematode chemosensation, host-seeking behavior, life-stage-dependent sensory circuits
+- [[Paul Sternberg]] — Caltech; *C. elegans* genetics, developmental biology, neurogenetics
+- [[Navonil Banerjee]] — UCLA (Hallem lab); *C. elegans* chemosensory circuit function across life stages
 
 ## Analyses
 

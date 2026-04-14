@@ -3,8 +3,8 @@ title: "Self-Supervised Behavior"
 type: theory
 aliases: ["SSB"]
 tags: [learning-framework, emergent-behavior, autonomy]
-source_count: 1
-last_updated: 2026-04-10
+source_count: 2
+last_updated: 2026-04-13
 status: emerging
 ---
 
@@ -30,6 +30,11 @@ Active inference aims for Bayes-optimal behavior and frames both perception and 
 
 SSB is currently instantiated only through the PaN algorithm. The framework is conceptually ambitious but early-stage. Key open questions include whether SSB-type agents can handle temporal credit assignment, learn sensory representations, and scale to realistic environments.
 
+## Ethological Support
+
+[[rosenberg-2021-labyrinth-learning|Rosenberg et al. (2021)]] provide the strongest ethological fit to date. Mice in an overnight labyrinth exhibit rich, structured behavior — efficient exploration, one-shot home-path learning, sudden-insight transitions — in conditions where **no reward signal is provided at all**. Exploration is the dominant behavioral mode regardless of reward availability (see [[intrinsic-exploration|intrinsic exploration]]). This is consistent with SSB's central claim that goal-directed behavior emerges from internal loop dynamics rather than external utility.
+
 ## Sources
 
 - [[li-2024-prediction-noise-reward|Li et al. (2024)]] — introduces the SSB framework
+- [[rosenberg-2021-labyrinth-learning|Rosenberg et al. (2021)]] — ethological support: rich structured behavior in unrewarded mice
