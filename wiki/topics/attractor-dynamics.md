@@ -3,8 +3,8 @@ title: "Attractor Dynamics"
 type: mechanism
 aliases: ["attractor networks", "attractor states"]
 tags: [dynamical-systems, computation, neural-circuits]
-source_count: 3
-last_updated: 2026-04-10
+source_count: 4
+last_updated: 2026-04-14
 level: circuit
 ---
 
@@ -57,8 +57,20 @@ This connects attractor dynamics to [[Degeneracy]]: the manifold structure (the 
 
 [[brennan-2023-looper-computational-scaffold|Brennan et al. (2023)]] generalize the attractor framework: in noisy systems optimized to store information, the relevant attractors are **1D stable trajectories** — all orthogonal directions are contracting, so noise is corrected. The branching and merging of these trajectories (the [[Neural Manifolds|computational scaffold]]) directly maps to the computations performed. This unifies limit cycle attractors (continuous locomotion in *C. elegans*) and transient trajectories (trial-based working memory) under a single framework: both are 1D stable structures whose topology encodes computational strategy.
 
+## Attractors in Cortex: Fixed Points, Line Attractors, Rotations
+
+[[vyas-2020-computation-through-dynamics|Vyas et al. (2020)]] catalog attractor structures observed in primate cortex under the [[Computation Through Dynamics|CTD]] framework:
+
+- **Stable fixed points for motor preparation.** In mouse ALM, delay-period activity moves toward stable fixed points corresponding to movement directions; optogenetic perturbation either relaxes back to the fixed point (robust) or hops to a different fixed point producing an incorrect action (Inagaki et al. 2019). A clean discrete-attractor picture of preparation.
+- **Line attractor for context-dependent decisions.** PFC in a context-dependent 2AFC task implements the decision by integrating the task-relevant input along a **line attractor** — a linear arrangement of stable fixed points (Mante et al. 2013). Context appears as a slow input that selects which sensory dimension integrates; the irrelevant dimension's input decays along orthogonal directions (dynamics quenching, not gating).
+- **Rotational dynamics as approximate limit cycles.** Motor-cortex population activity during reaching traces [[Rotational Dynamics|rotations]] in state space — an approximate low-dimensional oscillator that generates multiphasic muscle patterns (Churchland 2012). Rotations are an instance of limit-cycle-like structure in the cortex, parallel to *C. elegans* locomotion loops at a different scale.
+- **Fixed-point finding as methodology.** Fixed-point localization in trained RNNs (Golub & Sussillo 2018) followed by local linearization is the dominant analysis tool for extracting attractor structure from trained networks. This methodology underlies much of the CTD literature.
+
+Across these cases, the same pattern recurs: the relevant computational objects are **structures in the flow** (fixed points, line attractors, limit cycles), and the computation is the trajectory the system takes through them given its inputs.
+
 ## Sources
 
 - [[li-2024-prediction-noise-reward|Li et al. (2024)]] — attractor analysis of explore/exploit dynamics in PaN
 - [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]] — limit cycle attractors in *C. elegans* neural manifold
 - [[brennan-2023-looper-computational-scaffold|Brennan et al. (2023)]] — 1D stable trajectories as general attractor framework across systems
+- [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — fixed points, line attractors, rotational dynamics in cortex; fixed-point finding as analysis tool

@@ -13,7 +13,7 @@ key_finding: "The human brain is best understood by tracing its evolutionary his
 
 ## Overview
 
-The Introduction to Bennett's book lays out a methodological argument: the brain (86 billion neurons, trillions of connections, hundreds of neurotransmitters, constantly changing wiring) is too complex to reverse-engineer directly. Instead, tracing evolutionary history provides an **ordered decomposition** from simple to complex. Ancestral brains can be reconstructed through fossils and by comparing modern animal brains, which serve as "time capsules." The book is organized around five major breakthroughs in brain evolution.
+The Introduction to [[Max Bennett]]'s book lays out a methodological argument: the brain (86 billion neurons, trillions of connections, hundreds of neurotransmitters, constantly changing wiring) is too complex to reverse-engineer directly. Instead, tracing evolutionary history provides an **ordered decomposition** from simple to complex. Ancestral brains can be reconstructed through fossils and by comparing modern animal brains, which serve as "time capsules." The book is organized around five major breakthroughs in brain evolution.
 
 [PDF](../../raw/books/a_brief_history_of_intelligence/chunk-1.pdf) | [Transcript](../../raw/books/a_brief_history_of_intelligence/chunk-1-transcript.md)
 

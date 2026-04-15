@@ -112,6 +112,7 @@ LOOPER supersedes the asymmetric diffusion map method from [[brennan-2019-conser
 - **[[Attractor Dynamics]]**: 1D stable trajectories are attractors; branching/merging at specific points mirrors the attractor transition framework
 - **[[Sparse Coding]] / [[meister-2022-learning-fast-slow|Meister (2022)]]**: The scaffold reveals what information is stored — directly related to the question of whether the representation or the learning rule is the bottleneck
 - **[[Predictive Coding]]**: The scaffold shows when and where the system stores predictive information about future task events
+- **[[Computation Through Dynamics]]**: LOOPER is a concrete instantiation of the CTD stance — it treats the population's temporal evolution *as* the computation and extracts the dynamical structure (1D stable trajectories, branch/merge points) that instantiates task-relevant operations. The monkey-vs-RNN scaffold comparison is a CTD-style analysis done at the level of scaffold graphs rather than geometric motifs (rotations, fixed points, line attractors) reviewed in [[vyas-2020-computation-through-dynamics|Vyas et al. (2020)]].
 
 ## Open Questions Raised
 

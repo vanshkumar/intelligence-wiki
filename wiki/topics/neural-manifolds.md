@@ -3,8 +3,8 @@ title: "Neural Manifolds"
 type: concept
 aliases: ["neural manifold", "low-dimensional dynamics", "population dynamics"]
 tags: [dynamical-systems, dimensionality-reduction, phase-space, neural-circuits, computation]
-source_count: 2
-last_updated: 2026-04-10
+source_count: 3
+last_updated: 2026-04-14
 confidence: established
 ---
 
@@ -62,6 +62,17 @@ This framing connects manifolds to the [[Degeneracy|degeneracy]] observation: if
 
 For more complex systems, the manifold framework extends naturally. The computational scaffold ([[brennan-2023-looper-computational-scaffold|Brennan et al., 2023]]) captures not just motor control but any task requiring information storage and decision-making — working memory, categorization, theory of mind. Each of these can be understood as the control loop operating over increasingly abstract state spaces, with the scaffold's branching/merging structure revealing when information enters and leaves the loop.
 
+## The Intrinsic Manifold Constrains Learning
+
+The strongest within-subject evidence that manifolds are real constraints on learning comes from BCI experiments in primate motor cortex, reviewed in [[vyas-2020-computation-through-dynamics|Vyas et al. (2020)]]:
+
+- **Sadtler et al. (2014)**: monkeys readily learn BCI perturbations that require only within-manifold dynamics (hours) but struggle with off-manifold perturbations. The intrinsic manifold is a ~10D subspace containing the bulk of M1 population variance during reaching; perturbations that push the cursor mapping off this subspace are not learnable on short timescales.
+- **Golub et al. (2018)**: within-manifold learning proceeds by **neural reassociation** — animals re-use neural states from their pre-learning repertoire, pairing them differently with cursor targets, rather than discovering new states. Learning is a change of *mapping* from state to action, not a change of *state repertoire*.
+- **Oby et al. (2019)**: multi-day training can eventually access out-of-repertoire (within-manifold) and even off-manifold states, revealing multiple learning mechanisms operating at different timescales.
+- **Wärnberg & Kumar (2019)**: RNN modeling shows off-manifold learning requires substantial synaptic-weight changes, whereas within-repertoire reassociation requires smaller changes to inputs or minor weight adjustments.
+
+Interpretation for this wiki: the intrinsic manifold is the **control-theoretic repertoire** — the set of dynamical states connectivity and cellular biophysics make accessible. Fast learning operates inside the repertoire; slow, structural learning reshapes it. This is a direct empirical anchor for the control-theoretic reading of [[Degeneracy]]: genes and connectivity constrain the manifold (the accessible dynamical repertoire), and experience reassociates within it at fast timescales. Multi-day off-manifold learning ([[Memory Consolidation|consolidation]]-timescale) is what slow structural change looks like.
+
 ## Implications
 
 The manifold perspective suggests that the right level of description for neural computation is neither individual neurons nor bulk averages, but the **geometry of population dynamics**. This connects to [[Degeneracy]]: many different microscopic configurations (individual neuron activations) can produce the same manifold structure, because the manifold is a property of the collective dynamics, not of any individual element. The computational scaffold extends this further — architecturally distinct systems (monkey PFC vs. RNN) can share the same scaffold structure despite having nothing in common at the unit level.
@@ -70,3 +81,4 @@ The manifold perspective suggests that the right level of description for neural
 
 - [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]] — conserved manifold dynamics in *C. elegans*
 - [[brennan-2023-looper-computational-scaffold|Brennan et al. (2023)]] — LOOPER method, computational scaffold, cross-system comparison
+- [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — BCI manifold-constrained learning (Sadtler 2014, Golub 2018, Oby 2019) as strongest within-subject evidence that manifolds are real constraints on learning

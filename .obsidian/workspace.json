@@ -88,7 +88,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -161,7 +161,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -171,7 +170,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks"
             }
           },
           {
@@ -180,12 +179,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links"
             }
           },
           {
@@ -223,13 +221,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline"
             }
           }
         ]
@@ -250,8 +247,27 @@
       "bases:Create new base": false
     }
   },
-  "active": "d95e1ca233417026",
+  "active": "1813d60992f0f6a6",
   "lastOpenFiles": [
+    "wiki/topics/endotaxis.md",
+    "llm-wiki.md",
+    "index.md",
+    "wiki/people/david-sussillo.md",
+    "wiki/people/saurabh-vyas.md",
+    "wiki/people/krishna-shenoy.md",
+    "wiki/brain-regions/motor-cortex.md",
+    "wiki/topics/rotational-dynamics.md",
+    "wiki/topics/null-space-coding.md",
+    "wiki/topics/preparatory-activity.md",
+    "wiki/topics/computation-through-dynamics.md",
+    "wiki/sources/vyas-2020-computation-through-dynamics.md",
+    "raw/papers/vyas-2020.pdf",
+    "wiki/topics/cognitive-map.md",
+    "CLAUDE.md",
+    "wiki/sources/bennett-2023-history-intelligence-ch1.md",
+    "wiki/people/alexander-proekt.md",
+    "overview.md",
+    "wiki/topics/degeneracy.md",
     "wiki/people/navonil-banerjee.md",
     "wiki/people/paul-sternberg.md",
     "wiki/people/elissa-hallem.md",
@@ -261,32 +277,13 @@
     "wiki/sources/banerjee-2023-life-stage-chemosensation.md",
     "raw/papers/banerjee-2023.pdf",
     "wiki/people/tony-zhang.md",
-    "wiki/brain-regions/mushroom-body.md",
-    "wiki/topics/successor-representation.md",
-    "wiki/topics/cognitive-map.md",
-    "wiki/topics/endotaxis.md",
-    "wiki/sources/zhang-2024-endotaxis-neuromorphic-navigation.md",
-    "llm-wiki.md",
-    "index.md",
     "raw/papers/zhang-2024.pdf",
-    "wiki/people/matthew-rosenberg.md",
-    "wiki/topics/ethological-paradigms.md",
-    "wiki/topics/intrinsic-exploration.md",
-    "wiki/topics/sudden-insight.md",
-    "wiki/sources/rosenberg-2021-labyrinth-learning.md",
     "raw/papers/rosenberg-2021.pdf",
-    "wiki/topics/memory-consolidation.md",
-    "wiki/sources/wierzynski-2009-sleep-hpc-pfc.md",
     "raw/papers/wierzynski-2009.pdf",
-    "wiki/topics/inhibitory-circuits.md",
-    "wiki/topics/calcium-signaling.md",
-    "wiki/topics/dopamine.md",
-    "wiki/topics/long-term-potentiation.md",
     "raw/papers/reinert-2021.pdf",
     "raw/papers/jones-2020.pdf",
     "raw/papers/payeur-2020.pdf",
     "raw/papers/brennan-2023.pdf",
-    "raw/papers/brennan-2019.pdf",
-    "raw/papers/meister-2022.pdf"
+    "raw/papers/brennan-2019.pdf"
   ]
 }

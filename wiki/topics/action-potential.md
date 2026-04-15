@@ -59,7 +59,7 @@ The dendritic calcium spike is mediated by voltage-gated calcium channels (VGCCs
 
 ## Role in Neural Communication
 
-Action potentials solve the **distance problem** of neural signaling. Chemical diffusion scales poorly with distance (square of distance, plus enzymatic degradation in biological tissue). Electrical propagation via action potentials uses active regeneration at nodes of Ranvier, maintaining signal integrity over macroscopic distances ([[bennett-2023-history-intelligence|Bennett, 2023]]).
+Action potentials solve the **distance problem** of neural signaling. Chemical diffusion scales poorly with distance (square of distance, plus enzymatic degradation in biological tissue). Electrical propagation via action potentials uses active regeneration at nodes of Ranvier, maintaining signal integrity over macroscopic distances ([[bennett-2023-history-intelligence-ch1|Bennett, 2023]]).
 
 Adrian's three key discoveries about action potentials:
 1. **All-or-nothing** — discrete pulses, not continuous signals

@@ -1,6 +1,6 @@
 {
-  "collapse-filter": false,
-  "search": "",
+  "collapse-filter": true,
+  "search": "path:-wiki/sources",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
@@ -17,6 +17,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.9291867252543956,
+  "scale": 0.4493721543040232,
   "close": true
 }

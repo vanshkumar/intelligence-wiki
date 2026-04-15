@@ -3,7 +3,7 @@ title: "Degeneracy"
 type: concept
 aliases: ["neural degeneracy", "many-to-one mapping"]
 tags: [dynamical-systems, evolution, robustness, neural-circuits]
-source_count: 4
+source_count: 5
 last_updated: 2026-04-14
 confidence: established
 ---
@@ -54,6 +54,10 @@ This reframes the "simple rules, complex architecture" theme: the "rules" are lo
 
 Degeneracy poses a fundamental challenge to bottom-up neural modeling: if the microscopic parameters that must be specified (channel densities, synaptic weights) vary across individuals in ways that cannot be meaningfully averaged, then biophysically detailed models are inherently non-generalizable. This motivates phenomenological approaches that model dynamics directly rather than building up from components — the [[Neural Manifolds|computational scaffold]] being one such approach.
 
+### The Intrinsic Manifold as Dynamical Repertoire
+
+BCI learning experiments reviewed in [[vyas-2020-computation-through-dynamics|Vyas et al. (2020)]] — Sadtler et al. (2014), Golub et al. (2018), Oby et al. (2019) — provide the strongest within-subject evidence for a control-theoretic reading of degeneracy at the learning level. The intrinsic [[Neural Manifolds|manifold]] (the ~10D subspace containing M1 population variance) is the **set of dynamical states connectivity and cellular biophysics make accessible**. Within-manifold learning happens fast (hours) by **neural reassociation** — re-using existing states in new pairings — rather than by discovering new states. Off-manifold learning requires substantial synaptic-weight changes and takes days. This is exactly what the genes→control→structure reading of degeneracy predicts at the learning level: the repertoire is set by the substrate, experience reassociates within it, and reshaping the repertoire is slow and rare.
+
 ### The Complementary Direction: Same Substrate, Different Behavior
 
 [[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] establish the complement to classical degeneracy. In *C. elegans* CO₂ chemotaxis, the *same* genome and the *same* anatomical connectome produce *different effective circuits* in starved adults vs. dauer larvae — different interneuron polarities, different motor programs — despite shared behavioral valence (attraction). BAG–AIB gap junctions (via the CHE-7 innexin) and daf-2 insulin/IGF signaling gate the reconfiguration.
@@ -66,3 +70,4 @@ Where classical degeneracy decouples behavior from implementation *across* indiv
 - [[brennan-2023-looper-computational-scaffold|Brennan et al. (2023)]] — same computational scaffold across monkey PFC and RNN despite completely different neuronal activity
 - [[rosenberg-2021-labyrinth-learning|Rosenberg et al. (2021)]] — behavioral-level degeneracy: four local turning biases consistent across 19 mice (SD ~0.03) produce efficient labyrinth exploration
 - [[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] — complementary direction: same substrate, different effective circuit across life stages in *C. elegans* CO₂ chemotaxis
+- [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — BCI manifold-constrained learning; intrinsic manifold as the dynamical repertoire within which fast learning reassociates existing states

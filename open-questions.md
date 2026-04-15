@@ -120,7 +120,7 @@ These questions are organized by level but unified by the wiki's organizing prin
 - Is the [[Mushroom Body]] → [[Hippocampus]] motif correspondence **deep homology** (pre-bilaterian origin) or **convergent evolution**? Either way, what does the shared motif tell us about the optimality landscape of associative-learning architectures?
 - The formal overlap between endotaxis and the [[Successor Representation]] suggests a single underlying "resolvent-of-connectivity" primitive that can be read out as value function or as goal gradient depending on downstream circuits. Is there biological evidence for both readouts coexisting?
 - Does endotaxis interact with [[Memory Consolidation]] — is the learned map subsequently consolidated to cortical long-term storage, and if so, how does the goal-signal machinery persist or transfer?
-- [[Bittner et al. (2017)]] observed sudden CA1 place-field formation via dendritic calcium plateaus over seconds-long windows. Is this the mechanism by which endotaxis goal cells write their synapses? The timescale of the plasticity rule endotaxis needs matches behavioral-time-scale plasticity observed experimentally.
+- Bittner et al. (2017) observed sudden CA1 place-field formation via dendritic calcium plateaus over seconds-long windows. Is this the mechanism by which endotaxis goal cells write their synapses? The timescale of the plasticity rule endotaxis needs matches behavioral-time-scale plasticity observed experimentally.
 
 ## Ethology, Exploration & Sudden Insight
 *(New — added from Rosenberg et al. 2021)*
@@ -132,6 +132,19 @@ These questions are organized by level but unified by the wiki's organizing prin
 - Why does exploration remain the dominant behavioral mode (~75–95%) even in rewarded animals after learning? Is it hedging, intrinsic reward, or that reward simply does not suppress the default mode?
 - Is one-shot home-path learning dependent on hippocampal [[Place Cells|place cell]] formation during the inbound traversal, or does it rely primarily on path-integration machinery? Rotation-robust navigation favors the former but does not distinguish them.
 - Does intrinsic exploration have a neuromodulatory signature (locus coeruleus / norepinephrine tone)? This connects the [[Explore-Exploit Tradeoff]] mechanism to the observed dominance of exploration in [[intrinsic-exploration|intrinsic exploration]].
+
+## Computation Through Dynamics & Motor Cortex
+*(New — added from Vyas et al. 2020)*
+
+- What determines the intrinsic neural manifold? Is the ~10D subspace containing motor-cortex population variance primarily shaped by anatomical connectivity, cellular biophysics, slow developmental tuning, or all three? Manifold-constrained BCI learning (Sadtler 2014) makes the constraint concrete but leaves its substrate open. ([[vyas-2020-computation-through-dynamics|Vyas et al., 2020]])
+- Are the motor-cortex CTD motifs (preparatory initial conditions, output-null preparation, rotational pattern generation, CIS) specific to motor cortex or instances of more general motifs? Rotations appear in speech cortex (Stavisky 2019) but not in SMA or muscles (Lara 2018a) — what predicts where the motif appears?
+- Is null-space structure learned or given? Does the brain learn to place preparation in the null space of fixed readout weights `C`, or do `C` and cortical dynamics co-adapt?
+- How widespread is the communication-subspace picture (Semedo 2019)? Does every inter-area connection factor cleanly into communication vs. private subspaces, analogous to output-null vs. output-potent in motor cortex?
+- What is the biological implementation of contextual inputs in CTD models? Tonic thalamocortical input (Wang 2018) is one candidate; neuromodulation is another — are these distinct mechanisms or different labels for related signals?
+- What is the relationship between fast within-repertoire learning (hours, Golub 2018) and slow off-manifold learning (days, Oby 2019)? Are these distinct mechanisms (synaptic tagging, consolidation) or a continuum? Does [[Memory Consolidation|SWR-driven consolidation]] mediate the slow, structural change?
+- Can CTD be unified with credit-assignment accounts ([[payeur-2020-burst-dependent-credit-assignment|Payeur et al., 2020]])? CTD describes what the dynamics *do*; credit-assignment describes how synapses get tuned to produce them — the two should compose but have not been worked out together.
+- When brains and RNNs trained on the same task find the same computational scaffold via different strategies ([[brennan-2023-looper-computational-scaffold|Brennan 2023]]), what does this tell us about how to use RNNs as CTD hypothesis generators? Which RNN predictions should we take seriously as biological hypotheses and which should we treat as dataset-specific artifacts?
+- Can the rotational motif in motor cortex be causally tested by perturbing the rotation directly (e.g., via patterned optogenetic input along the rotation axis)? The tools are becoming available; the critical falsification experiment for CTD as a causal model has not been done.
 
 ## Circuit-Behavior Mapping & State-Dependent Reconfiguration
 *(New — added from Banerjee et al. 2023)*

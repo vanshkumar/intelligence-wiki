@@ -1,0 +1,111 @@
+---
+title: "Computation Through Dynamics"
+type: theory
+aliases: ["CTD", "computation through neural population dynamics", "dynamical systems framework"]
+tags: [dynamical-systems, population-dynamics, motor-cortex, rnn, framework]
+source_count: 1
+last_updated: 2026-04-14
+status: established
+---
+
+**Computation Through Dynamics (CTD)** is the stance that a neural population's job is to *be* a dynamical system whose temporal evolution *is* the computation, rather than a code whose instantaneous values represent the answer. Formalized as an explicit framework by [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]], though the lineage runs through Shenoy, Churchland, Sussillo and the larger Stanford / Columbia / Caltech motor-cortex community over 15+ years.
+
+For this wiki, CTD is **the vocabulary**. It names the framework that has been implicit in several ingested sources: [[brennan-2023-looper-computational-scaffold|Brennan et al. (2023)]]'s computational scaffolds, [[li-2024-prediction-noise-reward|Li et al. (2024)]]'s attractor-driven PaN, [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]]'s conserved manifolds. CTD is the general framing; those are specific instantiations.
+
+## The Core Claim
+
+A neural population's state `x(t) ∈ ℝ^N` evolves according to
+
+```
+dx/dt = f(x(t), u(t))
+```
+
+where `f` is the intrinsic state-update rule (set by circuitry and cellular biophysics) and `u(t)` is external input. The computation is identified with the flow — the trajectories `f` traces through state space as a function of inputs and initial conditions.
+
+### Three consequences
+
+1. **Initial conditions matter.** Where the population *starts* determines what it will do. Preparatory activity in motor cortex is the canonical case — prep state is the initial condition from which movement evolves.
+
+2. **Inputs can be transient or contextual.** Fast inputs perturb the state (`δx`); slow **contextual inputs** shift the operating point `x*` and thereby change the linearized dynamics `A(x*, u*)`. The same circuit can implement different computations in different contexts without any synaptic change — context reshapes `f` locally.
+
+3. **The right level of description is collective, not single-neuron.** Tuning curves of individual neurons are secondary; the variance that drives behavior lives in the collective flow. This is the stance that [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]] establish at the extreme — individual neurons fire variably across animals, but the macroscopic dynamics are conserved.
+
+## Methodological Moves
+
+### Linearization around fixed points
+
+Fixed points `x*` where `f(x*) = 0` are the simplest structures in the flow: stable fixed points are the simplest model of memory; unstable fixed points ("saddles") shape trajectories between regions. Near any fixed point, the nonlinear dynamics are approximately
+
+```
+d(δx)/dt ≈ A(x*) δx
+```
+
+where `A = ∂f/∂x` evaluated at `x*`. The eigenstructure of `A` reveals local behavior (decaying, oscillatory, expansive). Fixed-point finding in trained RNNs (Golub & Sussillo 2018) is the dominant analysis tool in CTD.
+
+### Task-trained RNNs as hypothesis generators
+
+The workflow:
+1. Define a task with input-output examples.
+2. Train an RNN to perform it.
+3. Analyze the trained RNN by finding fixed points, linearizing, and examining dynamics.
+4. The RNN's solution is a *hypothesis* — it proposes which dynamical motifs could subserve the computation.
+5. Test the hypothesis against recordings from an animal doing the same task.
+
+This is how rotational dynamics (Sussillo et al. 2015), line-attractor decisions (Mante 2013), and curved Bayesian priors (Sohn 2019) were proposed. The hypothesis-generator framing is important: it does not assume the brain uses the RNN's solution, only that the RNN's solution is a candidate worth comparing.
+
+Caveat established by [[brennan-2023-looper-computational-scaffold|Brennan 2023]]: brains and RNNs trained on the same task can find the *same computational scaffold* via *different strategies* (brain learns the general algorithm; RNN exploits dataset statistics). Treat RNN solutions as *one* hypothesis, not *the* solution.
+
+### Slow / contextual inputs
+
+A powerful trick: if a task has multiple contexts that share sensory and motor primitives, the same circuit can implement both by having the context appear as a slow input that shifts `x*`. This is how [[#Line Attractors for Decisions|Mante-style context-dependent decisions]] work: context is not gated at the input; it reshapes `f` locally so that only the relevant input dimension integrates.
+
+## Canonical Motifs
+
+### Preparatory Activity as Initial Condition
+
+Delay-period motor-cortex activity sets up the initial state from which movement-period dynamics evolve. Different reaches ⟹ different preparatory states. More preparation time ⟹ faster reaction times, because the initial condition is better positioned. See [[Preparatory Activity]].
+
+### Output-Null Preparation
+
+Preparation must be behaviorally informative without producing movement. Solution: preparatory activity lives in the **null space** of the motor-output readout — large along dimensions that do not drive muscles. Movement begins when activity rotates from null into output-potent dimensions (Kaufman 2014). See [[Null Space Coding]].
+
+### Rotational Dynamics
+
+During movement, motor-cortex population activity traces rotations in state space, approximated by a low-dimensional linear oscillator. The rotation *generates* muscle activity; it is not a representation of movement parameters. Demonstrated empirically (Churchland 2012) and reproduced by RNNs trained to transform preparatory states into muscle patterns (Sussillo 2015). See [[Rotational Dynamics]].
+
+### Condition-Invariant Signal
+
+A large, direction-agnostic signal triggered by the go cue that transitions the motor cortex population from preparation to movement-generation regions of state space. An input that moves the dynamics across a separatrix (Kaufman 2016).
+
+### Line Attractors for Decisions
+
+In context-dependent 2AFC (Mante et al. 2013), PFC implements the decision by integrating the task-relevant input along a **line attractor** — a linear arrangement of stable fixed points. Context appears as a slow input that selects which sensory dimension integrates; the irrelevant dimension's input decays along orthogonal directions (dynamics quenching, not gating).
+
+### Manifold-Constrained Learning
+
+Recorded population activity lies on a low-dimensional **intrinsic manifold**. BCI learning is fast if the required dynamics stay on the manifold and slow / impossible if they do not (Sadtler 2014). Within-manifold learning proceeds by **neural reassociation** — re-using existing states in new pairings (Golub 2018). Off-manifold learning requires more substantial synaptic-weight changes and takes days (Oby 2019).
+
+This motif is the most consequential for this wiki's control thesis: the intrinsic manifold is the **control-theoretic repertoire** that connectivity and biophysics make accessible, and fast learning operates inside it.
+
+## Relationship to the Organizing Principle
+
+CTD is the formal language for the closed-loop sensorimotor control that this wiki treats as the foundation of intelligence. The motor-cortex case — prepare, move, integrate feedback, update — is literally the primitive closed loop. CTD supplies:
+- A formalism for each stage (initial conditions, flow, inputs, contextual inputs).
+- Specific dynamical motifs that implement each (rotational pattern generation, output-null preparation, line-attractor integration).
+- A principled extension to longer timescales (adaptation operates on initial conditions), to more latent variables (decisions are line attractors), and to contextual computation (slow inputs reshape local dynamics).
+
+Every more "cognitive" case in the literature — timing, decision, working memory, category abstraction — is treated in the CTD framework as *the same dynamical machinery* extended, not as a separate faculty.
+
+## Relation to Adjacent Frameworks
+
+| Framework | Level | Relation to CTD |
+|---|---|---|
+| [[Attractor Dynamics]] | Mechanism | Attractors are the coarse structures of the flow CTD describes |
+| [[Neural Manifolds]] | Geometry | The subspace in which CTD dynamics actually live |
+| Computational scaffolds ([[brennan-2023-looper-computational-scaffold|Brennan 2023]]) | Data-driven | LOOPER extracts 1D scaffolds directly from data; CTD typically fits RNNs and linearizes |
+| [[Predictive Coding]] | Mechanism | PC proposes a specific `f`; CTD is framework-agnostic about which `f` the brain uses |
+| [[Active Inference]] | Normative | AI proposes a specific objective; CTD describes what dynamics *do*, not what they *should* do |
+
+## Sources
+
+- [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — the review that codifies CTD as a named framework and catalogs its motifs.
