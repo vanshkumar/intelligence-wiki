@@ -3,8 +3,8 @@ title: "Action Potential"
 type: mechanism
 aliases: ["spike", "nerve impulse", "AP"]
 tags: [biophysics, ion-channels, hodgkin-huxley, neuron, electrical-signaling]
-source_count: 4
-last_updated: 2026-04-10
+source_count: 5
+last_updated: 2026-04-16
 level: cellular
 ---
 
@@ -51,9 +51,9 @@ Both escape routes are where **plasticity mechanisms** operate: calcium signalin
 
 ## Bursts vs. Isolated Spikes
 
-Beyond rate coding, the **temporal pattern** of action potentials carries computational meaning. Pyramidal neurons in cortex can fire either **isolated spikes** (single APs) or **bursts** (high-frequency doublets/triplets with inter-spike interval < 16 ms). The burst/spike distinction is controlled by [[Dendritic Computation|dendritic computation]]: regenerative calcium spikes in apical dendrites, driven by top-down feedback, propagate to the soma and trigger somatic bursts.
+Beyond rate coding, the **temporal pattern** of action potentials carries computational meaning. Pyramidal neurons in cortex can fire either **isolated spikes** (single APs) or **bursts** (high-frequency doublets/triplets with inter-spike interval < 16 ms). The burst/spike distinction is controlled by [[Dendritic Computation|dendritic computation]]: regenerative calcium spikes in apical dendrites, driven by top-down feedback, propagate to the soma and trigger somatic bursts (the BAC firing mechanism; Larkum et al. 1999).
 
-[[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] show this distinction is computationally significant for [[Credit Assignment]]: burst events drive long-term potentiation (LTP) at the neuron's input synapses, while isolated spikes drive long-term depression (LTD). This means the firing *pattern* — not just the firing *rate* — carries the sign of the teaching signal from higher cortical areas.
+[[kording-konig-2001-two-integration-sites|Kording & Konig (2001)]] first proposed that this burst/spike distinction allows a single axon to **multiplex two independent information channels**: single spikes transmit the neuron's feedforward activity (A), while bursts transmit an error/learning signal (D). Facilitating and depressing synapses at the receiving end can selectively read out one or the other. [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] implemented this at biophysical fidelity, showing that burst events drive long-term potentiation (LTP) at the neuron's input synapses, while isolated spikes drive long-term depression (LTD). This means the firing *pattern* — not just the firing *rate* — carries the sign of the teaching signal from higher cortical areas.
 
 The dendritic calcium spike is mediated by voltage-gated calcium channels (VGCCs), not the sodium/potassium channels of the somatic AP. This represents an escape from the [[Action Potential#The Star Topology Constraint|star topology constraint]]: the apical dendrite has its own local voltage dynamics, coupled to but partially independent of the soma, allowing the neuron to integrate feedforward and feedback information in separate compartments.
 
@@ -70,5 +70,6 @@ Adrian's three key discoveries about action potentials:
 
 - [[gerstner-neuronal-dynamics-ch2|Gerstner et al., Neuronal Dynamics Ch. 2]] — Hodgkin-Huxley model, ion channel design space, star topology
 - [[gerstner-neuronal-dynamics-ch1|Gerstner et al., Neuronal Dynamics Ch. 1]] — LIF model as simplified action potential mechanism
+- [[kording-konig-2001-two-integration-sites|Kording & Konig (2001)]] — burst vs single spike as two multiplexed information channels (activity and error) on one axon
 - [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — burst vs isolated spike distinction as credit assignment signal; dendritic calcium spikes escape star topology
 - [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — dendritic nonlinearities escape star topology; single neuron ≈ multi-layer network

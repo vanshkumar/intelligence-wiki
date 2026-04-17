@@ -3,8 +3,8 @@ title: "Neural Manifolds"
 type: concept
 aliases: ["neural manifold", "low-dimensional dynamics", "population dynamics"]
 tags: [dynamical-systems, dimensionality-reduction, phase-space, neural-circuits, computation]
-source_count: 3
-last_updated: 2026-04-14
+source_count: 4
+last_updated: 2026-04-15
 confidence: established
 ---
 

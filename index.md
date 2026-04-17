@@ -20,6 +20,11 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — Endotaxis: a 3-layer Hebbian circuit that computes a "virtual odor" (monotonic in graph distance) to repurpose the ancient chemotaxis module for cognitive navigation
 - [[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] — Same CO₂ cue, same valence, different microcircuits in *C. elegans* adults vs. dauer larvae; BAG–AIB gap junctions and daf-2 insulin signaling gate the reconfiguration
 - [[vyas-2020-computation-through-dynamics|Vyas et al. (2020)]] — Review codifying the Computation Through Dynamics (CTD) framework; motor-cortex motifs (preparatory initial conditions, output-null preparation, rotational dynamics, line-attractor decisions, manifold-constrained BCI learning)
+- [[sacramento-2018-dendritic-microcircuits-backprop|Sacramento et al. (2018)]] — Three-compartment pyramidal neurons + SST interneurons learn via local dendritic prediction errors; analytically approximates backpropagation without separate phases; unifies predictive coding with credit assignment
+- [[greedy-2022-single-phase-burstccn|Greedy et al. (2022)]] — BurstCCN synthesis: Q-Y cancellation enables single-phase deep learning; combines burst multiplexing, STP type specificity, and homeostatic feedback; resolves phase and depth limitations; 1.84% MNIST, ~23% CIFAR-10
+- [[guerguiev-2017-segregated-dendrites|Guerguiev et al. (2017)]] — First spiking implementation of credit assignment with segregated dendritic compartments; plateau potentials carry feedback error; feedback alignment emerges during training; 3.28% MNIST
+- [[kording-konig-2001-two-integration-sites|Kording & Konig (2001)]] — Two sites of synaptic integration (basal/apical dendrites) → two variables per neuron → backpropagation and self-supervised learning; conceptual seed of burst-dependent credit assignment
+- [[francioni-2026-vectorized-dendritic-signals|Francioni et al. (2026)]] — First in vivo evidence: cell-specific SD residuals in L5 apical dendrites encode error derivatives during BCI learning; NDNF+ L1 interneuron perturbation abolishes vectorized signals and impairs learning
 
 ## Concepts
 
@@ -84,13 +89,24 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[Markus Meister]] — Caltech; neural coding, retinal processing, learning rates and information theory
 - [[Alexander Proekt]] — UPenn; neural dynamics, macroscopic dynamical models, *C. elegans*
 - [[Ilenna Jones]] — UPenn; dendritic computation, single-neuron computational power
-- [[Konrad Kording]] — UPenn; computational neuroscience, machine learning, neural data science
+- [[Konrad Kording]] — UPenn; computational neuroscience, machine learning, neural data science; two-site integration framework (2001), dendritic computation
+- [[Joao Sacramento]] — ETH Zurich (Neuroinformatics); dendritic microcircuits, predictive coding meets credit assignment
+- [[Walter Senn]] — University of Bern; dendritic predictive plasticity framework, cortical learning theory
+- [[Rui Ponte Costa]] — University of Bristol; cortical microcircuits, biologically plausible learning
+- [[Will Greedy]] — University of Bristol (Costa group); BurstCCN single-phase deep learning synthesis
+- [[Jordan Guerguiev]] — University of Toronto; first spiking segregated-dendrite credit assignment, burst-dependent plasticity
+- [[Timothy Lillicrap]] — Google DeepMind; feedback alignment, biologically plausible deep learning
+- [[Blake Richards]] — McGill / Mila; dendritic credit assignment, biologically plausible deep learning
+- [[Yoshua Bengio]] — Mila / U Montreal; deep learning pioneer, target propagation, biologically plausible credit assignment
+- [[Peter Konig]] — University of Osnabruck (formerly ETH Zurich); cortical dynamics, self-supervised learning, two-site integration framework
 - [[Pieter Goltstein]] — Max Planck; prefrontal cortex, category learning, two-photon imaging
 - [[Matthew Rosenberg]] — Caltech (Meister lab); ethological behavior, labyrinth navigation, unsupervised mouse behavior
 - [[Tony Zhang]] — Caltech (Meister lab); computational neuroscience, endotaxis circuit model for cognitive navigation
 - [[Elissa Hallem]] — UCLA; nematode chemosensation, host-seeking behavior, life-stage-dependent sensory circuits
 - [[Paul Sternberg]] — Caltech; *C. elegans* genetics, developmental biology, neurogenetics
 - [[Navonil Banerjee]] — UCLA (Hallem lab); *C. elegans* chemosensory circuit function across life stages
+- [[Valerio Francioni]] — MIT (Harnett lab); first in vivo evidence for vectorized dendritic teaching signals
+- [[Mark Harnett|Mark T. Harnett]] — MIT McGovern Institute; dendritic biophysics, cortical computation
 - [[Krishna Shenoy]] — Stanford; motor cortex, BCI, dynamical-systems framing of motor control; senior author of the CTD review
 - [[Saurabh Vyas]] — Columbia (Zuckerman); motor adaptation operates on preparatory dimensions; first author of the CTD review
 - [[David Sussillo]] — Stanford / Google DeepMind; RNNs as models of neural population dynamics; fixed-point analysis methods

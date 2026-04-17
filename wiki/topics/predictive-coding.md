@@ -3,8 +3,8 @@ title: "Predictive Coding"
 type: theory
 aliases: ["prediction error minimization", "predictive processing"]
 tags: [learning-rule, prediction, cortex, perception]
-source_count: 2
-last_updated: 2026-04-10
+source_count: 3
+last_updated: 2026-04-16
 status: established
 ---
 
@@ -47,14 +47,24 @@ A fundamental challenge for predictive coding as a theory of behavior: if the br
 
 Predictive coding at the network level is structurally similar to [[Neural Adaptation]] at the single-neuron level — both encode deviations from an expected baseline rather than absolute values. Adaptation adjusts a neuron's input-output mapping based on recent stimulus history; predictive coding adjusts a layer's representation based on predictions from other layers. The burst-dependent plasticity threshold P̄ in [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] is formally analogous to adaptation — learning is driven by deviations of burst probability from a slowly moving average, not by absolute burst rate.
 
+## Predictive Coding as Credit Assignment
+
+[[sacramento-2018-dendritic-microcircuits-backprop|Sacramento et al. (2018)]] provide the strongest bridge between predictive coding and [[Credit Assignment]] in the wiki. In their dendritic microcircuit model, each cortical layer contains pyramidal neurons (three compartments: soma, basal, apical) and lateral SST interneurons. The interneurons learn to predict and cancel top-down feedback at the apical dendrite, establishing a **self-predicting state** where apical compartments are silent. When a novel teaching signal arrives at the output, interneurons can't explain it away → prediction errors appear at apical dendrites → these errors propagate backward through the network.
+
+The key result: in the weak-feedback limit, the apical prediction error at layer k is exactly the backpropagated error — the output error multiplied by the chain of derivative and weight matrices. **Predictive coding and backpropagation are not competing theories; they are two descriptions of the same dendritic microcircuit.** The prediction error *is* the credit signal.
+
+This unification has a concrete architectural interpretation: the top-down pathway carries the "actual" feedback signal, the lateral (SST interneuron) pathway carries the "predicted" feedback signal, and the apical compartment computes their difference. All plasticity rules are local dendritic prediction error rules of the form dw/dt = η[φ(u) − φ(v)]r, belonging to the dendritic predictive plasticity family (Urbanczik & Senn 2014).
+
 ## Biological Plausibility
 
 Predictive coding is considered more biologically plausible than backpropagation because:
 - All updates are local (no need to propagate errors through the full network)
 - It naturally accounts for top-down influences on perception
 - The prediction error signals map onto known neural response properties
+- [[sacramento-2018-dendritic-microcircuits-backprop|Sacramento et al. (2018)]] show that dendritic prediction errors in mouse visual cortex (Zmarz & Keller 2016, Attinger et al. 2017) are consistent with the self-predicting microcircuit framework
 
 ## Sources
 
 - [[li-2024-prediction-noise-reward|Li et al. (2024)]] — extends predictive coding to closed-loop behavior via PaN
+- [[sacramento-2018-dendritic-microcircuits-backprop|Sacramento et al. (2018)]] — unifies predictive coding and backpropagation: apical dendritic prediction errors (top-down minus lateral prediction) are analytically equivalent to backpropagated gradients
 - [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — burst probability deviation from adaptive baseline as prediction-error-like signal

@@ -3,8 +3,8 @@ title: "Synapses"
 type: concept
 aliases: ["synapse", "synaptic transmission", "synaptic connection"]
 tags: [neuron, plasticity, learning, hebbian-learning, evolution]
-source_count: 5
-last_updated: 2026-04-14
+source_count: 7
+last_updated: 2026-04-17
 confidence: established
 ---
 
@@ -51,7 +51,7 @@ Beyond lasting changes in connection strength, synapses exhibit **short-term pla
 - **Short-term depression (STD)**: Repeated presynaptic activity depletes vesicles, reducing transmission. STD acts as a high-pass filter, preferentially transmitting the **onset** or **rate** of presynaptic activity rather than sustained firing.
 - **Short-term facilitation (STF)**: Repeated presynaptic activity builds up residual calcium in the terminal, increasing release probability. STF acts as a low-pass filter, preferentially transmitting **sustained** or **high-frequency** activity.
 
-[[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] show that the differential distribution of STP types across synapse classes enables **signal multiplexing** in cortical circuits: feedforward (bottom-up) synapses exhibit predominantly STD, transmitting **event rate** (the neuron's sensory representation), while feedback (top-down) synapses exhibit predominantly STF, transmitting **burst rate** (the [[Credit Assignment|credit signal]] from higher areas). This allows a single pyramidal neuron ensemble to simultaneously carry both its feedforward representation and the top-down teaching signal, separated by STP type and [[Dendritic Computation|dendritic compartment]].
+The idea that STP type distribution serves as a signal multiplexing mechanism was first proposed by [[kording-konig-2001-two-integration-sites|Kording & Konig (2001)]]: strongly depressing synapses respond only to tonic single spikes (transmitting activity A), while strongly facilitating synapses respond only to bursts (transmitting the learning signal D). [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] implemented this in biophysical detail, showing that feedforward (bottom-up) synapses exhibit predominantly STD, transmitting **event rate** (the neuron's sensory representation), while feedback (top-down) synapses exhibit predominantly STF, transmitting **burst rate** (the [[Credit Assignment|credit signal]] from higher areas). This allows a single pyramidal neuron ensemble to simultaneously carry both its feedforward representation and the top-down teaching signal, separated by STP type and [[Dendritic Computation|dendritic compartment]].
 
 The STP polarization prediction — STD feedforward, STF feedback along the sensory hierarchy — is a key falsifiable prediction of the burst-dependent credit assignment framework.
 
@@ -77,6 +77,8 @@ Evolutionary biologists identify a bundle of synaptic innovations — speed, spa
 
 - [[bennett-2023-history-intelligence-ch1|Bennett (2023), Ch. 1]] — synapse as the key computational novelty of neurons
 - [[gerstner-neuronal-dynamics-ch2|Gerstner et al., Neuronal Dynamics Ch. 2]] — NMDA coincidence detection, calcium-plasticity bridge
+- [[kording-konig-2001-two-integration-sites|Kording & Konig (2001)]] — original proposal: STP type (facilitating vs depressing) as multiplexing mechanism for activity and error signals on the same axon
 - [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — STP multiplexing: STD at feedforward synapses transmits event rate, STF at feedback synapses transmits burst rate
+- [[greedy-2022-single-phase-burstccn|Greedy et al. (2022)]] — most specific STP predictions: three connection types (STD feedforward W, STF feedback Y via interneurons, STD feedback Q direct) with distinct computational roles; Q-Y cancellation requires STP type specificity on two classes of feedback to the same dendritic compartment
 - [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — multi-synaptic boutons as computational architecture; LTP-induced MSBs increase single-neuron capacity
 - [[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] — electrical synapses as state-gated substrate for circuit reconfiguration; BAG–AIB gap junction (CHE-7) functionally active only in dauer larvae

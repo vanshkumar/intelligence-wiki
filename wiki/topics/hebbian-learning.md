@@ -3,8 +3,8 @@ title: "Hebbian Learning"
 type: theory
 aliases: ["Hebb's rule", "fire together wire together", "Hebbian plasticity"]
 tags: [learning-rule, plasticity, synapse, associative-learning]
-source_count: 4
-last_updated: 2026-04-14
+source_count: 6
+last_updated: 2026-04-16
 status: established
 ---
 
@@ -46,7 +46,8 @@ Hebbian learning maps onto several known biological mechanisms:
 - **Long-term potentiation (LTP)** — sustained strengthening of synapses following correlated activity, especially at NMDA receptor-containing synapses
 - **Spike-timing-dependent plasticity (STDP)** — a refinement where the precise timing between pre and post spikes determines whether strengthening or weakening occurs
 - **Neuromodulation** — dopamine and other neuromodulators gate or modulate Hebbian plasticity, potentially determining *which* co-active pairs get strengthened (three-factor learning rules)
-- **Burst-dependent plasticity** — [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] show that whether a pyramidal neuron fires a burst or an isolated spike determines the sign of plasticity (burst → LTP, isolated spike → LTD). The rule is fundamentally Hebbian — it depends only on local pre/post activity — but the "post" signal is enriched by [[Dendritic Computation|dendritic computation]]: top-down feedback via apical dendrites modulates burst probability, embedding hierarchical [[Credit Assignment|credit assignment]] information into a local learning rule
+- **Dendritic predictive plasticity** — [[sacramento-2018-dendritic-microcircuits-backprop|Sacramento et al. (2018)]] formalize a family of local learning rules of the form dw/dt = η[φ(u) − φ(v)]r, where u and v are compartmental potentials and r is presynaptic input. The weight changes as the product of a **dendritic prediction error** and presynaptic rate — Hebbian in structure, but the "post" signal is the mismatch between two compartments rather than simple postsynaptic activity. This rule family (from Urbanczik & Senn 2014) unifies feedforward, lateral, and feedback plasticity in a single framework.
+- **Burst-dependent plasticity** — [[kording-konig-2001-two-integration-sites|Kording & Konig (2001)]] first proposed that burst-gated Hebbian plasticity (ΔW ∝ D_post × A_pre, where D is dendritic burst rate) enables gradient-based learning: the rule is local, but the burst signal carries error information from higher areas via apical dendrites. [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] implemented this at biophysical detail, showing that whether a pyramidal neuron fires a burst or an isolated spike determines the sign of plasticity (burst → LTP, isolated spike → LTD). The rule is fundamentally Hebbian — it depends only on local pre/post activity — but the "post" signal is enriched by [[Dendritic Computation|dendritic computation]], embedding hierarchical [[Credit Assignment|credit assignment]] information into a local learning rule
 
 ### The Calcium Bridge
 
@@ -60,14 +61,16 @@ Hebbian learning is the mechanism by which the sensorimotor control loop modifie
 
 ## Relationship to Other Learning Frameworks
 
-- **[[Predictive Coding]]**: Local prediction error minimization can be seen as a generalized form of Hebbian learning — weight updates depend on local activity and local error signals.
-- **Backpropagation**: Requires non-local error signals propagated through the network — biologically implausible in its standard form. Predictive coding and related frameworks attempt to approximate backprop with local Hebbian-like rules. [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] show that burst-dependent plasticity — a Hebbian rule enriched by dendritic computation — can approximate backpropagation gradients at the ensemble level, bridging the gap between Hebbian locality and deep, error-driven learning.
+- **[[Predictive Coding]]**: Local prediction error minimization can be seen as a generalized form of Hebbian learning — weight updates depend on local activity and local error signals. [[sacramento-2018-dendritic-microcircuits-backprop|Sacramento et al. (2018)]] make this connection precise: all plasticity rules in their dendritic microcircuit are local products of dendritic prediction errors and presynaptic rates — structurally Hebbian, but analytically equivalent to backpropagation.
+- **Backpropagation**: Requires non-local error signals propagated through the network — biologically implausible in its standard form. [[kording-konig-2001-two-integration-sites|Kording & Konig (2001)]] showed that two dendritic integration sites allow a Hebbian network to **exactly implement** backpropagation (burst rate = δ), and proved that single-site neurons face a fundamental tradeoff between representing and learning. [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] brought this to biophysical detail, showing burst-dependent plasticity approximates backpropagation gradients at the ensemble level, scaling to CIFAR-10.
 - **[[li-2024-prediction-noise-reward|PaN]]**: Uses local energy gradients for both activity and weight updates, consistent with Hebbian locality. The weight update rule is ∂E/∂W, which depends only on the activities of the two layers the weight connects.
 
 ## Sources
 
 - [[meister-2022-learning-fast-slow|Meister (2022)]] — Hebbian learning is fast; the bottleneck is the representation, not the plasticity
 - [[gerstner-neuronal-dynamics-ch2|Gerstner et al., Neuronal Dynamics Ch. 2]] — calcium as bridge between electrical activity and synaptic plasticity; NMDA as coincidence detector
+- [[kording-konig-2001-two-integration-sites|Kording & Konig (2001)]] — burst-gated Hebbian plasticity as bridge between Hebbian locality and gradient-based learning; the conceptual origin of the burst-dependent credit assignment lineage
+- [[sacramento-2018-dendritic-microcircuits-backprop|Sacramento et al. (2018)]] — dendritic predictive plasticity: local compartmental-mismatch rules that are Hebbian in form but equivalent to backpropagation
 - [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — burst-dependent plasticity as a Hebbian rule that approximates backpropagation via dendritic computation
 - [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — LTP-induced MSBs grow single-neuron computational architecture
 - [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — plain Hebbian learning rules across three synapse populations (map-cell recurrence, goal-cell convergence, point-cell habituation) suffice for cognitive-map acquisition, one-shot homing, and efficient patrolling

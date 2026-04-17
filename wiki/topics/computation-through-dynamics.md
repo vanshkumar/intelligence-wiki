@@ -3,8 +3,8 @@ title: "Computation Through Dynamics"
 type: theory
 aliases: ["CTD", "computation through neural population dynamics", "dynamical systems framework"]
 tags: [dynamical-systems, population-dynamics, motor-cortex, rnn, framework]
-source_count: 1
-last_updated: 2026-04-14
+source_count: 2
+last_updated: 2026-04-15
 status: established
 ---
 
@@ -87,6 +87,17 @@ Recorded population activity lies on a low-dimensional **intrinsic manifold**. B
 
 This motif is the most consequential for this wiki's control thesis: the intrinsic manifold is the **control-theoretic repertoire** that connectivity and biophysics make accessible, and fast learning operates inside it.
 
+## The Substrate: Random Recurrent Networks and the Chaos Transition
+
+CTD analyses typically train RNNs to perform a task and read out the dynamical motifs that emerge. But the **untrained** substrate — what a generic recurrent network of N rate neurons with random asymmetric couplings does — is the raw material those trained dynamics are carved out of. [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] establish the phase diagram: below a critical gain (`gJ < 1`) the network is silent; above it, the only stable long-time state is **extensively high-dimensional chaos**. Fixed points, limit cycles, and static "spin-glass" states all exist as MFT solutions but are unstable to fluctuations in the asymmetric case.
+
+This matters for CTD in two ways:
+
+- **Initialization**. Task-trained RNNs (Sussillo 2015, Mante 2013, Sohn 2019) are typically initialized above the transition. The trained structure — rotations, line attractors, fixed points — is what task training carves out of the chaotic reservoir. Training suppresses most of the chaos while preserving just enough dynamical richness to solve the task.
+- **Available capacity**. Above `gJ = 1`, a macroscopic (∝ N) fraction of Lyapunov exponents are positive. Random RNNs carry, in principle, extensive computational capacity; training selects which subspace is used. See [[Edge of Chaos]] for the framing that cortex and usefully-trained RNNs operate near the transition — where correlation times diverge (long memory) and the dynamics are richly input-sensitive.
+
+The analytical tool that makes statements about this substrate tractable is [[Dynamical Mean-Field Theory|DMFT]], which reduces N coupled equations to a single self-consistent neuron.
+
 ## Relationship to the Organizing Principle
 
 CTD is the formal language for the closed-loop sensorimotor control that this wiki treats as the foundation of intelligence. The motor-cortex case — prepare, move, integrate feedback, update — is literally the primitive closed loop. CTD supplies:
@@ -109,3 +120,4 @@ Every more "cognitive" case in the literature — timing, decision, working memo
 ## Sources
 
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — the review that codifies CTD as a named framework and catalogs its motifs.
+- [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — the chaos transition in random asymmetric rate networks; establishes the dynamical substrate from which trained CTD motifs are carved and anchors the [[Edge of Chaos]] framing of the operating regime.

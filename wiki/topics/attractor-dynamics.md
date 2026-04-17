@@ -3,8 +3,8 @@ title: "Attractor Dynamics"
 type: mechanism
 aliases: ["attractor networks", "attractor states"]
 tags: [dynamical-systems, computation, neural-circuits]
-source_count: 4
-last_updated: 2026-04-14
+source_count: 5
+last_updated: 2026-04-15
 level: circuit
 ---
 
@@ -68,9 +68,22 @@ This connects attractor dynamics to [[Degeneracy]]: the manifold structure (the 
 
 Across these cases, the same pattern recurs: the relevant computational objects are **structures in the flow** (fixed points, line attractors, limit cycles), and the computation is the trajectory the system takes through them given its inputs.
 
+## Chaotic Attractors in Random Networks
+
+[[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] establish that in a large network of rate neurons with random asymmetric couplings (mean 0, variance J²/N), the attractor landscape as a function of gain `gJ` has exactly two phases in the N → ∞ limit:
+
+- **gJ < 1**: a single globally stable **point attractor** at zero.
+- **gJ > 1**: the zero fixed point destabilizes, and the only stable attractor is a **chaotic attractor** — a strange attractor with a macroscopic (∝ N) number of positive Lyapunov exponents. Nonzero fixed points, limit cycles, and static "spin-glass" freezing states all exist as solutions to the mean-field equations but are all unstable to fluctuations when J is asymmetric.
+
+Two consequences extend the attractor framework:
+
+- **Asymmetry unlocks chaos.** With symmetric J (Hopfield case), the dynamics descend an energy function and can only converge to fixed points. The SCS result shows that breaking detailed balance — via asymmetric Jᵢⱼ — removes the Lyapunov function and admits limit cycles and chaos as generic possibilities. Cortical connectivity, being broadly asymmetric, is in the regime where the richer attractor types are available.
+- **Chaos is the generic untrained attractor.** Below the transition the network is silent; above it, no structured (periodic, static) attractor is stable — chaos is what you get. Structured attractors like the rotations and line attractors cataloged elsewhere on this page are **shaped** attractors, produced either by non-random connectivity or by task training that carves low-dimensional stable structure out of the chaotic background. See the substrate discussion on [[Computation Through Dynamics]].
+
 ## Sources
 
 - [[li-2024-prediction-noise-reward|Li et al. (2024)]] — attractor analysis of explore/exploit dynamics in PaN
 - [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]] — limit cycle attractors in *C. elegans* neural manifold
 - [[brennan-2023-looper-computational-scaffold|Brennan et al. (2023)]] — 1D stable trajectories as general attractor framework across systems
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — fixed points, line attractors, rotational dynamics in cortex; fixed-point finding as analysis tool
+- [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — sharp transition from point attractor to chaotic attractor at gJ = 1 in random asymmetric rate networks; structured attractors (fixed points, limit cycles) are unstable in the generic random case
