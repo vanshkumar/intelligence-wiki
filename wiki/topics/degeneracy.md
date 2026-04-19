@@ -3,8 +3,8 @@ title: "Degeneracy"
 type: concept
 aliases: ["neural degeneracy", "many-to-one mapping"]
 tags: [dynamical-systems, evolution, robustness, neural-circuits]
-source_count: 5
-last_updated: 2026-04-14
+source_count: 6
+last_updated: 2026-04-18
 confidence: established
 ---
 
@@ -45,6 +45,18 @@ Notably, the monkey and RNN achieve the same scaffold structure via **different 
 Degeneracy is predicted if genes encode behavior by constraining neurons' nonlinear feedback control algorithms rather than specifying circuits directly. Genes set ion channel expression, receptor densities, and growth factor gradients — parameters that shape each neuron's local dynamical repertoire. If these parameters are tuned so that certain macroscopic dynamical structures (e.g., limit cycle attractors for locomotion) emerge with high probability from the collective dynamics, then the microscopic configuration is free to vary as long as the target structure appears. The conserved 2D manifold loops in *C. elegans* ([[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt, 2019]]) are exactly the kind of structure this predicts: a locomotion control pattern that evolution selects for, implemented by whatever neuronal configuration happens to produce it.
 
 This reframes the "simple rules, complex architecture" theme: the "rules" are local control algorithms (neurons' input-output dynamics shaped by gene expression), and the "architecture" is not the wiring diagram but the macroscopic dynamical structure that emerges — the control landscape the organism actually uses to act.
+
+### The Rate-Model Formalization: Wilson-Cowan
+
+[[wilson-cowan-1972-ei-populations|Wilson & Cowan (1972)]] make the control-theoretic reading of degeneracy rigorous at the rate-model level. The [[Wilson-Cowan Model|two-variable E-I population model]] specifies the macroscopic dynamical repertoire (simple [[Hysteresis|hysteresis]], multi-stability, [[Limit Cycle|limit cycles]]) entirely in terms of inequalities on a handful of **population-level** parameters — the four coupling strengths c₁, c₂, c₃, c₄ and two sigmoid slopes aₑ, aᵢ. Any microscopic configuration that produces the required mesoscopic couplings will exhibit the target regime.
+
+This is the cleanest available mathematical backing for the prediction:
+
+- Limit-cycle attractors for locomotion emerge whenever `c₁aₑ > c₄aᵢ + 18` — E-E coupling exceeds I-I coupling by a margin. Genes need only constrain the *aggregate* E-E and I-I coupling strengths through cell-type-specific synapse counts and receptor expression; the specific microcircuit that realizes those aggregates is free to vary.
+- Short-term memory (bistability) emerges whenever `c₁ > 9/aₑ` — strong enough recurrent excitation relative to threshold variance. Same structure: a mesoscopic-parameter condition, not a microscopic-wiring specification.
+- Theorem 4 predicts that the same substrate will also exhibit the complementary regime under different bias — so a single genetically-specified population can express *multiple* dynamical functions (rhythm and memory) depending on neuromodulatory state, reinforcing the substrate flexibility documented in [[Context-Dependent Circuit Reconfiguration]].
+
+Wilson-Cowan thus closes the gap between "genes set local neuronal parameters" and "conserved macroscopic dynamical structures": the mesoscopic ODEs are the explicit mapping.
 
 ### Behavioral-Level Degeneracy
 

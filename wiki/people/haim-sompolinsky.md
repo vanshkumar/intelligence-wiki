@@ -12,7 +12,7 @@ Haim Sompolinsky is a theoretical physicist and computational neuroscientist who
 Selected contributions relevant to this wiki:
 
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — the sharp stationary-to-chaos transition at gJ = 1 in random asymmetric rate networks, solved exactly by [[Dynamical Mean-Field Theory|DMFT]]. Theoretical anchor for the [[Edge of Chaos]] framing and the substrate for modern trained-RNN analyses under [[Computation Through Dynamics]].
-- **Balanced E-I networks** (van Vreeswijk & Sompolinsky 1996, 1998) — asynchronous irregular firing as a generic property of balanced excitation-inhibition, explaining the variability and low correlations observed in cortex without invoking stochastic noise at the single-neuron level.
+- **Balanced E-I networks** (van Vreeswijk & Sompolinsky 1996, 1998) — asynchronous irregular firing as a generic property of balanced excitation-inhibition, explaining the variability and low correlations observed in cortex without invoking stochastic noise at the single-neuron level. Brought to the spiking integrate-and-fire level by [[brunel-1999-sparsely-connected-networks|Brunel (2000)]] with Fokker-Planck methods; see [[Excitation-Inhibition Balance]] and [[Asynchronous Irregular State]].
 - **Associative memory and attractor networks** — extensive work on the capacity and dynamics of Hopfield-type networks and their biologically plausible extensions.
 
 ## Relevant Work in This Wiki

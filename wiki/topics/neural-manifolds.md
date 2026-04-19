@@ -3,8 +3,8 @@ title: "Neural Manifolds"
 type: concept
 aliases: ["neural manifold", "low-dimensional dynamics", "population dynamics"]
 tags: [dynamical-systems, dimensionality-reduction, phase-space, neural-circuits, computation]
-source_count: 4
-last_updated: 2026-04-15
+source_count: 5
+last_updated: 2026-04-17
 confidence: established
 ---
 
@@ -77,8 +77,15 @@ Interpretation for this wiki: the intrinsic manifold is the **control-theoretic 
 
 The manifold perspective suggests that the right level of description for neural computation is neither individual neurons nor bulk averages, but the **geometry of population dynamics**. This connects to [[Degeneracy]]: many different microscopic configurations (individual neuron activations) can produce the same manifold structure, because the manifold is a property of the collective dynamics, not of any individual element. The computational scaffold extends this further — architecturally distinct systems (monkey PFC vs. RNN) can share the same scaffold structure despite having nothing in common at the unit level.
 
+## Theoretical Baseline: The Manifold of a Random RNN
+
+Before connectivity is shaped by genes or experience, what manifold does a random recurrent network occupy? [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] answer this for the canonical random-asymmetric-coupling ensemble: above the chaotic transition (gain gJ > 1), the network's activity lives on a **bounded, finite-dimensional attractor embedded in N-dimensional state space**. The flow on it is deterministically chaotic, with a macroscopic (∝ N) number of positive Lyapunov exponents.
+
+This is the theoretical counterpart to the empirical manifolds observed in recordings (Sadtler 2014; Gallego 2017; Brennan & Proekt 2019). The ~10D intrinsic manifold of motor cortex or the 2D loop structure of *C. elegans* can be read as the trained/shaped descendant of this generic dynamical repertoire — connectivity structure (Dale's law, sparsity, low-rank task-relevant perturbations) constrains the SCS flow to a specific lower-dimensional subset. Manifold-constrained BCI learning is, in this framing, reassociation within the trained manifold; off-manifold learning is restructuring of the flow itself.
+
 ## Sources
 
 - [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]] — conserved manifold dynamics in *C. elegans*
 - [[brennan-2023-looper-computational-scaffold|Brennan et al. (2023)]] — LOOPER method, computational scaffold, cross-system comparison
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — BCI manifold-constrained learning (Sadtler 2014, Golub 2018, Oby 2019) as strongest within-subject evidence that manifolds are real constraints on learning
+- [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — theoretical baseline: random asymmetric rate networks have an extensively high-dimensional chaotic flow on a bounded finite-dimensional attractor; the substrate from which shaped/trained manifolds are carved

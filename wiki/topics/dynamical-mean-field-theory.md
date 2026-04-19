@@ -1,10 +1,10 @@
 ---
 title: "Dynamical Mean-Field Theory"
 type: method
-aliases: ["DMFT", "dynamical MFT", "time-dependent mean-field theory"]
-tags: [theory, random-networks, statistical-physics, rnn, analysis-method]
-source_count: 1
-last_updated: 2026-04-15
+aliases: ["DMFT", "dynamical MFT", "time-dependent mean-field theory", "Fokker-Planck mean-field"]
+tags: [theory, random-networks, statistical-physics, rnn, analysis-method, fokker-planck, spiking-networks]
+source_count: 2
+last_updated: 2026-04-18
 technique_type: computational
 ---
 
@@ -41,7 +41,7 @@ DMFT has been extended well beyond the original SCS setup:
 - **Balanced E-I networks** (van Vreeswijk & Sompolinsky 1996) — analyzed with DMFT to show asynchronous irregular firing as a generic balanced-state property.
 - **Low-rank connectivity** (Mastrogiuseppe & Ostojic 2018) — DMFT over a random background plus a low-rank perturbation, with the low-rank part carrying task-relevant dynamics.
 - **Training-induced low-rank structure** (Schuessler et al. 2020) — DMFT applied to the residual after training to show that learning adds low-dimensional corrections to the SCS background.
-- **Spiking and conductance-based variants** — approximate DMFTs exist and connect to mean-field spiking models (Brunel & Hakim).
+- **Spiking and conductance-based variants** — [[brunel-1999-sparsely-connected-networks|Brunel (2000)]] is the canonical spiking analogue: a Fokker-Planck analysis of the membrane-potential distribution under a self-consistent Gaussian synaptic-current approximation. The reduction is structurally parallel to DMFT — an N-body problem replaced by a single-neuron equation whose driving statistics are set self-consistently by the population — but the dynamical variable is the membrane-potential PDF rather than the activity autocorrelation. Yields the four generic phases (SR, AR, AI, SI) of sparsely connected E-I networks with analytically computable Hopf bifurcation lines and oscillation frequencies. Brunel & Hakim (1999) handle the purely-inhibitory limit; van Vreeswijk & Sompolinsky (1996, 1998) the binary-neuron balanced-state analogue.
 
 ## Why It Matters for This Wiki
 
@@ -56,3 +56,4 @@ DMFT is the principal theoretical tool by which statements about large random or
 ## Sources
 
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — first use of DMFT to solve the chaos transition in random rate networks; the template for subsequent DMFT work in theoretical neuroscience.
+- [[brunel-1999-sparsely-connected-networks|Brunel (2000)]] — Fokker-Planck mean-field theory for sparsely connected E-I spiking networks; the spiking analogue of DMFT, yielding the four-regime phase diagram (SR, AR, AI, SI) with analytic bifurcation lines and oscillation frequencies.

@@ -3,8 +3,8 @@ title: "Dark Room Problem"
 type: concept
 aliases: ["dark room objection"]
 tags: [predictive-coding, active-inference, philosophy]
-source_count: 1
-last_updated: 2026-04-10
+source_count: 2
+last_updated: 2026-04-18
 confidence: established
 ---
 
@@ -22,6 +22,11 @@ Any agent that minimizes prediction error has a trivial solution available: redu
 
 This is a notably parsimonious solution: it requires no curiosity drive, no prior preferences, no separate action module — just the noise that's already inherent in any biological neural system.
 
+## Where the Problem Originates
+
+The dark-room objection applies most sharply to theories where surprise/prediction-error minimization is the agent's sole objective. This framing traces back to the [[Helmholtz Machine]] of [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]], which introduced [[Variational Free Energy|variational free energy]] as an objective for *unsupervised perceptual learning* — a disembodied setting where the dark room is not a failure mode because the network is not an agent choosing where to go. The Helmholtz machine itself does not face the dark room problem; the problem emerges only when the framework is extended to embodied action ([[Active Inference]]) without simultaneously introducing a constraint (prior preferences, intrinsic drives, or — in PaN's case — inescapable noise) that prevents the agent from collapsing to the trivial solution.
+
 ## Sources
 
 - [[li-2024-prediction-noise-reward|Li et al. (2024)]] — noise as a solution to the dark room problem
+- [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — the [[Variational Free Energy|free-energy]] framework from which the dark-room objection inherits, though the objection applies only after the framework is extended to embodied agents

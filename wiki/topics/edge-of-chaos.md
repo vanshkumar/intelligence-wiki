@@ -3,8 +3,8 @@ title: "Edge of Chaos"
 type: theory
 aliases: ["criticality", "critical dynamics", "marginal stability"]
 tags: [dynamical-systems, rnn, phase-transition, computation, criticality]
-source_count: 1
-last_updated: 2026-04-15
+source_count: 3
+last_updated: 2026-04-18
 status: emerging
 ---
 
@@ -34,7 +34,7 @@ This is the theoretical backing for reservoir computing (echo-state networks, li
 
 Empirically supported as a framing; mechanistically underspecified as a claim about biology:
 
-- **Cortical network balance**. Balanced E-I networks (van Vreeswijk & Sompolinsky 1996) operate in a high-variance, input-sensitive regime that is often argued to be effectively critical.
+- **Cortical network balance**. Balanced E-I networks (van Vreeswijk & Sompolinsky 1996; [[brunel-1999-sparsely-connected-networks|Brunel 2000]]) operate in a high-variance, input-sensitive regime that is often argued to be effectively critical. [[brunel-1999-sparsely-connected-networks|Brunel (2000)]] provides the spiking-network analogue of SCS criticality: near the boundary of the [[Asynchronous Irregular State|AI state]], the coherence time of residual oscillations in the global activity autocorrelation scales as 1/ε (where ε = C/N is the connection sparsity), diverging as N → ∞. The balance point g = 4 is the spiking edge — on one side lies the asynchronous-irregular regime, on the other the synchronous-irregular (ripple or gamma) regime.
 - **Neuronal avalanches**. Beggs & Plenz (2003) and subsequent work find power-law distributions of cortical activity bursts consistent with a critical branching process — a spiking-network analog of edge of chaos.
 - **Homeostatic mechanisms**. Plausible tuning knobs to keep cortex near criticality include synaptic scaling, intrinsic excitability regulation, and inhibitory gain control.
 - **Open question**: whether "edge of chaos" is a literal physical claim about cortical operating point, or a looser metaphor for richly input-sensitive-yet-memoryful dynamics. The hypothesis predicts specific signatures (diverging correlation times, scaling laws) whose experimental status across brain regions is still being worked out.
@@ -52,9 +52,11 @@ In this reading, criticality is the substrate that makes flexible control possib
 ## Caveats
 
 - Random asymmetric networks at gJ = 1 are *marginally* unstable in a generic way; *trained* cortical networks at their operating point may have rich structured attractors that do not reduce to being near the SCS transition. The edge-of-chaos framing is clearer for untrained reservoirs than for trained cortex.
-- The transition point gJ = 1 is specific to the SCS ensemble (Gaussian, zero mean, asymmetric, fully connected). Real connectivity has Dale's law, sparsity, and low-rank structure that shift or restructure the transition.
+- The transition point gJ = 1 is specific to the SCS ensemble (Gaussian, zero mean, asymmetric, fully connected). Real connectivity has Dale's law, sparsity, and low-rank structure that shift or restructure the transition. [[wilson-cowan-1972-ei-populations|Wilson & Cowan (1972)]] make this explicit at the rate-model level: when the E/I dichotomy is imposed by construction (as in real cortex), the "edge" is the set of parameter-space boundaries separating simple hysteresis, multi-stability, and limit cycles — and their Theorem 4 says any point deep in the limit-cycle regime is close (in bias space) to a hysteresis regime. "Edge of chaos" in a structured E-I network is more a statement about sitting near regime-boundary surfaces in the WC parameter space than about proximity to gJ = 1.
 - "Criticality" has been used loosely across fields — the [[sompolinsky-1988-chaos-random-networks|SCS]] transition, Beggs-style avalanche criticality, and Ising-model critical points are related but distinct phenomena.
 
 ## Sources
 
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — the phase transition to chaos at gJ = 1 in random asymmetric rate networks; theoretical anchor for the edge-of-chaos hypothesis in neural networks.
+- [[brunel-1999-sparsely-connected-networks|Brunel (2000)]] — spiking-network analogue: the balance point g = 4 separates asynchronous-irregular from synchronous regimes in sparsely connected E-I integrate-and-fire networks, with critical-slowing-style finite-size coherence times scaling as 1/ε at the boundary.
+- [[wilson-cowan-1972-ei-populations|Wilson & Cowan (1972)]] — structured rate-level E-I dynamics: "edge" in real cortex is the set of regime-boundary surfaces between simple hysteresis, multi-stability, and limit cycles, not proximity to gJ = 1; Theorem 4 says any limit-cycle-capable population is close (in bias space) to a hysteresis regime.

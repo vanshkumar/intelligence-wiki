@@ -3,8 +3,8 @@ title: "Attractor Dynamics"
 type: mechanism
 aliases: ["attractor networks", "attractor states"]
 tags: [dynamical-systems, computation, neural-circuits]
-source_count: 5
-last_updated: 2026-04-15
+source_count: 6
+last_updated: 2026-04-18
 level: circuit
 ---
 
@@ -68,6 +68,18 @@ This connects attractor dynamics to [[Degeneracy]]: the manifold structure (the 
 
 Across these cases, the same pattern recurs: the relevant computational objects are **structures in the flow** (fixed points, line attractors, limit cycles), and the computation is the trajectory the system takes through them given its inputs.
 
+## Structured Attractors in E-I Populations: Wilson-Cowan
+
+[[wilson-cowan-1972-ei-populations|Wilson & Cowan (1972)]] — the structured counterpart to the SCS random-network picture. A two-variable mean-field model of coupled excitatory and inhibitory populations (activities `E(t), I(t)`) has exactly three generic attractor configurations in its (E, I) phase plane:
+
+- **Simple [[Hysteresis|hysteresis]]** (two stable fixed points separated by a saddle): appears when E-E recurrence exceeds a threshold set by the excitatory sigmoid slope, `c₁ > 9/aₑ`. The upper stable fixed point is a persistent-activity state — the attractor-based substrate for short-term memory (Hebb 1949; Cragg & Temperley 1955).
+- **Multiple hysteresis** (up to five fixed points, three stable): requires strong E-I negative feedback, `aₑaᵢc₂c₃ > (aₑc₁ − 9)(aᵢc₄ + 9)`. Uniquely E-I; impossible in purely excitatory populations.
+- **[[Limit Cycle|Limit-cycle attractor]]** (single unstable fixed point surrounded by a stable periodic orbit): requires `c₁aₑ > c₄aᵢ + 18` — **E-E coupling significantly stronger than I-I coupling**. Limit cycle frequency and amplitude both increase monotonically with input intensity, realizing a frequency-coded intensity representation.
+
+The important **Theorem 4**: any E-I population capable of a limit cycle under some stimulus must also exhibit simple hysteresis under some other stimulus. The same substrate expresses different attractor configurations when nonspecific biases shift it across parameter-space boundaries — a direct instance of [[Context-Dependent Circuit Reconfiguration]] in the attractor framework.
+
+Wilson-Cowan is the structured, low-dimensional, rate-level complement to SCS's generic random-network chaos: the attractor types that SCS finds to be *unstable* in the generic random case (fixed points, limit cycles, multi-stable configurations) are *stable* once the structural E/I asymmetry and sigmoid nonlinearity are imposed. For cortex — which is structured (Dale's law, cell-type segregation) and has the E-I dichotomy by construction — Wilson-Cowan is the right mean-field baseline; chaos requires the additional ingredient of random asymmetric internal coupling within one population.
+
 ## Chaotic Attractors in Random Networks
 
 [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] establish that in a large network of rate neurons with random asymmetric couplings (mean 0, variance J²/N), the attractor landscape as a function of gain `gJ` has exactly two phases in the N → ∞ limit:
@@ -87,3 +99,4 @@ Two consequences extend the attractor framework:
 - [[brennan-2023-looper-computational-scaffold|Brennan et al. (2023)]] — 1D stable trajectories as general attractor framework across systems
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — fixed points, line attractors, rotational dynamics in cortex; fixed-point finding as analysis tool
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — sharp transition from point attractor to chaotic attractor at gJ = 1 in random asymmetric rate networks; structured attractors (fixed points, limit cycles) are unstable in the generic random case
+- [[wilson-cowan-1972-ei-populations|Wilson & Cowan (1972)]] — structured rate-level E-I populations have three generic attractor configurations (simple hysteresis, multiple hysteresis, limit cycles) selected by inequalities on four coupling strengths; Theorem 4 on regime interconvertibility by nonspecific biasing inputs

@@ -3,8 +3,8 @@ title: "Predictive Coding"
 type: theory
 aliases: ["prediction error minimization", "predictive processing"]
 tags: [learning-rule, prediction, cortex, perception]
-source_count: 3
-last_updated: 2026-04-16
+source_count: 4
+last_updated: 2026-04-18
 status: established
 ---
 
@@ -55,6 +55,16 @@ The key result: in the weak-feedback limit, the apical prediction error at layer
 
 This unification has a concrete architectural interpretation: the top-down pathway carries the "actual" feedback signal, the lateral (SST interneuron) pathway carries the "predicted" feedback signal, and the apical compartment computes their difference. All plasticity rules are local dendritic prediction error rules of the form dw/dt = η[φ(u) − φ(v)]r, belonging to the dendritic predictive plasticity family (Urbanczik & Senn 2014).
 
+## Historical Root: The Helmholtz Machine
+
+Hierarchical predictive coding descends directly from the [[Helmholtz Machine]] of [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]], which first cast unsupervised learning as variational inference in a network with separate top-down (generative) and bottom-up (recognition) pathways. The [[Variational Free Energy|Helmholtz free energy]] they introduced — `F = Σ Q E − H[Q]` — becomes the predictive-coding energy function when the generative model is linear-Gaussian and the recognition distribution is Gaussian at each layer. Rao & Ballard's (1999) hierarchical predictive coding is best understood as a continuous-latent specialization of the Helmholtz framework, and Friston's free-energy principle generalizes it further to include action ([[Active Inference]]).
+
+The two architectural commitments that survive the lineage intact are:
+- **Separate recognition and generative pathways** with independent weights — the top-down pathway predicts, the bottom-up pathway infers, and the two are not forced to be transposes of each other (as in Boltzmann machines).
+- **Local prediction-error learning** — all updates depend only on pre- and post-synaptic activity at each synapse, with the error signal computed from the mismatch between top-down prediction and bottom-up signal.
+
+See [[Analysis-by-Synthesis]] for the broader philosophical and historical context.
+
 ## Biological Plausibility
 
 Predictive coding is considered more biologically plausible than backpropagation because:
@@ -68,3 +78,4 @@ Predictive coding is considered more biologically plausible than backpropagation
 - [[li-2024-prediction-noise-reward|Li et al. (2024)]] — extends predictive coding to closed-loop behavior via PaN
 - [[sacramento-2018-dendritic-microcircuits-backprop|Sacramento et al. (2018)]] — unifies predictive coding and backpropagation: apical dendritic prediction errors (top-down minus lateral prediction) are analytically equivalent to backpropagated gradients
 - [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — burst probability deviation from adaptive baseline as prediction-error-like signal
+- [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — historical root: the [[Helmholtz Machine]] introduces variational free-energy learning with separate top-down generative and bottom-up recognition pathways

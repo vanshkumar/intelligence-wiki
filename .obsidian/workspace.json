@@ -22,6 +22,20 @@
             }
           },
           {
+            "id": "774723eb127eaccc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CLAUDE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CLAUDE"
+            }
+          },
+          {
             "id": "1813d60992f0f6a6",
             "type": "leaf",
             "state": {
@@ -72,23 +86,8 @@
               "icon": "lucide-file",
               "title": "open-questions"
             }
-          },
-          {
-            "id": "774723eb127eaccc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CLAUDE.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "CLAUDE"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -161,6 +160,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "llm-wiki.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -170,7 +170,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for llm-wiki"
             }
           },
           {
@@ -179,11 +179,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "llm-wiki.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from llm-wiki"
             }
           },
           {
@@ -221,12 +222,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "llm-wiki.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of llm-wiki"
             }
           }
         ]
@@ -247,43 +249,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "1813d60992f0f6a6",
+  "active": "9b2ca1504b4673c6",
   "lastOpenFiles": [
-    "wiki/topics/endotaxis.md",
-    "llm-wiki.md",
-    "index.md",
-    "wiki/people/david-sussillo.md",
-    "wiki/people/saurabh-vyas.md",
-    "wiki/people/krishna-shenoy.md",
-    "wiki/brain-regions/motor-cortex.md",
-    "wiki/topics/rotational-dynamics.md",
-    "wiki/topics/null-space-coding.md",
-    "wiki/topics/preparatory-activity.md",
-    "wiki/topics/computation-through-dynamics.md",
-    "wiki/sources/vyas-2020-computation-through-dynamics.md",
-    "raw/papers/vyas-2020.pdf",
-    "wiki/topics/cognitive-map.md",
     "CLAUDE.md",
-    "wiki/sources/bennett-2023-history-intelligence-ch1.md",
-    "wiki/people/alexander-proekt.md",
+    "index.md",
+    "open-questions.md",
     "overview.md",
-    "wiki/topics/degeneracy.md",
-    "wiki/people/navonil-banerjee.md",
-    "wiki/people/paul-sternberg.md",
-    "wiki/people/elissa-hallem.md",
-    "wiki/brain-regions/c-elegans-chemotaxis-circuit.md",
-    "wiki/topics/context-dependent-circuit-reconfiguration.md",
-    "wiki/topics/circuit-behavior-mapping.md",
-    "wiki/sources/banerjee-2023-life-stage-chemosensation.md",
-    "raw/papers/banerjee-2023.pdf",
-    "wiki/people/tony-zhang.md",
-    "raw/papers/zhang-2024.pdf",
-    "raw/papers/rosenberg-2021.pdf",
-    "raw/papers/wierzynski-2009.pdf",
-    "raw/papers/reinert-2021.pdf",
-    "raw/papers/jones-2020.pdf",
-    "raw/papers/payeur-2020.pdf",
-    "raw/papers/brennan-2023.pdf",
-    "raw/papers/brennan-2019.pdf"
+    "wiki/people/jack-cowan.md",
+    "wiki/people/hugh-wilson.md",
+    "wiki/topics/hysteresis.md",
+    "wiki/topics/limit-cycle.md",
+    "wiki/topics/neural-mass-model.md",
+    "wiki/topics/wilson-cowan-model.md",
+    "wiki/sources/wilson-cowan-1972-ei-populations.md",
+    "raw/papers/wilson-cowan-1972.pdf",
+    "wiki/topics/asynchronous-irregular-state.md",
+    "wiki/topics/excitation-inhibition-balance.md",
+    "wiki/people/nicolas-brunel.md",
+    "wiki/sources/brunel-1999-sparsely-connected-networks.md",
+    "raw/papers/brunel-1999.pdf",
+    "wiki/people/geoffrey-hinton.md",
+    "wiki/people/peter-dayan.md",
+    "wiki/topics/variational-free-energy.md",
+    "wiki/topics/analysis-by-synthesis.md",
+    "wiki/topics/wake-sleep-algorithm.md",
+    "wiki/topics/helmholtz-machine.md",
+    "wiki/sources/dayan-hinton-1994-helmholtz-machine.md",
+    "raw/papers/dayan-hinton-1994.pdf",
+    "wiki/people/mark-harnett.md",
+    "wiki/people/valerio-francioni.md",
+    "wiki/sources/francioni-2026-vectorized-dendritic-signals.md",
+    "wiki/people/will-greedy.md",
+    "raw/papers/francioni-2026.pdf",
+    "raw/papers/greedy-2022.pdf",
+    "raw/papers/guerguiev-2017.pdf",
+    "raw/papers/sacramento-2018.pdf",
+    "raw/papers/kording-konig-2001.pdf",
+    "raw/papers/sompolinsky-1988.pdf",
+    "raw/papers/vyas-2020.pdf"
   ]
 }

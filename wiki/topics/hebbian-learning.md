@@ -3,8 +3,8 @@ title: "Hebbian Learning"
 type: theory
 aliases: ["Hebb's rule", "fire together wire together", "Hebbian plasticity"]
 tags: [learning-rule, plasticity, synapse, associative-learning]
-source_count: 6
-last_updated: 2026-04-16
+source_count: 7
+last_updated: 2026-04-18
 status: established
 ---
 
@@ -48,6 +48,7 @@ Hebbian learning maps onto several known biological mechanisms:
 - **Neuromodulation** — dopamine and other neuromodulators gate or modulate Hebbian plasticity, potentially determining *which* co-active pairs get strengthened (three-factor learning rules)
 - **Dendritic predictive plasticity** — [[sacramento-2018-dendritic-microcircuits-backprop|Sacramento et al. (2018)]] formalize a family of local learning rules of the form dw/dt = η[φ(u) − φ(v)]r, where u and v are compartmental potentials and r is presynaptic input. The weight changes as the product of a **dendritic prediction error** and presynaptic rate — Hebbian in structure, but the "post" signal is the mismatch between two compartments rather than simple postsynaptic activity. This rule family (from Urbanczik & Senn 2014) unifies feedforward, lateral, and feedback plasticity in a single framework.
 - **Burst-dependent plasticity** — [[kording-konig-2001-two-integration-sites|Kording & Konig (2001)]] first proposed that burst-gated Hebbian plasticity (ΔW ∝ D_post × A_pre, where D is dendritic burst rate) enables gradient-based learning: the rule is local, but the burst signal carries error information from higher areas via apical dendrites. [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] implemented this at biophysical detail, showing that whether a pyramidal neuron fires a burst or an isolated spike determines the sign of plasticity (burst → LTP, isolated spike → LTD). The rule is fundamentally Hebbian — it depends only on local pre/post activity — but the "post" signal is enriched by [[Dendritic Computation|dendritic computation]], embedding hierarchical [[Credit Assignment|credit assignment]] information into a local learning rule
+- **Delta-rule wake-sleep plasticity** — [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] use the purely local delta rule (Widrow–Stearns 1985) in both phases of the [[Wake-Sleep Algorithm]]. Each synapse update is a product of a presynaptic activity and a local target-activity mismatch — structurally identical to a classical Hebbian rule with a target signal replacing the pure postsynaptic activity. The target is supplied by the other pathway (wake: generative weights learn against recognition-sampled targets; sleep: recognition weights learn against generative-sampled targets), so no weight transport and no backprop is required to train a hierarchy
 
 ### The Calcium Bridge
 
@@ -74,3 +75,4 @@ Hebbian learning is the mechanism by which the sensorimotor control loop modifie
 - [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — burst-dependent plasticity as a Hebbian rule that approximates backpropagation via dendritic computation
 - [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — LTP-induced MSBs grow single-neuron computational architecture
 - [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — plain Hebbian learning rules across three synapse populations (map-cell recurrence, goal-cell convergence, point-cell habituation) suffice for cognitive-map acquisition, one-shot homing, and efficient patrolling
+- [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — delta-rule wake-sleep plasticity: purely local Hebbian-style updates (ΔW ∝ pre × target_mismatch) in two phases suffice for hierarchical unsupervised learning, with targets supplied by the complementary network

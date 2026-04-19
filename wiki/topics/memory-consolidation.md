@@ -3,8 +3,8 @@ title: "Memory Consolidation"
 type: concept
 aliases: ["systems consolidation", "sleep consolidation", "sharp-wave ripples", "SWR", "ripples"]
 tags: [memory, sleep, hippocampus, prefrontal-cortex, plasticity, oscillations]
-source_count: 1
-last_updated: 2026-04-11
+source_count: 2
+last_updated: 2026-04-18
 confidence: established
 ---
 
@@ -36,6 +36,20 @@ The hippocampal-prefrontal coupling is **state-dependent** — nearly abolished 
 
 The gradual timescale of memory consolidation (many sleep cycles over days to weeks) is consistent with the gradual emergence of category representations observed in [[Prefrontal Cortex|mPFC]] during learning ([[reinert-2021-pfc-categorization|Reinert et al., 2021]]). SWR-driven hippocampal reactivation during sleep may be one mechanism by which PFC representations are progressively built and refined — each sleep episode reinforcing and elaborating the cortical trace.
 
+## A Normative Role for REM: Tuning the Recognition Pathway
+
+The [[Wake-Sleep Algorithm]] introduced by [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] offers a complementary, normatively motivated functional role for REM sleep. In the wake-sleep algorithm:
+
+- **Wake phase**: data-driven. Real inputs drive bottom-up recognition; top-down generative weights are updated to match what the recognition model inferred.
+- **Sleep phase**: generatively driven. The network hallucinates from the top-down generative model; bottom-up recognition weights are trained to invert the hallucinations.
+
+Mapped onto mammalian sleep, this suggests a two-stage division:
+- **SWS**: wake-like replay of real hippocampal traces, tuning cortical generative models to account for recent experience (the SWR-driven story from [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]]).
+- **REM**: sleep-phase-like generative hallucination, tuning cortical recognition pathways against internally generated samples. The vivid, dream-like, top-down-driven quality of REM fits the "generate from θ" description naturally.
+
+This is a proposal, not a demonstrated fact — it predates detailed understanding of REM function by decades and the empirical mapping is still loose. The testable prediction is that REM activity should functionally resemble sampling from a cortical generative model, and that blocking REM should selectively impair recognition pathways (not generative ones). It also gives a principled reason why the hippocampus-to-cortex coupling observed during SWS ([[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al., 2009]]) is *abolished* during REM: the two phases serve different computational purposes and should not be mixed.
+
 ## Sources
 
 - [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] — SWR-driven directional spike timing from hippocampus to PFC during SWS; abolished during REM
+- [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — normative proposal: [[Wake-Sleep Algorithm|wake-sleep]] gives REM a distinct functional role as generative-phase tuning of recognition pathways

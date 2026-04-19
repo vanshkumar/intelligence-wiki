@@ -3,8 +3,8 @@ title: "Active Inference"
 type: theory
 aliases: ["active inference framework"]
 tags: [predictive-coding, free-energy, perception, action, bayesian]
-source_count: 1
-last_updated: 2026-04-10
+source_count: 2
+last_updated: 2026-04-18
 status: emerging
 ---
 
@@ -17,6 +17,10 @@ Active inference is the closest existing theoretical framework to a control-firs
 Active inference is often described as the action-oriented extension of predictive coding. Where predictive coding explains perception (updating beliefs to match sensory input), active inference explains behavior (acting on the world to make sensory input match beliefs).
 
 The framework is closely associated with Karl Friston's **free energy principle**, which casts both perception and action as minimizing variational free energy — an upper bound on surprise.
+
+## Historical root: the Helmholtz machine
+
+Active inference's formal backbone — variational [[Variational Free Energy|free energy]] as an upper bound on negative log-evidence — was introduced into connectionist learning by [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] as the **Helmholtz free energy** in the [[Helmholtz Machine]]. The Helmholtz machine addresses perception and learning (minimize `F` with respect to activation and weight variables); active inference adds **action** as a third variable the agent can use to further reduce `F` by changing its own sensory distribution. The three-way unification — perception = minimize F over activations, learning = minimize F over weights, action = minimize F over controls — is Friston's extension of the Helmholtz variational framework. See [[Analysis-by-Synthesis]] for the broader intellectual lineage.
 
 ## Criticisms
 
@@ -37,3 +41,4 @@ The framework is closely associated with Karl Friston's **free energy principle*
 ## Sources
 
 - [[li-2024-prediction-noise-reward|Li et al. (2024)]] — positions PaN as distinct from active inference
+- [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — introduces the variational [[Variational Free Energy|free energy]] that active inference later generalized to embodied agents

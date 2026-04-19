@@ -3,8 +3,8 @@ title: "Inhibitory Circuits"
 type: concept
 aliases: ["inhibition", "interneurons", "inhibitory interneurons", "GABAergic", "PV+ interneurons", "SST+ interneurons"]
 tags: [inhibition, interneurons, GABA, computation, microcircuit]
-source_count: 6
-last_updated: 2026-04-16
+source_count: 7
+last_updated: 2026-04-18
 confidence: established
 ---
 
@@ -43,6 +43,12 @@ NDNF+ interneurons complement SST+ Martinotti cells in a proposed **laminar divi
 
 VIP+ interneurons primarily inhibit other interneurons (especially SST+ cells), producing **disinhibition** of pyramidal neurons. This creates a circuit motif where activating VIP+ cells releases pyramidal neurons from SST+ inhibition, potentially gating plasticity or switching between processing modes. VIP+ circuits are less well-characterized in the wiki's current sources but are increasingly recognized as important for attentional gating and learning.
 
+## Inhibition Dominates Network-Level Dynamics
+
+Beyond compartment-specific roles for individual neurons, inhibition is the dominant driver of cortical network-level dynamics. [[brunel-1999-sparsely-connected-networks|Brunel (2000)]] showed analytically that a sparsely connected excitatory-inhibitory spiking network has four generic regimes (SR, AR, [[Asynchronous Irregular State|AI]], SI) separated by Hopf and saddle-node bifurcations — and the *inhibition-dominated* regime (g > 4, where g is the relative strength of recurrent inhibition to recurrent excitation) is where cortex-like irregular, low-rate, weakly-correlated activity emerges. Both cortical oscillation families — **fast oscillations** (~100–200 Hz, matching sharp-wave ripples, frequency ≈ 1/2D set by synaptic delay) and **slow oscillations** (~20–60 Hz, matching gamma, frequency set by membrane τ) — appear on Hopf bifurcation lines of this inhibition-dominated state. The oscillations are generated primarily by the inhibitory population; excitation is the perturbation that sets the operating point.
+
+This elevates the role of inhibition from "gain control and compartment-specific computation" to **the parameter that sets the operating regime of the whole network**. The same anatomical circuit can express quiescent, asynchronous-irregular, gamma-oscillatory, or ripple-oscillatory dynamics depending on the balance `g` and external drive — and inhibition is what tunes `g`. Neuromodulation of inhibitory interneurons (e.g., VIP+ disinhibition, acetylcholine on PV+ cells) can thus switch between regimes without rewiring.
+
 ## Inhibition as a Computational Primitive
 
 [[bennett-2023-history-intelligence-ch1|Bennett (2023)]] notes that inhibition as a signaling mechanism predates neurons — unicellular organisms use inhibitory chemical signals. What neurons added was the **spatial precision** and **cell-type diversity** of inhibition: different interneuron types targeting different compartments of the same postsynaptic neuron to implement different computations simultaneously.
@@ -55,3 +61,4 @@ VIP+ interneurons primarily inhibit other interneurons (especially SST+ cells), 
 - [[gerstner-neuronal-dynamics-ch1|Gerstner et al., Neuronal Dynamics Ch. 1]] — shunting inhibition as divisive normalization
 - [[bennett-2023-history-intelligence-ch1|Bennett (2023), Ch. 1]] — inhibition as a pre-neural computational primitive
 - [[francioni-2026-vectorized-dendritic-signals|Francioni et al. (2026)]] — NDNF+ L1 interneuron activation abolishes vectorized dendritic error signals and impairs learning
+- [[brunel-1999-sparsely-connected-networks|Brunel (2000)]] — inhibition-dominated (g > 4) regime is where AI activity and both cortical oscillation families (gamma, sharp-wave ripples) emerge; oscillations are carried primarily by the inhibitory population

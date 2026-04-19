@@ -3,8 +3,8 @@ title: "Credit Assignment"
 type: concept
 aliases: ["credit assignment problem", "structural credit assignment", "temporal credit assignment"]
 tags: [learning, plasticity, hierarchical-learning, backpropagation, computation]
-source_count: 6
-last_updated: 2026-04-16
+source_count: 7
+last_updated: 2026-04-18
 confidence: established
 ---
 
@@ -52,6 +52,22 @@ None of these hold in biological neural circuits.
 
 SD residuals encode error **derivatives** rather than error magnitudes, slightly favoring target propagation over classical backpropagation. The linear soma-dendrite relationship is consistent with SST+-mediated linearization (Payeur). The lineage is now: conceptual insight (Kording 2001) → spiking proof of concept (Guerguiev 2017) → analytical theory (Sacramento 2018) → biophysical maturity (Payeur 2020) → full synthesis (Greedy 2022) → **experimental validation (Francioni 2026)**.
 
+### Wake-Sleep: A Parallel Lineage
+
+[[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] propose an entirely different route to hierarchical credit assignment without weight transport: the [[Wake-Sleep Algorithm]] for the [[Helmholtz Machine]]. Two separate networks — a top-down generative model (θ) and a bottom-up recognition model (φ) — are trained in alternating phases using a purely local delta rule. In the **wake phase**, real data drives recognition activations, and θ is updated to match them; in the **sleep phase**, the network hallucinates from θ and φ is trained to invert the generation.
+
+Wake-sleep and the dendritic lineage (Kording → Guerguiev → Sacramento → Payeur → Greedy → Francioni) are two routes to the same goal — hierarchical credit assignment without weight transport — that make different architectural trade-offs:
+
+| | Helmholtz / wake-sleep | Dendritic lineage |
+|---|---|---|
+| Separation of forward/inverse | temporal (wake vs. sleep phases) | spatial (basal vs. apical compartments) |
+| Networks | two, with independent weights | one, with compartmentalized neurons |
+| Teaching signal | top-down hallucinated sample (sleep) | continuous top-down prediction error |
+| Phase requirement | yes | eliminated post-Sacramento |
+| Natural biological fit | sleep / offline consolidation | online waking learning |
+
+The two are not mutually exclusive and could plausibly coexist in cortex — dendritic prediction-error learning during waking, wake-sleep-like tuning during sleep. A formal relationship between them (equivalence under some mapping, or a clean dissociation of what each can learn) is an open theoretical question.
+
 ### Neuromodulatory Gating
 
 Dopamine reward prediction error signals can gate [[Hebbian Learning|Hebbian plasticity]] — the "three-factor learning rule" (pre activity × post activity × neuromodulator). This addresses temporal credit assignment but only coarsely: the dopamine signal is global and scalar, raising the question of how it gets routed to the specific synapses that were causally responsible.
@@ -68,3 +84,4 @@ Dopamine reward prediction error signals can gate [[Hebbian Learning|Hebbian pla
 - [[payeur-2020-burst-dependent-credit-assignment|Payeur et al. (2020)]] — biophysically detailed implementation: burst-dependent plasticity with spiking neurons, inhibitory linearization, CIFAR-10 scale
 - [[greedy-2022-single-phase-burstccn|Greedy et al. (2022)]] — BurstCCN synthesis: Q-Y cancellation mechanism enables single-phase learning + depth scaling; resolves phase and depth limitations of all prior models
 - [[francioni-2026-vectorized-dendritic-signals|Francioni et al. (2026)]] — first in vivo experimental evidence: cell-specific SD residuals in L5 apical dendrites encode error derivatives; NDNF+ L1 interneuron perturbation abolishes vectorized signals and impairs learning
+- [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — parallel lineage: the [[Wake-Sleep Algorithm]] for the [[Helmholtz Machine]] is an alternative route to hierarchical credit assignment without weight transport, using temporal (wake/sleep) rather than spatial (basal/apical) separation of forward and inverse computations
