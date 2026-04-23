@@ -29,6 +29,7 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — The Helmholtz Machine: variational lower bound (Helmholtz free energy = ELBO) with separate bottom-up recognition and top-down generative networks trained by the local wake-sleep delta rule; computational ancestor of VAEs, predictive coding, and the Free Energy Principle
 - [[brunel-1999-sparsely-connected-networks|Brunel (2000)]] — Analytical Fokker-Planck theory of sparsely connected E-I spiking networks; four generic regimes (SR, AR, AI, SI); fast oscillations (~1/2D, set by synaptic delay) and slow oscillations (set by membrane τ) emerge as Hopf bifurcations of the balanced state; maps gamma and sharp-wave ripples onto the same dynamical framework
 - [[wilson-cowan-1972-ei-populations|Wilson & Cowan (1972)]] — Two-variable mean-field E-I population model; three generic dynamical regimes (simple hysteresis, multiple hysteresis, limit cycles) selected by inequalities on four coupling strengths; Theorem 4: limit-cycle-capable populations must also exhibit hysteresis under different bias; foundational neural-mass model
+- [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — FORCE learning: trains chaotic RNNs with intact feedback loops to produce complex coherent outputs by keeping error small throughout training; three architectures (readout feedback, separate feedback network, within-generator); chaos is beneficial with an operational "edge of chaos" at the largest g where FORCE still suppresses it; preparation as chaos suppression
 
 ## Concepts
 
@@ -70,6 +71,7 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[Rotational Dynamics]] — Motor-cortex population activity traces rotations during reaching; low-dimensional oscillator generates multiphasic muscle patterns
 - [[Limit Cycle]] — Isolated closed orbit attractor in state space; the dynamical object underlying locomotion CPGs, cortical rotations, and rhythm generation more generally
 - [[Wake-Sleep Algorithm]] — Two-phase local delta-rule learning for Helmholtz machines; wake trains generative weights against recognition samples, sleep trains recognition weights against generative hallucinations
+- [[force-learning|FORCE Learning]] — First-Order Reduced and Controlled Error: trains chaotic RNNs by keeping error small throughout via RLS; three architectures; constructive existence proof that CTD trained dynamics can be carved from the SCS chaotic reservoir
 
 ## Theories
 
@@ -134,4 +136,4 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 
 ## Analyses
 
-*No analysis pages yet.*
+- [[unified-picture-single-neuron-population-control|Unified picture: single-neuron biophysics + population dynamics for closed-loop control?]] — Partial unification. CTD + motor cortex on the population side; dendritic credit-assignment lineage on the single-neuron side; manifold-constrained learning as the cleanest junction; Wilson-Cowan/Brunel linking mesoscopic E-I parameters to attractor repertoire. Load-bearing gap: nobody has shown apical-dendrite events reshaping motor-cortex manifolds during adaptation.

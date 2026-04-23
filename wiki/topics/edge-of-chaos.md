@@ -3,8 +3,8 @@ title: "Edge of Chaos"
 type: theory
 aliases: ["criticality", "critical dynamics", "marginal stability"]
 tags: [dynamical-systems, rnn, phase-transition, computation, criticality]
-source_count: 3
-last_updated: 2026-04-18
+source_count: 4
+last_updated: 2026-04-22
 status: emerging
 ---
 
@@ -29,6 +29,10 @@ For a recurrent network used as a computational substrate (reservoir computing; 
 - **Near the transition** (gJ ≈ 1): marginal stability. Different input histories produce distinguishable, long-lived state trajectories. The system's state reflects a **nonlinear convolution** of its input history over a long window.
 
 This is the theoretical backing for reservoir computing (echo-state networks, liquid-state machines) which operate random RNNs near this regime by construction, and for the common practice of initializing trainable RNNs with gain slightly above 1 — task training then carves out structured attractors from the nearby chaotic reservoir, as discussed on [[Computation Through Dynamics]].
+
+### Operational Definition from FORCE
+
+[[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] give a constructive operational version. In [[force-learning|FORCE learning]], training performance (cycles required, RMS error, readout weight magnitude) improves monotonically with gain `g` up to `g ≈ 1.5`, then the procedure fails above `g ≈ 1.56` because the feedback signal during training can no longer suppress the network's chaos. The best operating point is **the largest `g` at which FORCE still suppresses chaos** — not a literal critical point of the untrained SCS network, but the upper boundary of the regime in which training can carve trained dynamics out of the reservoir. This is "edge of chaos" made actionable: the operating point is defined by what the learning rule can still do, not by an abstract property of the network.
 
 ## Status in Neuroscience
 
@@ -60,3 +64,4 @@ In this reading, criticality is the substrate that makes flexible control possib
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — the phase transition to chaos at gJ = 1 in random asymmetric rate networks; theoretical anchor for the edge-of-chaos hypothesis in neural networks.
 - [[brunel-1999-sparsely-connected-networks|Brunel (2000)]] — spiking-network analogue: the balance point g = 4 separates asynchronous-irregular from synchronous regimes in sparsely connected E-I integrate-and-fire networks, with critical-slowing-style finite-size coherence times scaling as 1/ε at the boundary.
 - [[wilson-cowan-1972-ei-populations|Wilson & Cowan (1972)]] — structured rate-level E-I dynamics: "edge" in real cortex is the set of regime-boundary surfaces between simple hysteresis, multi-stability, and limit cycles, not proximity to gJ = 1; Theorem 4 says any limit-cycle-capable population is close (in bias space) to a hysteresis regime.
+- [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — constructive operational definition: FORCE training is best just below the upper `g` boundary where it still suppresses chaos (`g ≈ 1.5`, fails at `g ≈ 1.56`); the operating point is defined by what the learning rule can still do, not by an abstract property of the untrained network.

@@ -3,8 +3,8 @@ title: "Motor Cortex"
 type: brain-region
 aliases: ["M1", "primary motor cortex", "PMd", "dorsal premotor cortex", "SMA", "supplementary motor area"]
 tags: [motor, reaching, dynamical-systems, ctd, pattern-generation]
-source_count: 1
-last_updated: 2026-04-14
+source_count: 2
+last_updated: 2026-04-22
 ---
 
 The **motor cortex** is the cortical territory that generates voluntary movement. In this wiki's dynamical-systems framing, it is the clearest case of the foundational closed-loop sensorimotor controller — the primitive from which the rest of the wiki's treatment of intelligence extends.
@@ -45,6 +45,15 @@ BCI experiments in motor cortex are the strongest empirical evidence for manifol
 
 Interpretation for this wiki: the intrinsic motor-cortex manifold is the **control-theoretic repertoire** that connectivity and cellular biophysics make accessible. Fast learning works within it; slow learning reshapes it.
 
+## Plasticity Division of Labor Hypothesis
+
+[[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] use their three [[force-learning|FORCE]] architectures to propose a division of labor between motor cortex and its principal feedback partners:
+
+- **Architecture 1B** (separate feedback network, modifications on generator→feedback synapses) as a model for motor cortex + basal ganglia or motor cortex + cerebellum. Plasticity in the *second* network dominates when a motor task is first being learned. This keeps motor cortex itself functionally stable while the feedback partner is tuned to provide the right signal.
+- **Architecture 1C** (modifications within the generator network itself) as the mode reserved for "virtuoso" highly-trained actions. Rewriting motor cortex internal connectivity is a slower, more consequential operation and is engaged only when fast feedback-partner modifications no longer suffice.
+
+This is a concrete mechanistic proposal for how fast manifold-constrained learning (on the cerebellum/BG side) and slow structural reshaping (within motor cortex) divide labor — consistent with the behavioral observation that early motor-skill learning involves cerebellar and basal-ganglia circuits and late automaticity shifts the locus to motor cortex.
+
 ## Relation to the Organizing Principle
 
 Motor cortex is the foundational case of the closed-loop sensorimotor control that this wiki treats as the basis of intelligence. The prepare → move → integrate feedback → update loop is implemented here in explicit, quantifiable form:
@@ -60,3 +69,4 @@ Every more "cognitive" case in the CTD literature — timing, decision-making, w
 ## Sources
 
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — review of CTD applied to motor cortex: preparation, output-null, rotational dynamics, CIS, manifold-constrained learning.
+- [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — three FORCE architectures as hypotheses for the division of labor between motor cortex and cerebellum / basal ganglia; preparation-as-chaos-suppression reading of Churchland et al. (2006).

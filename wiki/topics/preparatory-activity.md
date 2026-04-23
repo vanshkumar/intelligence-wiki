@@ -3,8 +3,8 @@ title: "Preparatory Activity"
 type: concept
 aliases: ["motor preparation", "delay-period activity", "initial condition hypothesis"]
 tags: [motor-cortex, dynamical-systems, ctd, initial-conditions]
-source_count: 1
-last_updated: 2026-04-14
+source_count: 2
+last_updated: 2026-04-22
 confidence: established
 ---
 
@@ -33,6 +33,12 @@ The puzzle: preparatory activity is large and movement-tuned. Why doesn't it cau
 
 Answer: preparation is structured to lie in the **null space** of the motor-output readout. See [[Null Space Coding]]. Activity along output-null dimensions is behaviorally informative without driving muscles; movement begins when activity rotates from null into output-potent dimensions (Kaufman 2014, Elsayed 2016, Stavisky 2017a, Li 2016).
 
+## Preparation as Chaos Suppression
+
+[[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] propose a specific dynamical reading of what preparation *is*. To produce a one-shot (non-periodic) sequence in a [[force-learning|FORCE]]-trained recurrent network, the network must be brought to a fixed point before the sequence starts — an auxiliary readout provides a constant input that induces this fixed point, quenching the chaotic activity that otherwise dominates the spontaneous network. Sussillo & Abbott connect this directly to Churchland et al. (2006): the sharp drop in neural variability in motor and premotor cortex just before movement has exactly this character — a chaotic state being quenched into a prepared initial condition from which the movement trajectory then evolves. Preparation, in this reading, is literally **chaos suppression**, and the prepared initial condition is the stable fixed point that FORCE's auxiliary readout induces.
+
+This dovetails with the Inagaki et al. (2019) observation of discrete attractor dynamics in mouse ALM: preparation moves the state toward stable fixed points, and perturbations either return to the fixed point or hop to a different one.
+
 ## Role in Motor Adaptation
 
 [[vyas-2020-computation-through-dynamics|Vyas et al.]] highlight a striking result: **motor adaptation operates on preparatory dimensions, not movement-period dimensions**.
@@ -50,3 +56,4 @@ Preparatory activity is the clearest case in the wiki of the control-theoretic p
 ## Sources
 
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — review and formalization of the initial-condition hypothesis under CTD; motor adaptation as preparatory-state updating.
+- [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — preparation as chaos suppression: FORCE one-shot-sequence training requires a fixed-point-inducing input before the sequence; directly connects to the Churchland et al. (2006) drop in neural variability at movement onset.

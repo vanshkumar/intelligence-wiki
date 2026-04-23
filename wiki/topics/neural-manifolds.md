@@ -3,8 +3,8 @@ title: "Neural Manifolds"
 type: concept
 aliases: ["neural manifold", "low-dimensional dynamics", "population dynamics"]
 tags: [dynamical-systems, dimensionality-reduction, phase-space, neural-circuits, computation]
-source_count: 5
-last_updated: 2026-04-17
+source_count: 6
+last_updated: 2026-04-22
 confidence: established
 ---
 
@@ -83,9 +83,14 @@ Before connectivity is shaped by genes or experience, what manifold does a rando
 
 This is the theoretical counterpart to the empirical manifolds observed in recordings (Sadtler 2014; Gallego 2017; Brennan & Proekt 2019). The ~10D intrinsic manifold of motor cortex or the 2D loop structure of *C. elegans* can be read as the trained/shaped descendant of this generic dynamical repertoire — connectivity structure (Dale's law, sparsity, low-rank task-relevant perturbations) constrains the SCS flow to a specific lower-dimensional subset. Manifold-constrained BCI learning is, in this framing, reassociation within the trained manifold; off-manifold learning is restructuring of the flow itself.
 
+### In-silico counterpart: FORCE-trained manifolds
+
+[[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] provide the in-silico version. PCA of [[force-learning|FORCE]]-trained activity shows the output target is captured by ~8 leading PCs, and the readout weight projections onto the top ~50 PCs converge to uniquely specified values across training runs; projections onto smaller-eigenvalue PCs are free and differ across runs. The trained manifold is carved out of the SCS chaotic reservoir: training selects a low-dimensional subspace within the generically high-dimensional chaotic flow, and within it determines a smaller uniquely-specified structure, leaving the remaining dimensions free. This is the mechanistic model for why empirical manifolds are low-dimensional and why BCI manifold-constrained learning is possible — the manifold is what training selects.
+
 ## Sources
 
 - [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]] — conserved manifold dynamics in *C. elegans*
 - [[brennan-2023-looper-computational-scaffold|Brennan et al. (2023)]] — LOOPER method, computational scaffold, cross-system comparison
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — BCI manifold-constrained learning (Sadtler 2014, Golub 2018, Oby 2019) as strongest within-subject evidence that manifolds are real constraints on learning
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — theoretical baseline: random asymmetric rate networks have an extensively high-dimensional chaotic flow on a bounded finite-dimensional attractor; the substrate from which shaped/trained manifolds are carved
+- [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — in-silico counterpart: FORCE-trained RNNs show ~8-PC output-relevant and ~50-PC uniquely-determined subspaces carved out of the chaotic reservoir by training; mechanistic model for empirical intrinsic manifolds

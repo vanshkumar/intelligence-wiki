@@ -22,7 +22,7 @@ The classical framing of motor cortex posited that M1 activity *represents* move
 - Muscle activity during reaching is multiphasic and time-varying.
 - So the simplest account of motor-cortex dynamics is that it *is* the oscillator generating muscle activity, not a code about the movement.
 
-Sussillo et al. (2015) provided a sufficiency test: RNNs trained to transform preparatory-like inputs into realistic muscle patterns developed low-dimensional oscillators as their internal solution, reproducing the Churchland rotational structure without being constrained to do so.
+Sussillo et al. (2015) provided a sufficiency test: RNNs trained to transform preparatory-like inputs into realistic muscle patterns developed low-dimensional oscillators as their internal solution, reproducing the Churchland rotational structure without being constrained to do so. This result is a direct descendant of [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]], which established that chaotic recurrent networks trained by [[force-learning|FORCE learning]] can produce arbitrary coherent outputs — including human motion-capture running and walking — switched between by static control inputs; the 2015 paper applied the same machinery specifically to muscle targets and reported that rotations emerge generically.
 
 ## Subtleties
 
@@ -59,3 +59,4 @@ Russo et al. (2018, 2019) show that a large portion of the response during movem
 ## Sources
 
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — review; Churchland 2012, Sussillo 2015, Lara 2018a, Russo 2018/2019, Stavisky 2019 cited for rotational dynamics.
+- [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — the FORCE-learning foundation on which the Sussillo 2015 sufficiency test rests; demonstrates that coherent motor outputs (including motion-capture running/walking) can be carved out of a chaotic recurrent reservoir by local-ish training.

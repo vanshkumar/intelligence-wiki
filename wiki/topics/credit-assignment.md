@@ -3,8 +3,8 @@ title: "Credit Assignment"
 type: concept
 aliases: ["credit assignment problem", "structural credit assignment", "temporal credit assignment"]
 tags: [learning, plasticity, hierarchical-learning, backpropagation, computation]
-source_count: 7
-last_updated: 2026-04-18
+source_count: 8
+last_updated: 2026-04-22
 confidence: established
 ---
 
@@ -68,6 +68,12 @@ Wake-sleep and the dendritic lineage (Kording → Guerguiev → Sacramento → P
 
 The two are not mutually exclusive and could plausibly coexist in cortex — dendritic prediction-error learning during waking, wake-sleep-like tuning during sleep. A formal relationship between them (equivalence under some mapping, or a clean dissociation of what each can learn) is an open theoretical question.
 
+### Global Scalar Error + Recurrent Dynamics (FORCE)
+
+[[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] offer a different credit-assignment scheme from the dendritic lineage. In [[force-learning|FORCE]] architecture 1C (modifications within the recurrent generator network itself, with no external feedback loop), every synaptic-modification neuron is treated *as if* it were the readout unit. Every such neuron uses the same global scalar error `e(t) = w^T r(t) - f(t)` to update its incoming synapses via the same RLS rule. Because each neuron in a sparsely connected large random network samples a large subset of the full network's activity, the sampled correlation is a good enough approximation of the true one for FORCE to proceed.
+
+This is a structurally simpler credit assignment scheme than the dendritic lineage: no dendrites, no backward error propagation, just a global error signal delivered to all modifiable synapses plus recurrent dynamics that carry task-relevant information to every neuron. The price: it requires fast plasticity (on the timescale of the network, not LTP) and it implements a specific kind of learning (readout-error minimization for a precomputed target) rather than arbitrary hierarchical credit assignment. The dendritic lineage and FORCE-style approaches are thus solving *different* problems: dendrites handle hierarchical feedforward credit assignment with slow plasticity; FORCE handles fast recurrent-dynamics sculpting with a global error. Both are plausibly present in the brain at different scales.
+
 ### Neuromodulatory Gating
 
 Dopamine reward prediction error signals can gate [[Hebbian Learning|Hebbian plasticity]] — the "three-factor learning rule" (pre activity × post activity × neuromodulator). This addresses temporal credit assignment but only coarsely: the dopamine signal is global and scalar, raising the question of how it gets routed to the specific synapses that were causally responsible.
@@ -85,3 +91,4 @@ Dopamine reward prediction error signals can gate [[Hebbian Learning|Hebbian pla
 - [[greedy-2022-single-phase-burstccn|Greedy et al. (2022)]] — BurstCCN synthesis: Q-Y cancellation mechanism enables single-phase learning + depth scaling; resolves phase and depth limitations of all prior models
 - [[francioni-2026-vectorized-dendritic-signals|Francioni et al. (2026)]] — first in vivo experimental evidence: cell-specific SD residuals in L5 apical dendrites encode error derivatives; NDNF+ L1 interneuron perturbation abolishes vectorized signals and impairs learning
 - [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — parallel lineage: the [[Wake-Sleep Algorithm]] for the [[Helmholtz Machine]] is an alternative route to hierarchical credit assignment without weight transport, using temporal (wake/sleep) rather than spatial (basal/apical) separation of forward and inverse computations
+- [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — FORCE learning and its architecture 1C: every modifiable neuron treated as if it were the readout, all using the same global scalar error + their own recurrent inputs; a different credit-assignment trade (global error, fast plasticity, readout-error minimization) from the dendritic lineage (local error derivatives, slow plasticity, hierarchical)

@@ -3,8 +3,8 @@ title: "Computation Through Dynamics"
 type: theory
 aliases: ["CTD", "computation through neural population dynamics", "dynamical systems framework"]
 tags: [dynamical-systems, population-dynamics, motor-cortex, rnn, framework]
-source_count: 2
-last_updated: 2026-04-15
+source_count: 3
+last_updated: 2026-04-22
 status: established
 ---
 
@@ -52,6 +52,8 @@ The workflow:
 5. Test the hypothesis against recordings from an animal doing the same task.
 
 This is how rotational dynamics (Sussillo et al. 2015), line-attractor decisions (Mante 2013), and curved Bayesian priors (Sohn 2019) were proposed. The hypothesis-generator framing is important: it does not assume the brain uses the RNN's solution, only that the RNN's solution is a candidate worth comparing.
+
+The workflow has a constructive counterpart: [[force-learning|FORCE learning]] ([[sussillo-abbott-2009-force-learning|Sussillo & Abbott 2009]]) is the foundational existence proof that trained trajectories — periodic outputs, Lorenz-attractor trajectories, 4-bit memories, human motion-capture locomotion — can be carved out of an SCS-chaotic recurrent reservoir by a local-ish learning rule applied to readout or feedback weights. FORCE is the synthesis dual of fixed-point analysis: FORCE constructs the trained dynamics, fixed-point analysis dissects them.
 
 Caveat established by [[brennan-2023-looper-computational-scaffold|Brennan 2023]]: brains and RNNs trained on the same task can find the *same computational scaffold* via *different strategies* (brain learns the general algorithm; RNN exploits dataset statistics). Treat RNN solutions as *one* hypothesis, not *the* solution.
 
@@ -121,3 +123,4 @@ Every more "cognitive" case in the literature — timing, decision, working memo
 
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — the review that codifies CTD as a named framework and catalogs its motifs.
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — the chaos transition in random asymmetric rate networks; establishes the dynamical substrate from which trained CTD motifs are carved and anchors the [[Edge of Chaos]] framing of the operating regime.
+- [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — [[force-learning|FORCE learning]]: constructive proof that trained trajectories can be carved out of the SCS chaotic reservoir by local-ish learning applied to readout/feedback weights; preparatory-activity-as-chaos-suppression reading; explicit anti-single-neuronism ("trying to link single-neuron responses to motor actions may thus be misguided") 11 years before the CTD label.
