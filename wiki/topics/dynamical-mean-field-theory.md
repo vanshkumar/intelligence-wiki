@@ -3,8 +3,8 @@ title: "Dynamical Mean-Field Theory"
 type: method
 aliases: ["DMFT", "dynamical MFT", "time-dependent mean-field theory", "Fokker-Planck mean-field"]
 tags: [theory, random-networks, statistical-physics, rnn, analysis-method, fokker-planck, spiking-networks]
-source_count: 2
-last_updated: 2026-04-18
+source_count: 3
+last_updated: 2026-04-27
 technique_type: computational
 ---
 
@@ -47,6 +47,20 @@ DMFT has been extended well beyond the original SCS setup:
 
 DMFT is the principal theoretical tool by which statements about large random or quasi-random recurrent networks become tractable. It underwrites most of the theoretical claims on [[Edge of Chaos]], most of the analytic backbone of [[Computation Through Dynamics]]-style work on random RNNs, and the [[Neural Manifolds|manifold]]-level description of chaotic flows. Concretely: whenever a statement of the form "in large random networks with such-and-such statistics, the dynamics do X" is made rigorously, it almost always goes through DMFT.
 
+## The Static Sibling: Replica Methods
+
+DMFT is the **dynamical** half of a two-method toolkit for analyzing large random-coupling systems. The **static** half is the [[replica-method|replica method]] (with Parisi's hierarchical RSB extension), which handles equilibrium quantities — free energies, magnetic susceptibilities, distributions of overlaps between pure states — for systems that admit them (typically symmetric couplings with detailed balance).
+
+| | **Replica method** ([[parisi-1979-replica-symmetry-breaking|Parisi 1979]]) | **DMFT** ([[sompolinsky-1988-chaos-random-networks|SCS 1988]]) |
+|---|---|---|
+| Domain | Static / equilibrium | Dynamic / time-dependent |
+| Quantities | Free energy, susceptibility, overlap distribution | Autocorrelation `C(τ)`, Lyapunov spectrum |
+| Coupling structure | Symmetric `J` (energy function exists) | Symmetric or asymmetric `J` |
+| Order parameter | Matrix `Q_αβ` → function `q(x)` (under RSB) | Self-consistent Gaussian process for typical neuron |
+| Canonical neuroscience use | Hopfield capacity (Amit-Gutfreund-Sompolinsky 1985) | Random-RNN chaos transition; balanced AI dynamics |
+
+The two methods are routinely combined (path-integral / dynamical functional formalism with replicated trajectories) for problems that mix disorder averaging with non-equilibrium dynamics, e.g., the learning dynamics of a perceptron on random data.
+
 ## Caveats
 
 - DMFT is exact only in the N → ∞ limit with i.i.d. couplings. Finite-N corrections and structured connectivity require different techniques (path-integral expansions, replica methods, or numerics).
@@ -57,3 +71,4 @@ DMFT is the principal theoretical tool by which statements about large random or
 
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — first use of DMFT to solve the chaos transition in random rate networks; the template for subsequent DMFT work in theoretical neuroscience.
 - [[brunel-1999-sparsely-connected-networks|Brunel (2000)]] — Fokker-Planck mean-field theory for sparsely connected E-I spiking networks; the spiking analogue of DMFT, yielding the four-regime phase diagram (SR, AR, AI, SI) with analytic bifurcation lines and oscillation frequencies.
+- [[parisi-1979-replica-symmetry-breaking|Parisi (1979)]] — the static sibling: replica symmetry breaking for the SK spin glass, function-valued order parameter `q(x)`. Underwrites Hopfield-capacity calculations and rugged-landscape thinking.

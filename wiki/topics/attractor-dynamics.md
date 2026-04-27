@@ -3,8 +3,8 @@ title: "Attractor Dynamics"
 type: mechanism
 aliases: ["attractor networks", "attractor states"]
 tags: [dynamical-systems, computation, neural-circuits]
-source_count: 6
-last_updated: 2026-04-18
+source_count: 7
+last_updated: 2026-04-27
 level: circuit
 ---
 
@@ -80,6 +80,19 @@ The important **Theorem 4**: any E-I population capable of a limit cycle under s
 
 Wilson-Cowan is the structured, low-dimensional, rate-level complement to SCS's generic random-network chaos: the attractor types that SCS finds to be *unstable* in the generic random case (fixed points, limit cycles, multi-stable configurations) are *stable* once the structural E/I asymmetry and sigmoid nonlinearity are imposed. For cortex — which is structured (Dale's law, cell-type segregation) and has the E-I dichotomy by construction — Wilson-Cowan is the right mean-field baseline; chaos requires the additional ingredient of random asymmetric internal coupling within one population.
 
+## Hopfield Attractors and the Spin-Glass Capacity Bound
+
+Hopfield-style associative memory is the symmetric-coupling, energy-function counterpart of the random-network picture. For couplings `J_ij = J_ji` the dynamics admit a Lyapunov function `E = −½ Σ_ij J_ij S_i S_j`, so trajectories descend an [[Energy Landscape|energy landscape]] and can only converge to **fixed-point attractors**. Hebbian writing of `p` patterns into the couplings sculpts a basin around each pattern.
+
+The capacity question — how many attractor basins can coexist before catastrophic interference — was answered by Amit, Gutfreund & Sompolinsky (1985, 1987) using the [[replica-method|replica method]] from [[parisi-1979-replica-symmetry-breaking|Parisi (1979)]]. The result sets a sharp bound:
+
+- For `α = p / N < α_c ≈ 0.138`: stored patterns are clean fixed-point attractors with sizable basins. Recall is reliable.
+- For `α > α_c`: stored patterns lose stability. The system enters a [[spin-glass|spin-glass phase]] dominated by exponentially many spurious local minima with no relation to the stored patterns.
+
+The capacity bound is **the spin-glass transition** — beyond it, the Hopfield landscape stops looking like a structured ferromagnet and starts looking like a generic frustrated random-coupling system. [[Sparse Coding|Sparse codes]] (small fraction of active spins per pattern) raise this bound by reducing inter-pattern overlap; this is one quantitative form of the wiki's general theme that sparseness mitigates interference.
+
+The Hopfield case is **the symmetric counterpart of [[sompolinsky-1988-chaos-random-networks|SCS]]**: with symmetric `J` you get fixed-point attractors organized as basins in a (possibly rugged) energy landscape, analyzed by replica methods; with asymmetric `J` you get a chaotic attractor with no energy function, analyzed by [[Dynamical Mean-Field Theory|DMFT]]. Cortical connectivity is broadly asymmetric, placing the natural cortical regime closer to SCS than to Hopfield — which is why the wiki treats spin-glass theory as a methodological foundation for associative memory rather than a direct model of cortex.
+
 ## Chaotic Attractors in Random Networks
 
 [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] establish that in a large network of rate neurons with random asymmetric couplings (mean 0, variance J²/N), the attractor landscape as a function of gain `gJ` has exactly two phases in the N → ∞ limit:
@@ -100,3 +113,4 @@ Two consequences extend the attractor framework:
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — fixed points, line attractors, rotational dynamics in cortex; fixed-point finding as analysis tool
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — sharp transition from point attractor to chaotic attractor at gJ = 1 in random asymmetric rate networks; structured attractors (fixed points, limit cycles) are unstable in the generic random case
 - [[wilson-cowan-1972-ei-populations|Wilson & Cowan (1972)]] — structured rate-level E-I populations have three generic attractor configurations (simple hysteresis, multiple hysteresis, limit cycles) selected by inequalities on four coupling strengths; Theorem 4 on regime interconvertibility by nonspecific biasing inputs
+- [[parisi-1979-replica-symmetry-breaking|Parisi (1979)]] — the symmetric-`J` half of the random-network problem: hierarchical RSB solution of the SK spin glass, function-valued order parameter `q(x)`, ultrametric organization of pure states; analytical foundation for Hopfield-style associative memory and the capacity bound `α_c ≈ 0.138`
