@@ -3,7 +3,7 @@ title: "Neural Coding"
 type: theory
 aliases: ["neural code", "coding metaphor", "encoding and decoding", "sensory coding"]
 tags: [representation, information-theory, perception, coding, philosophy-of-neuroscience, contested-framework]
-source_count: 1
+source_count: 2
 last_updated: 2026-04-29
 status: contested
 ---
@@ -84,10 +84,15 @@ Some specific coding frameworks survive Brette's critique relatively intact in t
 - **Predictive coding** as a description of cortical microcircuits ([[predictive-coding|predictive coding]]; [[sacramento-2018-dendritic-microcircuits-backprop|Sacramento 2018]]) survives as a *credit-assignment* mechanism. The representational reading (apical-dendrite signals "represent" prediction errors over latent causes) is the contested part.
 - **The dendritic credit-assignment lineage** ([[kording-konig-2001-two-integration-sites|Kording & Konig 2001]] → [[francioni-2026-vectorized-dendritic-signals|Francioni 2026]]) is internally framed in coding terms but its biology — apical compartments as gated signaling pathways carrying residual mismatch — admits a sensorimotor reading where the apical signal is residual sensorimotor error. The mechanism survives reinterpretation; the framing changes.
 
+## The rate-vs-timing dispute as Kuhnian
+
+The long-running rate-vs-timing debate ([[chatgpt-2026-comp-neuro-kuhnian-review|ChatGPT 2026]]) is Kuhnian in a specific sense: the two camps treat the *same* spike-train data with different commitments about what the explanatory primitive is. Rate-centric paradigms treat irregularity as a feature (stochastic computation, distributional codes); timing-centric paradigms treat millisecond reliability under fluctuating inputs as evidence for temporally structured computation. The dispute shifts which puzzles are legitimate and which results count as anomalies — Kuhn's hallmark of standards-divergent conflict. Brette's critique sits inside this: the coding-metaphor critique is a paradigm-level move that questions whether *either* rate or timing readings get the explanatory primitive right, and recommends [[paradigm-pluralism-comp-neuro|paradigm-aware]] reinterpretation rather than adjudication within the coding frame.
+
 ## Status in this wiki
 
 The wiki uses coding-flavored language ("place cells encode location," "PFC encodes the categorization rule," "V1 encodes orientation") because this is the standard vocabulary of the literature it summarizes. Following Brette, these claims should be read as *correspondence claims with experimental scope* — under the conditions of the experiment, neural activity statistically corresponds to the named variable — without inheriting the representational and causal entailments. The wiki's organizing principle (intelligence begins with closed-loop sensorimotor control) is essentially a constructive version of Brette's negative argument; the negative and positive halves are mutually supporting.
 
 ## Sources
 
+- [[chatgpt-2026-comp-neuro-kuhnian-review|ChatGPT (2026)]] — frames the rate-vs-timing debate (and the broader "what is a code?" debate) as Kuhnian standards-divergent conflicts; locates the coding metaphor as one paradigm's foundational commitment within a [[paradigm-pluralism-comp-neuro|multi-paradigm comp-neuro ecology]].
 - [[brette-2018-coding-metaphor|Brette (2018)]] — sustained philosophical critique of the coding metaphor, including the three-sense decomposition (correspondence, representation, causality), the worked examples (cone wavelength, ITD slope coding, V1 context-dependence, ideal observers, cell assemblies, Paramecium, heart, dominoes-vs-tent), and the positive proposal (subjective physics, sensorimotor contingencies, synchrony receptive fields, models that behave).

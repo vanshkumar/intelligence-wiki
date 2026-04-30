@@ -3,8 +3,8 @@ title: "Credit Assignment"
 type: concept
 aliases: ["credit assignment problem", "structural credit assignment", "temporal credit assignment"]
 tags: [learning, plasticity, hierarchical-learning, backpropagation, computation]
-source_count: 8
-last_updated: 2026-04-22
+source_count: 9
+last_updated: 2026-04-30
 confidence: established
 ---
 
@@ -82,6 +82,12 @@ Dopamine reward prediction error signals can gate [[Hebbian Learning|Hebbian pla
 
 [[Predictive Coding]] frameworks propose that local prediction errors at each level of a hierarchy provide the error signals needed for credit assignment, avoiding the need for explicit backward passes. The relationship between predictive coding and backpropagation is an active area of research.
 
+## Why Credit Assignment is the Right Target Under Principles vs Parameters
+
+[[lillicrap-kording-2019-understanding-neural-networks|Lillicrap & Kording (2019)]] argue that trained neural networks (and brains) are compressible at the level of the *recipe* that builds them — architecture, loss function, learning rule — but not at the level of the parameters they end up with. Credit assignment is the central question of *what the learning rule actually is*, and is therefore exactly the kind of principles-level research the [[principles-vs-parameters|principles-vs-parameters]] frame elevates as the appropriate target of explanation. The dendritic lineage's contribution is the credit-assignment recipe; the trained representations that result from running the recipe in any particular animal are not the object of explanation — they are an output of the recipe applied to that animal's environment.
+
+This recasts the methodological status of the credit-assignment program. The biophysical implausibility of vanilla backpropagation is not a problem because we need to explain trained representations more elegantly; it is a problem because the *recipe* the brain actually uses must fit the biophysical constraints, and finding that recipe is what counts as understanding. The dendritic + burst-dependent + feedback-alignment lineage is a candidate recipe; experimental tests of that recipe ([[francioni-2026-vectorized-dendritic-signals|Francioni 2026]]) are tests of the principles, not of any particular learned representation.
+
 ## Sources
 
 - [[kording-konig-2001-two-integration-sites|Kording & Konig (2001)]] — original proposal: two dendritic integration sites → two variables per neuron → backpropagation and self-supervised learning
@@ -92,3 +98,4 @@ Dopamine reward prediction error signals can gate [[Hebbian Learning|Hebbian pla
 - [[francioni-2026-vectorized-dendritic-signals|Francioni et al. (2026)]] — first in vivo experimental evidence: cell-specific SD residuals in L5 apical dendrites encode error derivatives; NDNF+ L1 interneuron perturbation abolishes vectorized signals and impairs learning
 - [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — parallel lineage: the [[Wake-Sleep Algorithm]] for the [[Helmholtz Machine]] is an alternative route to hierarchical credit assignment without weight transport, using temporal (wake/sleep) rather than spatial (basal/apical) separation of forward and inverse computations
 - [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — FORCE learning and its architecture 1C: every modifiable neuron treated as if it were the readout, all using the same global scalar error + their own recurrent inputs; a different credit-assignment trade (global error, fast plasticity, readout-error minimization) from the dendritic lineage (local error derivatives, slow plasticity, hierarchical)
+- [[lillicrap-kording-2019-understanding-neural-networks|Lillicrap & Kording (2019)]] — methodological framing: credit assignment is the central principles-level question (what is the learning rule?); the [[principles-vs-parameters|principles-vs-parameters]] decomposition recommends that this is exactly the right target of neuroscientific explanation, while the trained representations the rule produces are not

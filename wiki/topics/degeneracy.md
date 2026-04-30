@@ -3,8 +3,8 @@ title: "Degeneracy"
 type: concept
 aliases: ["neural degeneracy", "many-to-one mapping"]
 tags: [dynamical-systems, evolution, robustness, neural-circuits]
-source_count: 7
-last_updated: 2026-04-29
+source_count: 8
+last_updated: 2026-04-30
 confidence: established
 ---
 
@@ -82,6 +82,12 @@ Where classical degeneracy decouples behavior from implementation *across* indiv
 
 The pattern is the inverse of classical biological degeneracy: there, *different* microscopic implementations produce *the same* macroscopic function; here, *the same* microscopic element produces *apparently different* functional types under standard analyses. Both establish that the mapping between observed structure and computation is not the identity. The chip case strengthens the broader [[circuit-behavior-mapping|circuit-behavior mapping]] thesis: even with full ground truth, current methods do not invert the structure → function map cleanly.
 
+### Information-Theoretic Complement: Principles vs Parameters
+
+[[lillicrap-kording-2019-understanding-neural-networks|Lillicrap & Kording (2019)]] supply an information-theoretic complement to the wiki's control-theoretic reading of degeneracy. The control-theoretic argument: genes encode behavior not by specifying microscopic circuits but by modifying neurons' nonlinear feedback control algorithms, producing conserved macroscopic dynamical structures (limit-cycle attractors, etc.) with high probability despite unique microscopic configurations. Lillicrap & Kording's argument: the genome is bounded at ~6 × 10⁹ bits and is therefore *compressible*, while the trained synaptic state is shaped by an incompressible world and is *incompressible*. The natural decomposition is [[principles-vs-parameters|principles vs parameters]] — the principles (architecture, plasticity rules, developmental program) are what genes can specify; the parameters (the specific synaptic state of an adult animal) are what get filled in by sensorimotor experience.
+
+The two arguments converge on the same prescription: target the recipe, not the trained state. Degeneracy is the biological observation that the same macroscopic function arises from many microscopic configurations; principles-vs-parameters is the information-theoretic reason this *must* be so for any agent that performs across an incompressible world. The conserved macroscopic structures that degeneracy makes visible are the principles; the variable microscopic configurations are the parameters.
+
 ## Sources
 
 - [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]] — conserved macroscopic dynamics despite variable individual neuron activation in *C. elegans*
@@ -90,3 +96,4 @@ The pattern is the inverse of classical biological degeneracy: there, *different
 - [[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] — complementary direction: same substrate, different effective circuit across life stages in *C. elegans* CO₂ chemotaxis
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — BCI manifold-constrained learning; intrinsic manifold as the dynamical repertoire within which fast learning reassociates existing states
 - [[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] — methodological mirror in an engineered system: standard analyses recover multiple "cell types" and behavior-specific lesion classes from a chip with only one physical transistor type, demonstrating that the structure → function map is not invertible by current methods even when ground truth is known
+- [[lillicrap-kording-2019-understanding-neural-networks|Lillicrap & Kording (2019)]] — information-theoretic complement: the genome is compressible (~6 × 10⁹ bits, mostly non-coding) and bounds what can be specified at the principles level; the trained synaptic state is shaped by an incompressible world and is therefore incompressible. The principles-vs-parameters decomposition is the information-theoretic version of the wiki's control-theoretic genes-encode-dynamics-not-circuits hypothesis

@@ -3,8 +3,8 @@ title: "Computation Through Dynamics"
 type: theory
 aliases: ["CTD", "computation through neural population dynamics", "dynamical systems framework"]
 tags: [dynamical-systems, population-dynamics, motor-cortex, rnn, framework]
-source_count: 5
-last_updated: 2026-04-29
+source_count: 7
+last_updated: 2026-04-30
 status: established
 ---
 
@@ -115,6 +115,8 @@ Every more "cognitive" case in the literature — timing, decision, working memo
 
 The implication for CTD is sharper than a generic methodological warning. Linear (or shallow non-linear) dimensionality reduction recovers necessary but not sufficient evidence that the recovered dimensions *are* the computation. The strongest defense against the critique is the **trained-RNN sufficiency proof**: an RNN that, when run forward, actually generates the target behavior provides a constructive existence proof of one possible mechanism — going beyond correlation to demonstrated capability. For analyses that stop at "dimension X correlates with task variable Y," the chip-NMF result is a direct caution. The [[brennan-2023-looper-computational-scaffold|LOOPER scaffolds]] framework partially addresses this by demanding that recovered structure predict counterfactual perturbations, not just correlate with observed variables.
 
+[[lillicrap-kording-2019-understanding-neural-networks|Lillicrap & Kording (2019)]] generalize the warning: trained networks (and brains) performing across an incompressible world should not be expected to admit short-formal-language summaries at the parameters layer; only the *recipe* (architecture + loss + learning rule + training regime) is communicable. The strongest reading of CTD — that the recovered low-dimensional dynamics *are* the explanation — is in tension with this view. The CTD-compatible response is to treat the dynamics as a property of the recipe rather than of any particular trained instantiation: if randomly initialized networks reliably develop the same dynamics when trained on the same task ([[principles-vs-parameters|principles, not parameters]]), the dynamics are part of what the recipe produces, and the explanatory weight rests on the recipe + training-regime, not on the trained dynamics being separately summarizable. The trained-RNN sufficiency move is what makes this defense work.
+
 ## Relation to Adjacent Frameworks
 
 | Framework | Level | Relation to CTD |
@@ -124,6 +126,7 @@ The implication for CTD is sharper than a generic methodological warning. Linear
 | Computational scaffolds ([[brennan-2023-looper-computational-scaffold|Brennan 2023]]) | Data-driven | LOOPER extracts 1D scaffolds directly from data; CTD typically fits RNNs and linearizes |
 | [[Predictive Coding]] | Mechanism | PC proposes a specific `f`; CTD is framework-agnostic about which `f` the brain uses |
 | [[Active Inference]] | Normative | AI proposes a specific objective; CTD describes what dynamics *do*, not what they *should* do |
+| [[paradigm-pluralism-comp-neuro|Paradigm pluralism]] | Meta | Reads CTD as one paradigm in a multi-paradigm comp-neuro ecology — competitor to coding-style decomposition over what counts as the explanatory primitive, mediator across mechanistic and behavioral targets via shared mathematical language |
 
 ## Sources
 
@@ -131,4 +134,6 @@ The implication for CTD is sharper than a generic methodological warning. Linear
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — the chaos transition in random asymmetric rate networks; establishes the dynamical substrate from which trained CTD motifs are carved and anchors the [[Edge of Chaos]] framing of the operating regime.
 - [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — [[force-learning|FORCE learning]]: constructive proof that trained trajectories can be carved out of the SCS chaotic reservoir by local-ish learning applied to readout/feedback weights; preparatory-activity-as-chaos-suppression reading; explicit anti-single-neuronism ("trying to link single-neuron responses to motor actions may thus be misguided") 11 years before the CTD label.
 - [[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] — methodological caution: NMF on a fully understood microprocessor recovers latent dimensions cleanly correlated with known signals (clock, read-write line) without recovering computational understanding; sharpens the requirement that CTD-style analyses make trained-RNN sufficiency proofs (or counterfactual-prediction tests) load-bearing rather than relying on correlation alone.
+- [[lillicrap-kording-2019-understanding-neural-networks|Lillicrap & Kording (2019)]] — generalizes the chip-NMF caveat into a [[principles-vs-parameters|principles-vs-parameters]] frame: trained-system parameters are not communicable in any short formal language because the world they encode is incompressible. The CTD-compatible reading is that recovered dynamics are properties of the recipe (architecture + loss + training regime) rather than of any particular trained instantiation; the trained-RNN sufficiency move is what makes the defense work.
+- [[chatgpt-2026-comp-neuro-kuhnian-review|ChatGPT (2026)]] — Kuhnian-pluralist reading: identifies CTD as both competitor (to coding-style and structure-first paradigms over what counts as the explanatory primitive) and mediator (offering shared mathematical language across mechanistic and behavioral targets); flags activity-silent working memory as a load-bearing local anomaly within the dynamical-systems / attractor paradigm.
 - [[brette-2018-coding-metaphor|Brette (2018)]] — sympathetic alignment with critique. CTD is largely consistent with Brette's positive program: neural populations as dynamical systems whose evolution *is* the computation, not as substrates for codes; trained RNNs as hypothesis generators rather than literal representational claims; spikes as state transitions in a dynamical system rather than symbols. The residual coding-flavored move that Brette would push back on is the labeling of CTD-discovered structure with task-variable names ("line attractor for decision," "rotation for muscle pattern generation") — these descriptions are useful but should be read as correspondence claims with experimental scope, not as statements that the dynamics *encode* the labeled variables. The sufficiency-proof workflow (trained RNN actually generates the behavior) is essentially the same standard Brette demands of "models that behave."
