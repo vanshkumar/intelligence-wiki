@@ -3,7 +3,7 @@ title: "Spin Glass"
 type: concept
 aliases: ["spin glasses", "Sherrington-Kirkpatrick model", "SK model", "Edwards-Anderson model"]
 tags: [statistical-physics, disordered-systems, hopfield, associative-memory, energy-landscape, mean-field]
-source_count: 1
+source_count: 2
 last_updated: 2026-04-27
 confidence: established
 ---
@@ -54,7 +54,7 @@ Spin glasses are physics, not biology. Their relevance to biological intelligenc
 
 ### Associative memory: the Hopfield connection
 
-Hopfield's 1982 model of associative memory writes the same Hamiltonian as a spin glass, but with **non-random** couplings:
+[[hopfield-1982-collective-computational-abilities|Hopfield's 1982 model]] of associative memory writes the same Hamiltonian as a spin glass, but with **non-random** couplings:
 
 ```
 J_ij = (1/N) Σ_μ ξ_i^μ ξ_j^μ      (Hebbian sum over patterns ξ^μ)
@@ -65,7 +65,7 @@ When the number of stored patterns `p ≪ N`, this is a structured ferromagnet (
 - **Retrieval phase** for `α = p/N < α_c ≈ 0.138`: clean memory recall.
 - **Spin-glass phase** for `α > α_c`: stored patterns are no longer attractors; the network is dominated by spin-glass-like spurious states.
 
-This is a textbook case of how a brain-like system (a Hebbian associative memory) inherits spin-glass physics in the high-load regime. **The capacity bound is the spin-glass transition.**
+This is a textbook case of how a brain-like system (a Hebbian associative memory) inherits spin-glass physics in the high-load regime. **The capacity bound is the spin-glass transition.** Hopfield himself anticipated the connection in the founding paper: "this case is isomorphic with an Ising model … when `T_ij` is symmetric but has a random character (the spin glass) there are known to be many (locally) stable states" — citing Kirkpatrick-Sherrington 1978.
 
 ### Sparse coding pushes back the spin-glass transition
 
@@ -92,12 +92,14 @@ These limitations are part of why this wiki treats spin glasses as a **methodolo
 ## Sources
 
 - [[parisi-1979-replica-symmetry-breaking|Parisi (1979)]] — the seed paper that solves the mean-field SK spin glass via hierarchical replica symmetry breaking; introduces the function-valued order parameter `q(x)` and the ultrametric organization of pure states.
+- [[hopfield-1982-collective-computational-abilities|Hopfield (1982)]] — explicitly identifies the symmetric-Hebbian-coupling network with the Ising spin-glass Hamiltonian; the bridge from neural networks into the spin-glass research programme that AGS (1985, 1987) would close by computing capacity exactly via Parisi's replica framework.
 
 ## See Also
 
 - [[replica-method|Replica Method & RSB]] — the analytical machinery
 - [[Dynamical Mean-Field Theory]] — dynamical sibling, used for chaotic asymmetric networks
 - [[energy-landscape|Energy Landscape]] — the rugged-landscape picture
+- [[hopfield-network|Hopfield Network]] — structured spin glass with Hebbian-stored couplings
 - [[attractor-dynamics|Attractor Dynamics]] — Hopfield networks as structured spin glasses
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — the asymmetric-`J` sibling problem
 - [[sparse-coding|Sparse Coding]] — the move that raises Hopfield capacity above the spin-glass bound

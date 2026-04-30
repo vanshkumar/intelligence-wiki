@@ -3,8 +3,8 @@ title: "Sparse Coding"
 type: concept
 aliases: ["sparse representations", "sparse code", "sparse neural codes", "overcomplete representations"]
 tags: [neural-representations, learning, information-theory, cortex]
-source_count: 4
-last_updated: 2026-04-14
+source_count: 8
+last_updated: 2026-04-29
 confidence: established
 ---
 
@@ -44,6 +44,8 @@ The combination of high dimensionality and sparseness means each event is repres
 
 Meister argues that the Bayesian and neural explanations for learning speed are the same thing at different levels: lacking a sparse code for a contingency IS what makes it seem "implausible" (low prior). The sparse code literally determines what correlations the brain can efficiently detect.
 
+The Jaynesian sharpening ([[jaynes-1957-maxent-statistical-mechanics|Jaynes 1957]]; [[maximum-entropy-principle|MaxEnt principle]]): heavy-tailed priors that produce sparse codes are the **MaxEnt priors under higher-moment (kurtosis-like) constraints**. The Olshausen-Field optimization, ICA, and the Rao-Ballard kurtotic-prior model are all doing MAP inference under such priors. Building a sparse code is, in this language, the act of registering a new constraint about the input distribution; once registered, the MaxEnt prior under the expanded constraint set assigns more probability mass to the structure the constraint captures, which is what makes Hebbian association on it fast. The slow timescale of representation building is the slow timescale of constraint accumulation — equivalent to extending the reach of MaxEnt-style inference over more latent variables of the environment.
+
 ## Sparse Codes Extend the Reach of Control
 
 From a control perspective, sparse codes determine what the sensorimotor loop can "see" and act on. A sparse code for a stimulus category means the control system can discriminate it, associate it with actions, and learn contingencies involving it in a single trial. Without a sparse code, the category is invisible to fast associative learning — the control loop cannot leverage it. Building sparse codes (whether through evolution or unsupervised experience) is thus equivalent to extending the organism's control over more latent variables in its environment. The slow timescale of representation building ([[reinert-2021-pfc-categorization|Reinert et al., 2021]]) reflects the cost of expanding the control loop's state space.
@@ -51,6 +53,8 @@ From a control perspective, sparse codes determine what the sensorimotor loop ca
 ## Relationship to Predictive Coding
 
 The progressive construction of sparse codes in cortical hierarchies is consistent with [[Predictive Coding]] — each level learns to predict and explain away patterns in the level below, which decorrelates and sparsifies the representation. Sparse coding and predictive coding may be two views of the same hierarchical feature extraction process.
+
+[[rao-ballard-1999-predictive-coding|Rao & Ballard (1999)]] make this concrete. With a Gaussian prior on activities `g(r) = α Σ r_i²`, their hierarchical predictive coder learns Gabor-like simple-cell receptive fields when input is windowed; with a kurtotic prior `g(r) = α Σ log(1 + r_i²)`, the same model learns localized wavelet-like receptive fields *without* spatial windowing, replicating the Olshausen & Field (1996) sparse-coding result inside the predictive-coding framework. **Sparse coding is what predictive coding does when the prior on activities is heavy-tailed**; predictive coding is the dynamical/architectural skeleton in which sparse coding lives. Both recover V1-like receptive fields from [[natural-image-statistics|natural-image statistics]] because the natural-image distribution is itself heavy-tailed in oriented-feature representations.
 
 ## Relationship to Divisive Normalization
 
@@ -81,3 +85,7 @@ The same motif appearing independently across deeply divergent lineages is evide
 - [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — dendritic tree as structured sparse network; biologically constrained sparsity at the single-neuron level
 - [[reinert-2021-pfc-categorization|Reinert et al. (2021)]] — gradual emergence of sparse category representations in mPFC during visual rule learning
 - [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — sparse→dense convergent Hebbian motif realized in both mushroom body (Kenyon cells → MBONs) and proposed hippocampal endotaxis circuit
+- [[rao-ballard-1999-predictive-coding|Rao & Ballard (1999)]] — with a kurtotic prior on activities, the hierarchical predictive coder learns localized Gabor-like wavelet receptive fields, replicating Olshausen-Field sparse coding inside the predictive-coding framework; sparse and predictive coding are complementary views of the same hierarchical inference problem
+- [[jaynes-1957-maxent-statistical-mechanics|Jaynes (1957)]] — heavy-tailed activity priors that produce sparse codes are [[maximum-entropy-principle|MaxEnt]] priors under higher-moment constraints. Building a sparse code = registering a new constraint; this places sparse-coding optimization on inference-theoretic foundations and connects the slow timescale of representation building to the slow timescale of constraint accumulation.
+- [[brette-2018-coding-metaphor|Brette (2018)]] — the **efficient-coding paradox** applies to sparse coding as the heavy-tailed special case: a perfectly sparse code minimizes redundancy and is therefore unreadable without the decoding key. The mechanistic claim — that local Hebbian plasticity produces sparse representations under heavy-tailed activity priors — survives the critique. The interpretive claim — that the sparse code "represents" the latent causes of inputs — is contested. The wiki's reading of sparse coding as "carving the sensory world into categories the control system can act on" (under the organizing principle) is closer to a [[subjective-physics|subjective-physics]] reading and is largely robust to Brette's critique: sparse codes serve the closed sensorimotor loop by making associations efficiently learnable, regardless of whether they "represent" anything in the world.
+- [[friston-2010-free-energy-principle|Friston (2010)]] — places sparse coding inside the [[free-energy-principle|free-energy principle]] as a special case where the activity prior is heavy-tailed. The empirical fact that natural images yield sparse representations under multiple optimization criteria becomes, on this reading, a special case of FEP minimization; sparse coding is the specific [[efficient-coding-hypothesis|efficient-coding]] regime that FEP reproduces under a kurtosis-like constraint on activity priors.

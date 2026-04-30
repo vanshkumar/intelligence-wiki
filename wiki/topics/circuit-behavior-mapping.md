@@ -3,8 +3,8 @@ title: "Circuit-Behavior Mapping"
 type: concept
 aliases: ["implementation-behavior mapping", "structure-function mapping", "neural implementation flexibility"]
 tags: [degeneracy, circuits, behavior, control, dynamical-systems]
-source_count: 3
-last_updated: 2026-04-14
+source_count: 4
+last_updated: 2026-04-29
 confidence: emerging
 ---
 
@@ -47,8 +47,15 @@ Degeneracy, by contrast, is primarily a story about developmental variability �
 
 The control-theoretic reading of degeneracy ([[Degeneracy#Control-Theoretic Interpretation]]) says genes constrain neuronal dynamics rather than specifying circuits, so that desired macroscopic structures (limit cycle attractors, manifold loops, turning biases) emerge with high probability across variable implementations. Context-dependent reconfiguration extends this: the *same* genome and the *same* implementation can instantiate different macroscopic structures depending on state. Genes constrain the *repertoire* of accessible control structures, and state selects among them.
 
+### Coupling to the Environment Closes the Loop
+
+[[brette-2018-coding-metaphor|Brette (2018)]] deepens the umbrella claim: the circuit-behavior mapping is not just many-to-many *within the brain* — it is a *closed loop* coupled to the environment. Behavior changes the sensory input the circuit receives; the circuit changes the motor output to the body; the body changes the world; the world changes back. Coding-style descriptions of "the circuit's behavior" treat the circuit as a stand-alone input-output device, which is the dominoes structure (Fig. 10 of Brette 2018). The reality is more like a tent — every component supports every other through circular causality. Models that respect this — full sensorimotor loops, "models that behave" (Gomez-Marin 2017) — are what Brette argues should replace coding-style decomposition.
+
+For circuit-behavior mapping, this means the question is not just "how does this circuit produce that behavior?" (one-shot decoding from a recording) but "how does this circuit, embedded in this body, in this environment, produce this trajectory of behavior?" The substrate is fixed; the effective circuit depends on state ([[banerjee-2023-life-stage-chemosensation|Banerjee 2023]]); the trajectory depends on environment-mediated coupling. The mapping is therefore many-to-many in three directions: across individuals (degeneracy), within individuals across states (reconfiguration), and across environments (sensorimotor coupling).
+
 ## Sources
 
 - [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]] — degeneracy direction: variable neuron activity, conserved macroscopic dynamics in *C. elegans*.
 - [[rosenberg-2021-labyrinth-learning|Rosenberg et al. (2021)]] — degeneracy direction at the behavioral level: conserved turning biases across 19 mice.
 - [[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] — reconfiguration direction: same genome and substrate, different effective circuits in adults vs. dauer larvae.
+- [[brette-2018-coding-metaphor|Brette (2018)]] — environmental-coupling direction: the mapping is a closed loop coupled to the environment, not a stand-alone input-output transformation. The dominoes-vs-tent argument; "models that behave" as the constructive replacement for coding-style decomposition.

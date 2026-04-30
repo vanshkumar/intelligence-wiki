@@ -1,10 +1,10 @@
 ---
 title: "Memory Consolidation"
 type: concept
-aliases: ["systems consolidation", "sleep consolidation", "sharp-wave ripples", "SWR", "ripples"]
-tags: [memory, sleep, hippocampus, prefrontal-cortex, plasticity, oscillations]
-source_count: 2
-last_updated: 2026-04-18
+aliases: ["systems consolidation", "sleep consolidation", "sharp-wave ripples", "SWR", "ripples", "cellular consolidation", "transcriptional consolidation"]
+tags: [memory, sleep, hippocampus, prefrontal-cortex, plasticity, oscillations, transcription, creb]
+source_count: 3
+last_updated: 2026-04-28
 confidence: established
 ---
 
@@ -36,6 +36,15 @@ The hippocampal-prefrontal coupling is **state-dependent** — nearly abolished 
 
 The gradual timescale of memory consolidation (many sleep cycles over days to weeks) is consistent with the gradual emergence of category representations observed in [[Prefrontal Cortex|mPFC]] during learning ([[reinert-2021-pfc-categorization|Reinert et al., 2021]]). SWR-driven hippocampal reactivation during sleep may be one mechanism by which PFC representations are progressively built and refined — each sleep episode reinforcing and elaborating the cortical trace.
 
+## Cellular vs systems consolidation
+
+Memory consolidation operates at (at least) two levels that are sometimes conflated:
+
+- **Cellular / synaptic consolidation** (minutes to ~24 h): the transcriptional and translational events at individual synapses that convert an early-phase synaptic change into a lasting one. Gated by the [[creb|CREB]] cascade — calcium / kinase activation → CREB phosphorylation at S133 → IEG transcription → structural modification. [[kukushkin-2024-massed-spaced-non-neural|Kukushkin et al. (2024)]] show that the cellular component operates with the same dynamics in non-neural human cell lines, suggesting that the *molecular* substrate of consolidation predates the nervous system. The 24-h timescale of luciferase persistence in CRE-luc cells is the cellular analog of the days-to-weeks timescale of systems-level consolidation.
+- **Systems consolidation** (days to lifetime): the gradual transfer of memory dependence from hippocampus to neocortex, mediated by SWR-driven hippocampal replay during slow-wave sleep. The hippocampus-to-cortex transfer described above is at this level.
+
+Both levels are necessary for circuit-level associative memory. Cellular consolidation is what determines *whether* a synaptic change persists; systems consolidation is what determines *which circuits* end up storing the memory long-term. The [[spacing-effect|spacing effect]] enters at the cellular level — temporal patterns of training that produce sustained kinase / CREB activity gate the cellular consolidation step. Systems-level consolidation then operates on whatever synaptic changes the cellular step has stabilized.
+
 ## A Normative Role for REM: Tuning the Recognition Pathway
 
 The [[Wake-Sleep Algorithm]] introduced by [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] offers a complementary, normatively motivated functional role for REM sleep. In the wake-sleep algorithm:
@@ -53,3 +62,4 @@ This is a proposal, not a demonstrated fact — it predates detailed understandi
 
 - [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] — SWR-driven directional spike timing from hippocampus to PFC during SWS; abolished during REM
 - [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — normative proposal: [[Wake-Sleep Algorithm|wake-sleep]] gives REM a distinct functional role as generative-phase tuning of recognition pathways
+- [[kukushkin-2024-massed-spaced-non-neural|Kukushkin et al. (2024)]] — cellular / transcriptional consolidation reproduced in non-neural human cells; the [[creb|CREB]]-dependent transcription that gates the conversion from transient cellular events to lasting molecular change is a conserved property of cellular signaling cascades, not unique to neurons. Locates the cellular component of consolidation below the synaptic level.

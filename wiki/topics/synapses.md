@@ -3,8 +3,8 @@ title: "Synapses"
 type: concept
 aliases: ["synapse", "synaptic transmission", "synaptic connection"]
 tags: [neuron, plasticity, learning, hebbian-learning, evolution]
-source_count: 7
-last_updated: 2026-04-17
+source_count: 8
+last_updated: 2026-04-28
 confidence: established
 ---
 
@@ -19,6 +19,8 @@ The synapse is the only known biological structure where **two specific cells' a
 - **Synaptic strength** can be modified based on the correlation between pre and post activity — the basis of [[Hebbian Learning]]
 
 No known non-neural system has true pairwise activity-dependent plasticity. Physarum slime mold flow networks were examined as a candidate but found to respond to local flow magnitude, not correlated activity of two connected nodes.
+
+Note that this is the **pairwise specificity** claim — it is *not* the claim that all aspects of memory require synapses. [[kukushkin-2024-massed-spaced-non-neural|Kukushkin et al. (2024)]] demonstrate that the **temporal-pattern decoding and transcriptional consolidation** components of memory (the [[spacing-effect|massed-spaced learning effect]]; CREB-driven IEG transcription with sustained dynamics) are reproducible in non-neural human cells. What synapses uniquely contribute is *which* connection changes; the cellular signaling cascade contributes *whether* a lasting change happens given the temporal pattern. Both are necessary for circuit-level associative memory; only the former is genuinely synapse-specific. See [[cellular-cognition|cellular cognition]].
 
 ## Computational Primitives
 
@@ -82,3 +84,4 @@ Evolutionary biologists identify a bundle of synaptic innovations — speed, spa
 - [[greedy-2022-single-phase-burstccn|Greedy et al. (2022)]] — most specific STP predictions: three connection types (STD feedforward W, STF feedback Y via interneurons, STD feedback Q direct) with distinct computational roles; Q-Y cancellation requires STP type specificity on two classes of feedback to the same dendritic compartment
 - [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — multi-synaptic boutons as computational architecture; LTP-induced MSBs increase single-neuron capacity
 - [[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] — electrical synapses as state-gated substrate for circuit reconfiguration; BAG–AIB gap junction (CHE-7) functionally active only in dauer larvae
+- [[kukushkin-2024-massed-spaced-non-neural|Kukushkin et al. (2024)]] — refines the synapse-uniqueness claim: the *pairwise activity-dependent specificity* of synapses is genuinely unique to neurons, but the *temporal-pattern decoding and transcriptional consolidation* of memory ([[spacing-effect|spacing effect]]; [[creb|CREB]]-driven IEG transcription) are reproducible in non-neural human cells

@@ -3,8 +3,8 @@ title: "Neural Manifolds"
 type: concept
 aliases: ["neural manifold", "low-dimensional dynamics", "population dynamics"]
 tags: [dynamical-systems, dimensionality-reduction, phase-space, neural-circuits, computation]
-source_count: 6
-last_updated: 2026-04-22
+source_count: 7
+last_updated: 2026-04-29
 confidence: established
 ---
 
@@ -87,6 +87,10 @@ This is the theoretical counterpart to the empirical manifolds observed in recor
 
 [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] provide the in-silico version. PCA of [[force-learning|FORCE]]-trained activity shows the output target is captured by ~8 leading PCs, and the readout weight projections onto the top ~50 PCs converge to uniquely specified values across training runs; projections onto smaller-eigenvalue PCs are free and differ across runs. The trained manifold is carved out of the SCS chaotic reservoir: training selects a low-dimensional subspace within the generically high-dimensional chaotic flow, and within it determines a smaller uniquely-specified structure, leaving the remaining dimensions free. This is the mechanistic model for why empirical manifolds are low-dimensional and why BCI manifold-constrained learning is possible — the manifold is what training selects.
 
+## Methodological Caveat: clean dimensions can mislead
+
+[[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] applied non-negative matrix factorization to all 3,510 transistors of an MOS 6502 processor running Space Invaders and recovered a six-dimensional latent embedding. The recovered dimensions correlated cleanly with known internal signals — the two-phase clock and the read-write line — exactly the way neural latent dimensions correlate with stimuli or behavior. Yet the chip's hierarchical computational organization (instruction decode → ALU → registers, byte-wide adders built from 1-bit adders built from NAND gates) is not visible in the manifold. The general lesson: low-dimensional structure that correlates with task variables is necessary but not sufficient for computational understanding. The chip is the cleanest sanity check available — a system where ground truth is fully known and the manifold story still does not deliver Marr-level understanding by itself. The strongest defense for empirical manifold work is the **trained-RNN sufficiency proof** ([[sussillo-abbott-2009-force-learning|FORCE]]-style constructive demonstration that a model with the recovered structure actually generates the behavior) and the [[brennan-2023-looper-computational-scaffold|LOOPER]]-style demand for counterfactual prediction beyond correlation.
+
 ## Sources
 
 - [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]] — conserved manifold dynamics in *C. elegans*
@@ -94,3 +98,4 @@ This is the theoretical counterpart to the empirical manifolds observed in recor
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — BCI manifold-constrained learning (Sadtler 2014, Golub 2018, Oby 2019) as strongest within-subject evidence that manifolds are real constraints on learning
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — theoretical baseline: random asymmetric rate networks have an extensively high-dimensional chaotic flow on a bounded finite-dimensional attractor; the substrate from which shaped/trained manifolds are carved
 - [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — in-silico counterpart: FORCE-trained RNNs show ~8-PC output-relevant and ~50-PC uniquely-determined subspaces carved out of the chaotic reservoir by training; mechanistic model for empirical intrinsic manifolds
+- [[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] — methodological caution from a fully understood system: NMF on a microprocessor recovers latent dimensions cleanly correlated with known signals (clock, read-write line) without recovering the chip's computational hierarchy. Dim-reduction-correlated-with-behavior is necessary but not sufficient for computational understanding.

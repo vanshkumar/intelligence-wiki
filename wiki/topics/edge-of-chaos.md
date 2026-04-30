@@ -3,8 +3,8 @@ title: "Edge of Chaos"
 type: theory
 aliases: ["criticality", "critical dynamics", "marginal stability"]
 tags: [dynamical-systems, rnn, phase-transition, computation, criticality]
-source_count: 4
-last_updated: 2026-04-22
+source_count: 5
+last_updated: 2026-04-29
 status: emerging
 ---
 
@@ -58,6 +58,7 @@ In this reading, criticality is the substrate that makes flexible control possib
 - Random asymmetric networks at gJ = 1 are *marginally* unstable in a generic way; *trained* cortical networks at their operating point may have rich structured attractors that do not reduce to being near the SCS transition. The edge-of-chaos framing is clearer for untrained reservoirs than for trained cortex.
 - The transition point gJ = 1 is specific to the SCS ensemble (Gaussian, zero mean, asymmetric, fully connected). Real connectivity has Dale's law, sparsity, and low-rank structure that shift or restructure the transition. [[wilson-cowan-1972-ei-populations|Wilson & Cowan (1972)]] make this explicit at the rate-model level: when the E/I dichotomy is imposed by construction (as in real cortex), the "edge" is the set of parameter-space boundaries separating simple hysteresis, multi-stability, and limit cycles — and their Theorem 4 says any point deep in the limit-cycle regime is close (in bias space) to a hysteresis regime. "Edge of chaos" in a structured E-I network is more a statement about sitting near regime-boundary surfaces in the WC parameter space than about proximity to gJ = 1.
 - "Criticality" has been used loosely across fields — the [[sompolinsky-1988-chaos-random-networks|SCS]] transition, Beggs-style avalanche criticality, and Ising-model critical points are related but distinct phenomena.
+- **Spectral signatures alone do not establish criticality.** [[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] applied LFP-style averaging and spectral analysis to a fully understood microprocessor and recovered roughly power-law (~1/f) spectra closely resembling cortical LFP. The chip's "rhythms" reflect the interaction of a single transistor type with the system clock and load patterns — they are epiphenomena, not signatures of computation, and certainly not signatures of any computational critical state. Cortical 1/f spectra are therefore not, by themselves, evidence for self-organized criticality or edge-of-chaos operation; they require independent mechanistic anchors. The strongest available such anchor is theoretical (the SCS / Brunel finite-size coherence-time scaling at the transition), which connects spectra to a specific network parameterization rather than treating the spectrum itself as the signature.
 
 ## Sources
 
@@ -65,3 +66,4 @@ In this reading, criticality is the substrate that makes flexible control possib
 - [[brunel-1999-sparsely-connected-networks|Brunel (2000)]] — spiking-network analogue: the balance point g = 4 separates asynchronous-irregular from synchronous regimes in sparsely connected E-I integrate-and-fire networks, with critical-slowing-style finite-size coherence times scaling as 1/ε at the boundary.
 - [[wilson-cowan-1972-ei-populations|Wilson & Cowan (1972)]] — structured rate-level E-I dynamics: "edge" in real cortex is the set of regime-boundary surfaces between simple hysteresis, multi-stability, and limit cycles, not proximity to gJ = 1; Theorem 4 says any limit-cycle-capable population is close (in bias space) to a hysteresis regime.
 - [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — constructive operational definition: FORCE training is best just below the upper `g` boundary where it still suppresses chaos (`g ≈ 1.5`, fails at `g ≈ 1.56`); the operating point is defined by what the learning rule can still do, not by an abstract property of the untrained network.
+- [[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] — methodological caution: a fully understood microprocessor produces 1/f-like LFP spectra without being near any computational critical state; spectral signatures alone do not establish criticality and require independent mechanistic anchors.

@@ -158,6 +158,7 @@ Parisi is explicit that the *physical interpretation* of the function `q(x)` is,
 - **[[Dynamical Mean-Field Theory]]** — sibling method. Both reduce `N`-body random problems to effective single-degree-of-freedom problems; replica handles statics (free energy, overlap distribution), DMFT handles dynamics (autocorrelations, Lyapunov exponents).
 - **[[Haim Sompolinsky]]** — the most prolific user of these methods in theoretical neuroscience. The Amit–Gutfreund–Sompolinsky line of Hopfield-capacity calculations rests on Parisi's framework.
 - **[[Attractor Dynamics]]** — Hopfield networks (symmetric `J`) live in the regime where Parisi's static analysis applies; their capacity and retrieval radius are computed by replica methods. The chaotic regime ([[sompolinsky-1988-chaos-random-networks|SCS]], asymmetric `J`) is the dynamical counterpart.
+- **[[hopfield-1982-collective-computational-abilities|Hopfield (1982)]]** — the structured-coupling neural-network model that AGS (1985, 1987) would analyze with Parisi's framework. Hopfield identifies the symmetric-Hebbian-coupling network with the Ising / spin-glass Hamiltonian explicitly and points to Kirkpatrick-Sherrington 1978; this is the bridge that brings the replica-method machinery into theoretical neuroscience.
 - **[[Sparse Coding]]** — the catastrophic-interference limit that motivates sparse codes is exactly the limit that replica calculations quantify in Hopfield networks; sparsity raises the capacity beyond the dense `0.138 N` bound.
 
 ## Open Questions Raised

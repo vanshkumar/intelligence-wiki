@@ -3,7 +3,7 @@ title: "Replica Method & Replica Symmetry Breaking"
 type: method
 aliases: ["replica trick", "replica method", "RSB", "replica symmetry breaking", "Parisi RSB", "hierarchical RSB"]
 tags: [statistical-physics, disordered-systems, spin-glass, mean-field, analytical-method, neural-networks]
-source_count: 1
+source_count: 2
 last_updated: 2026-04-27
 technique_type: computational
 ---
@@ -83,7 +83,7 @@ Identifying which class a system belongs to is itself a substantial analytical t
 
 Replica methods are foundational for the analytical theory of large random neural networks. The major neuroscience-adjacent applications:
 
-- **[[Attractor Dynamics|Hopfield network capacity]].** Amit, Gutfreund & Sompolinsky (1985, 1987) used replica calculations to derive the storage capacity `α_c ≈ 0.138 N` of the Hopfield model — the maximum number of random patterns that can be stored before catastrophic interference. The replica-symmetric calculation gives `α_c ≈ 0.138`; one-step RSB refines this slightly. Without Parisi's framework, the analytical theory of associative memory does not exist.
+- **[[hopfield-network|Hopfield network capacity]].** Amit, Gutfreund & Sompolinsky (1985, 1987) used replica calculations to derive the storage capacity `α_c ≈ 0.138 N` of the [[hopfield-1982-collective-computational-abilities|Hopfield (1982)]] model — the maximum number of random patterns that can be stored before catastrophic interference. The replica-symmetric calculation gives `α_c ≈ 0.138`; one-step RSB refines this slightly. Hopfield's original Gaussian-noise estimate gave `~0.15 N`; the AGS replica calculation sharpened it and showed that the capacity bound is the spin-glass transition (above `α_c`, stored patterns are replaced by spurious spin-glass minima). Without Parisi's framework, the analytical theory of associative memory does not exist.
 - **Perceptron capacity.** Gardner (1988) computed the storage capacity of the perceptron — the volume of weight space that correctly classifies `αN` random input-output pairs — using replica methods. The Gardner volume calculation is a template for modern theoretical work on neural-network learning capacity.
 - **Generalization bounds for trained networks.** Replica methods give exact-in-`N` results for the training and generalization error of feedforward networks trained on random tasks (Seung, Sompolinsky, Tishby 1992; Engel & Van den Broeck 2001 textbook). These bounds are the analytical baseline for understanding when learning works.
 - **Modern connections to deep learning.** The energy-landscape framework that RSB describes has been proposed as an analogy for the loss landscapes of deep networks (Choromanska et al. 2014); the validity of this analogy is contested but has motivated a sub-field. Modern Hopfield networks (Krotov & Hopfield 2016; Ramsauer et al. 2020) use energy functions that are tractable without RSB but inherit the conceptual frame.
@@ -113,3 +113,4 @@ The two methods can be combined (path-integral / dynamical functional formalism 
 ## Sources
 
 - [[parisi-1979-replica-symmetry-breaking|Parisi (1979)]] — the seed paper on hierarchical RSB; introduces the function-valued order parameter `q(x)` for the SK spin glass.
+- [[hopfield-1982-collective-computational-abilities|Hopfield (1982)]] — the canonical neural-network application target of replica methods. Introduces the symmetric-Hebbian-coupling network whose `(α, T)` phase diagram AGS (1985, 1987) compute exactly using Parisi's framework.

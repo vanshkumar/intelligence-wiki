@@ -3,8 +3,8 @@ title: "Degeneracy"
 type: concept
 aliases: ["neural degeneracy", "many-to-one mapping"]
 tags: [dynamical-systems, evolution, robustness, neural-circuits]
-source_count: 6
-last_updated: 2026-04-18
+source_count: 7
+last_updated: 2026-04-29
 confidence: established
 ---
 
@@ -76,6 +76,12 @@ BCI learning experiments reviewed in [[vyas-2020-computation-through-dynamics|Vy
 
 Where classical degeneracy decouples behavior from implementation *across* individuals (many implementations → one behavior), context-dependent reconfiguration decouples them *within* an individual *across states* (one substrate → many behaviors). Both establish that implementation is not a stable reference frame for behavior. The full framing is in [[Circuit-Behavior Mapping]] and the specific phenomenon in [[Context-Dependent Circuit Reconfiguration]].
 
+### Methodological Mirror in an Engineered System
+
+[[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] provide the methodological mirror of biological degeneracy in a system where ground truth is fully known. The MOS 6502 has only **one** physical type of transistor — the system's microscopic alphabet is genuinely uniform. Yet applying [[brennan-2019-conserved-macroscopic-dynamics|connectivity-based]] cell-type clustering recovers multiple "types" (clocked transistors, inverters, ALU controllers, data-bus controllers) because the same component type is used in different circuit roles with different local connectivity. Lesion-specific behavioral deficits identify "Donkey Kong transistors," "Pitfall transistors," and "Space Invaders transistors" — though every such transistor implements the same generic operation (e.g., full-adder) and is game-specific only because of which generic operations a given game's code path happens to use.
+
+The pattern is the inverse of classical biological degeneracy: there, *different* microscopic implementations produce *the same* macroscopic function; here, *the same* microscopic element produces *apparently different* functional types under standard analyses. Both establish that the mapping between observed structure and computation is not the identity. The chip case strengthens the broader [[circuit-behavior-mapping|circuit-behavior mapping]] thesis: even with full ground truth, current methods do not invert the structure → function map cleanly.
+
 ## Sources
 
 - [[brennan-2019-conserved-macroscopic-dynamics|Brennan & Proekt (2019)]] — conserved macroscopic dynamics despite variable individual neuron activation in *C. elegans*
@@ -83,3 +89,4 @@ Where classical degeneracy decouples behavior from implementation *across* indiv
 - [[rosenberg-2021-labyrinth-learning|Rosenberg et al. (2021)]] — behavioral-level degeneracy: four local turning biases consistent across 19 mice (SD ~0.03) produce efficient labyrinth exploration
 - [[banerjee-2023-life-stage-chemosensation|Banerjee et al. (2023)]] — complementary direction: same substrate, different effective circuit across life stages in *C. elegans* CO₂ chemotaxis
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — BCI manifold-constrained learning; intrinsic manifold as the dynamical repertoire within which fast learning reassociates existing states
+- [[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] — methodological mirror in an engineered system: standard analyses recover multiple "cell types" and behavior-specific lesion classes from a chip with only one physical transistor type, demonstrating that the structure → function map is not invertible by current methods even when ground truth is known

@@ -1,10 +1,10 @@
 ---
 title: "Long-Term Potentiation and Depression"
 type: mechanism
-aliases: ["LTP", "LTD", "long-term potentiation", "long-term depression", "synaptic potentiation"]
-tags: [plasticity, synapse, learning, calcium, glutamate]
-source_count: 5
-last_updated: 2026-04-11
+aliases: ["LTP", "LTD", "long-term potentiation", "long-term depression", "synaptic potentiation", "late-phase LTP", "L-LTP"]
+tags: [plasticity, synapse, learning, calcium, glutamate, creb, transcription]
+source_count: 6
+last_updated: 2026-04-28
 level: cellular
 ---
 
@@ -38,6 +38,12 @@ In the burst-dependent [[Credit Assignment]] framework ([[payeur-2020-burst-depe
 - **Isolated spike → LTD**: Without top-down support, isolated spikes below the threshold weaken feedforward synapses.
 - The adaptive threshold P̄ ensures the system responds to *changes* in burst probability, not absolute levels — formally analogous to [[Neural Adaptation]].
 
+## Late-Phase LTP and Transcriptional Consolidation
+
+Early-phase LTP (E-LTP) is protein-synthesis-independent and decays within hours; late-phase LTP (L-LTP) requires new transcription and translation and persists for days to weeks. The transition from E-LTP to L-LTP is gated by the **[[creb|CREB]] cascade**: calcium influx → CaMKII / PKA / PKC / ERK activation → CREB phosphorylation at S133 → CRE-bound CREB drives transcription of immediate-early genes → IEG products produce structural synaptic modifications.
+
+[[kukushkin-2024-massed-spaced-non-neural|Kukushkin et al. (2024)]] demonstrates that the consolidation half of this cascade — kinase activation, CREB phosphorylation, and CRE-dependent transcription — operates with the same temporal dynamics in non-neural human cell lines (SH-SY5Y, HEK293) as in *Aplysia* sensory neurons. This locates the **transcriptional consolidation step** at the cellular level rather than at the synapse: synapses contribute the pairwise specificity (which connection changes), but the cascade that decides whether a lasting change happens given the temporal pattern is broadly conserved across cell types. The [[spacing-effect|spacing effect]] in late-phase LTP therefore inherits the optimal-ITI dynamics of the cellular cascade — a 5–20-min optimal ITI in many systems is consistent with the cascade's intrinsic time constants.
+
 ## Role in Memory Consolidation
 
 During slow-wave sleep, [[Hippocampus|hippocampal]] CA1 cells fire 0-100 ms before [[Prefrontal Cortex|mPFC]] cells in sharp-wave/ripple-driven bursts ([[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al., 2009]]). This hippocampus→PFC timing falls squarely within the STDP window, with the pre→post ordering that would favor LTP at hippocampal-to-prefrontal synapses. Repeated SWR-driven reactivation across many sleep cycles could progressively strengthen these connections, providing a cellular mechanism for [[Memory Consolidation|systems consolidation]].
@@ -49,3 +55,4 @@ During slow-wave sleep, [[Hippocampus|hippocampal]] CA1 cells fire 0-100 ms befo
 - [[jones-2020-dendritic-computation-power|Jones & Kording (2020)]] — LTP-induced MSBs increase single-neuron computational capacity
 - [[meister-2022-learning-fast-slow|Meister (2022)]] — LTP is fast; the bottleneck for learning is the representation, not the plasticity mechanism
 - [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] — hippocampus→PFC spike timing during SWS falls within the STDP window for LTP
+- [[kukushkin-2024-massed-spaced-non-neural|Kukushkin et al. (2024)]] — the [[creb|CREB]] cascade that gates late-phase LTP operates with the same temporal dynamics in non-neural human cells; transcriptional consolidation is a cellular-level process that the synapse adds pairwise specificity to. The [[spacing-effect|spacing effect]] in late-phase LTP inherits the optimal-ITI dynamics of the cellular cascade.

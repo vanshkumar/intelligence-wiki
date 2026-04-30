@@ -3,8 +3,8 @@ title: "Helmholtz Machine"
 type: concept
 aliases: ["Helmholtz machine", "recognition-generative network"]
 tags: [generative-model, variational-inference, recognition-model, self-supervised-learning, cortical-hierarchy]
-source_count: 1
-last_updated: 2026-04-18
+source_count: 4
+last_updated: 2026-04-29
 confidence: established
 ---
 
@@ -46,8 +46,8 @@ The mapping fits Mumford's (1994) pattern-theoretic account of cortex, Grenander
 
 ## Relationship to other frameworks
 
-- **[[Predictive Coding]]**: Rao & Ballard's (1999) hierarchical predictive coding can be read as a specific instantiation of the Helmholtz architecture with Gaussian latents and linear-Gaussian generative models. The Helmholtz machine's top-down pathway is what predicts; its bottom-up pathway is what carries activation (and implicitly, prediction error when generative and recognition pathways disagree).
-- **[[Active Inference]]**: Friston's Free Energy Principle is a direct generalization — the Helmholtz free energy is the same object, extended to include action via a policy distribution. Active inference = Helmholtz machine + embodied agent that can act to change its sensory distribution.
+- **[[Predictive Coding]]**: [[rao-ballard-1999-predictive-coding|Rao & Ballard's (1999)]] hierarchical predictive coding is the **continuous-latent, linear-Gaussian specialization** of the Helmholtz architecture, applied directly to natural-image input. Where Dayan-Hinton 1994 used discrete binary latents and offline wake-sleep training, Rao-Ballard use continuous Gaussian latents with online gradient-descent dynamics, recover V1 simple-cell receptive fields from natural-image training, and reinterpret extra-classical RF effects as residual-error signatures. The Helmholtz machine's top-down pathway is what predicts; its bottom-up pathway is what carries activation (and implicitly, prediction error when generative and recognition pathways disagree).
+- **[[Active Inference]]** / [[free-energy-principle|Free Energy Principle]]: [[karl-friston|Friston]]'s [[free-energy-principle|FEP]] is a direct generalization — the Helmholtz free energy is the same object, extended to include action via a policy distribution. Active inference = Helmholtz machine + embodied agent that can act to change its sensory distribution. The canonical review ([[friston-2010-free-energy-principle|Friston 2010]]) makes this lineage explicit and adds three readings of `F` (energy − entropy; surprise + KL; complexity − accuracy) plus a canonical-microcircuit cortical implementation.
 - **Variational autoencoders**: The ELBO used in modern VAEs (Kingma & Welling 2013) is exactly the negative Helmholtz free energy; the encoder-decoder architecture is exactly the recognition/generative split. VAEs add the reparameterization trick (letting gradients flow through sampling via differentiable noise), which the Helmholtz machine avoided by using mean-field approximations or the wake-sleep delta rule.
 - **Boltzmann machines**: The Helmholtz machine was motivated as a faster-recognition alternative to Boltzmann machines, which share generative and recognition weights and require iterative sampling for inference. The price of speed is that the Helmholtz machine uses a biased approximation (factorial Q ≠ true posterior), whereas the Boltzmann machine (given enough sampling time) is exact.
 
@@ -68,3 +68,6 @@ The two are not incompatible — cortex could plausibly implement dendritic pred
 ## Sources
 
 - [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — introduces the architecture, derives the variational bound, demonstrates on the shifter problem, proposes cortical mapping.
+- [[rao-ballard-1999-predictive-coding|Rao & Ballard (1999)]] — the continuous-latent, vision-specific specialization of the Helmholtz framework; trained on natural images, recovers V1 simple-cell receptive fields and reinterprets extra-classical RF effects (endstopping, surround suppression, pop-out) as residual-error signatures of error-detecting neurons in the hierarchy.
+- [[friston-2010-free-energy-principle|Friston (2010)]] — generalizes the Helmholtz framework to embodied agents under the [[free-energy-principle|free-energy principle]]: the same `F` is minimized over recognition (Helmholtz), generative (Helmholtz), *and* action variables. Provides the canonical-microcircuit cortical reading (forward errors, backward predictions, precision-weighted gradient on `F`) and the precision = synaptic gain = attention identification.
+- [[brette-2018-coding-metaphor|Brette (2018)]] — critique: the Helmholtz machine architecture *enforces* the encoder/decoder dualism Brette argues against, with a recognition network that maps observations to causes and a generative network that maps causes back to observations. The latents face the [[neural-coding|symbol grounding problem]]; the architecture inherits the [[neural-coding|coding metaphor]] in its strongest form. The wake-sleep separation is in fact emblematic of the dualism Brette diagnoses as Cartesian (cf. Cisek 1999): the recognition network plays the role of *body sensing the world*, the generative network plays the role of *mind imagining*, and the dualistic structure is what allows them to be studied independently. Brette's positive program is to abandon this separation and treat perception as engagement with [[sensorimotor-contingencies|sensorimotor contingencies]] rather than inversion of an internal generative model.

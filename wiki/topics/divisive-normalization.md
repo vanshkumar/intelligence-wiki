@@ -1,10 +1,10 @@
 ---
 title: "Divisive Normalization"
 type: mechanism
-aliases: ["shunting inhibition", "gain control", "normalization"]
-tags: [computation, inhibition, gain-control, sensory-processing, cortex]
-source_count: 1
-last_updated: 2026-04-10
+aliases: ["shunting inhibition", "gain control", "normalization", "Reynolds-Heeger normalization"]
+tags: [computation, inhibition, gain-control, sensory-processing, cortex, attention, precision]
+source_count: 3
+last_updated: 2026-04-28
 level: cellular
 ---
 
@@ -51,9 +51,12 @@ The ubiquity across systems suggests it's a fundamental building block of neural
 ## Relationship to Other Concepts
 
 - **[[Sparse Coding]]**: Normalization controls how many neurons respond and at what rates, directly shaping the sparseness of representations. Combined with lateral inhibition, it implements the competitive dynamics that produce sparse codes.
-- **[[Predictive Coding]]**: Normalization could implement context-dependent scaling of prediction errors — adjusting the gain of error signals based on the overall level of activity or uncertainty.
+- **[[Predictive Coding]]**: Normalization could implement context-dependent scaling of prediction errors — adjusting the gain of error signals based on the overall level of activity or uncertainty. [[rao-ballard-1999-predictive-coding|Rao & Ballard (1999)]] note explicitly (Methods Eq. 8 and Discussion) that the lateral-interaction form of their predictive-coding dynamics, `dr/dt ∝ U^T I + (r^td − r) − Wr` with `W = U^T U`, implements **repeated subtraction of neighboring neuronal activities** that produces a net effect approximating divisive normalization. This is one of the earliest concrete proposals for *why* divisive normalization is a canonical cortical computation: it is an emergent consequence of recurrent prediction-error subtraction in a network optimized for natural-image statistics.
 - **[[Neural Adaptation]]**: Related but distinct. Adaptation (Adrian's discovery) is a temporal effect (responses decrease over time to sustained input). Normalization is a spatial/population effect (responses scale relative to other neurons' activity). Both serve gain control but operate on different axes.
+- **[[free-energy-principle|Free Energy Principle]] / Attention**: [[friston-2010-free-energy-principle|Friston (2010)]] reads attention as the optimization of **precision** (inverse error variance) on prediction-error units, implemented as synaptic gain control. This is the FEP-route to the Reynolds-Heeger normalization model of attention: divisive normalization is the optimal gain-control mechanism on prediction-error signals when their precision is being modulated by the agent's recognition density. The same primitive that produces contrast gain control in V1 produces attentional gain modulation under FEP.
 
 ## Sources
 
 - [[gerstner-neuronal-dynamics-ch1|Gerstner et al., Neuronal Dynamics Ch. 1]] — biophysical derivation of shunting inhibition as divisive normalization
+- [[rao-ballard-1999-predictive-coding|Rao & Ballard (1999)]] — proposes divisive normalization as an emergent consequence of recurrent prediction-error subtraction in a hierarchical predictive coder; the lateral-interaction form `Wr` with `W = U^T U` implements repeated subtraction of neighboring activities
+- [[friston-2010-free-energy-principle|Friston (2010)]] — reads divisive (Reynolds-Heeger) normalization as the optimal gain-control mechanism for precision-weighted prediction errors under [[free-energy-principle|FEP]]. Attention = optimization of precision = synaptic gain on prediction-error units; normalization is the neural primitive that implements that gain modulation.

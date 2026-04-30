@@ -66,6 +66,7 @@ Meister uses **information theory** to create a common currency for comparing le
 - **[[Sparse Coding]]**: The central concept of the paper. Sparse, high-dimensional representations solve the interference problem and enable one-shot associative learning.
 - **[[li-2024-prediction-noise-reward|Li et al. (2024)]]**: Both papers converge on the idea that the learning rules are simple and that the complexity is elsewhere — PaN in the architecture + noise, Meister in the representations. Together they suggest evolution's investments were in building the right codes and control systems, not the learning algorithm itself.
 - **[[Predictive Coding]]**: The visual cortex's progressive construction of sparse codes through hierarchical processing is consistent with predictive coding accounts of sensory processing.
+- **[[kukushkin-2024-massed-spaced-non-neural|Kukushkin et al. (2024)]]**: Provides a complementary contribution to the slow timescale of mammalian learning. Meister attributes slow lab-learning to **representation building** (slow construction of sparse codes). Kukushkin shows that even at the *non-synaptic*, single-cell level, transcriptional consolidation has 24-h kinetics — a genuinely *molecular* slowness that is independent of representation. Both contributions to slow learning may be at work; Meister's representational story is not displaced, but is now one of two factors rather than the only factor.
 
 ## Open Questions Raised
 

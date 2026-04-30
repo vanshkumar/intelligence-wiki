@@ -3,8 +3,8 @@ title: "Motor Cortex"
 type: brain-region
 aliases: ["M1", "primary motor cortex", "PMd", "dorsal premotor cortex", "SMA", "supplementary motor area"]
 tags: [motor, reaching, dynamical-systems, ctd, pattern-generation]
-source_count: 2
-last_updated: 2026-04-22
+source_count: 3
+last_updated: 2026-04-29
 ---
 
 The **motor cortex** is the cortical territory that generates voluntary movement. In this wiki's dynamical-systems framing, it is the clearest case of the foundational closed-loop sensorimotor controller — the primitive from which the rest of the wiki's treatment of intelligence extends.
@@ -70,3 +70,4 @@ Every more "cognitive" case in the CTD literature — timing, decision-making, w
 
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — review of CTD applied to motor cortex: preparation, output-null, rotational dynamics, CIS, manifold-constrained learning.
 - [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — three FORCE architectures as hypotheses for the division of labor between motor cortex and cerebellum / basal ganglia; preparation-as-chaos-suppression reading of Churchland et al. (2006).
+- [[brette-2018-coding-metaphor|Brette (2018)]] — conceptual ally: motor cortex is the canonical case where coding-style descriptions ("M1 encodes movement direction," "PMd encodes target") are most clearly subordinate to dynamical-systems descriptions; CTD's rotational dynamics, output-null preparation, and line-attractor decisions are exactly the "models that behave" Brette argues should replace coding-style decomposition. The wiki's reading of motor cortex as the foundational closed-loop controller is a direct instantiation of Brette's positive program. Residual coding-flavored language (M1 "encoding" muscle commands) should be read as correspondence with experimental scope, not as a representational claim about how M1 operates.

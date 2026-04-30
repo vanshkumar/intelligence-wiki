@@ -3,8 +3,8 @@ title: "Self-Supervised Behavior"
 type: theory
 aliases: ["SSB"]
 tags: [learning-framework, emergent-behavior, autonomy]
-source_count: 3
-last_updated: 2026-04-18
+source_count: 4
+last_updated: 2026-04-29
 status: emerging
 ---
 
@@ -40,8 +40,13 @@ The "self-supervised" framing has a distinct precursor in the [[Helmholtz Machin
 
 SSB inherits this *no-external-teacher* commitment but extends it from perceptual inference to closed-loop sensorimotor behavior. Where the Helmholtz machine's self-supervision is over static sensory data (train the generative and recognition models against each other), SSB's is over an embodied control loop (let the agent's own predictions drive action, and use the resulting prediction errors to update the model). Both frameworks replace external supervision with internal consistency — the Helmholtz machine does it for perception, SSB does it for behavior. [[Active Inference]] is the intermediate bridge, using the same [[Variational Free Energy|free-energy]] functional for both perception and action.
 
+## Compatibility with Brette's coding critique
+
+[[brette-2018-coding-metaphor|Brette (2018)]] and self-supervised behavior are largely aligned. Both reject the framing that organisms maximize an externally-defined objective (reward in standard RL, Shannon information in efficient coding) and instead seek principles that operate from the inside of the closed sensorimotor loop. SSB's emergent reward-seeking from local prediction + noise is a candidate mechanistic implementation of the kind of organism-internal information processing Brette's [[subjective-physics|subjective physics]] specifies at the conceptual level. PaN-style learning operates over relations between predictions, sensations, and actions — exactly the lawful structure subjective physics identifies as the right unit of analysis. The frameworks differ in their starting assumptions (PaN is a specific neural-network model; subjective physics is a conceptual framework) but converge on the same picture of intelligence as emerging from closed-loop dynamics rather than from inversion of generative models or extraction of efficient codes.
+
 ## Sources
 
 - [[li-2024-prediction-noise-reward|Li et al. (2024)]] — introduces the SSB framework
 - [[rosenberg-2021-labyrinth-learning|Rosenberg et al. (2021)]] — ethological support: rich structured behavior in unrewarded mice
 - [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — historical root: the [[Helmholtz Machine]] as self-supervised perceptual learning
+- [[brette-2018-coding-metaphor|Brette (2018)]] — conceptual ally: the [[subjective-physics|subjective physics]] / [[sensorimotor-contingencies|sensorimotor contingencies]] framework that SSB's emergent goal-seeking is a candidate mechanistic implementation of.

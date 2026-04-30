@@ -3,8 +3,8 @@ title: "Computation Through Dynamics"
 type: theory
 aliases: ["CTD", "computation through neural population dynamics", "dynamical systems framework"]
 tags: [dynamical-systems, population-dynamics, motor-cortex, rnn, framework]
-source_count: 3
-last_updated: 2026-04-22
+source_count: 5
+last_updated: 2026-04-29
 status: established
 ---
 
@@ -109,6 +109,12 @@ CTD is the formal language for the closed-loop sensorimotor control that this wi
 
 Every more "cognitive" case in the literature — timing, decision, working memory, category abstraction — is treated in the CTD framework as *the same dynamical machinery* extended, not as a separate faculty.
 
+## Methodological Caveat: dimensionality reduction does not entail computation
+
+[[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] applied non-negative matrix factorization to all 3,510 transistors of an MOS 6502 microprocessor running Space Invaders. Six recovered latent dimensions correlated cleanly with known internal signals — the two-phase clock (CLK0, CLK1OUT) and the read-write line. The figure looks essentially identical to neural-population analyses that find latent dimensions correlated with stimuli or behavior (Cunningham & Yu 2014; Churchland 2012; Mante 2013). Yet recovering "dimension 1 ≈ clock" does not, by itself, reveal how the processor computes — and the chip's full computational hierarchy was *not* recovered by any standard dim-reduction.
+
+The implication for CTD is sharper than a generic methodological warning. Linear (or shallow non-linear) dimensionality reduction recovers necessary but not sufficient evidence that the recovered dimensions *are* the computation. The strongest defense against the critique is the **trained-RNN sufficiency proof**: an RNN that, when run forward, actually generates the target behavior provides a constructive existence proof of one possible mechanism — going beyond correlation to demonstrated capability. For analyses that stop at "dimension X correlates with task variable Y," the chip-NMF result is a direct caution. The [[brennan-2023-looper-computational-scaffold|LOOPER scaffolds]] framework partially addresses this by demanding that recovered structure predict counterfactual perturbations, not just correlate with observed variables.
+
 ## Relation to Adjacent Frameworks
 
 | Framework | Level | Relation to CTD |
@@ -124,3 +130,5 @@ Every more "cognitive" case in the literature — timing, decision, working memo
 - [[vyas-2020-computation-through-dynamics|Vyas, Golub, Sussillo & Shenoy (2020)]] — the review that codifies CTD as a named framework and catalogs its motifs.
 - [[sompolinsky-1988-chaos-random-networks|Sompolinsky, Crisanti & Sommers (1988)]] — the chaos transition in random asymmetric rate networks; establishes the dynamical substrate from which trained CTD motifs are carved and anchors the [[Edge of Chaos]] framing of the operating regime.
 - [[sussillo-abbott-2009-force-learning|Sussillo & Abbott (2009)]] — [[force-learning|FORCE learning]]: constructive proof that trained trajectories can be carved out of the SCS chaotic reservoir by local-ish learning applied to readout/feedback weights; preparatory-activity-as-chaos-suppression reading; explicit anti-single-neuronism ("trying to link single-neuron responses to motor actions may thus be misguided") 11 years before the CTD label.
+- [[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] — methodological caution: NMF on a fully understood microprocessor recovers latent dimensions cleanly correlated with known signals (clock, read-write line) without recovering computational understanding; sharpens the requirement that CTD-style analyses make trained-RNN sufficiency proofs (or counterfactual-prediction tests) load-bearing rather than relying on correlation alone.
+- [[brette-2018-coding-metaphor|Brette (2018)]] — sympathetic alignment with critique. CTD is largely consistent with Brette's positive program: neural populations as dynamical systems whose evolution *is* the computation, not as substrates for codes; trained RNNs as hypothesis generators rather than literal representational claims; spikes as state transitions in a dynamical system rather than symbols. The residual coding-flavored move that Brette would push back on is the labeling of CTD-discovered structure with task-variable names ("line attractor for decision," "rotation for muscle pattern generation") — these descriptions are useful but should be read as correspondence claims with experimental scope, not as statements that the dynamics *encode* the labeled variables. The sufficiency-proof workflow (trained RNN actually generates the behavior) is essentially the same standard Brette demands of "models that behave."

@@ -3,8 +3,8 @@ title: "Ethological Paradigms"
 type: concept
 aliases: ["naturalistic tasks", "ethology-first neuroscience", "2AFC critique"]
 tags: [methodology, behavior, experimental-design, learning-rate]
-source_count: 2
-last_updated: 2026-04-13
+source_count: 3
+last_updated: 2026-04-29
 confidence: emerging
 ---
 
@@ -39,7 +39,12 @@ Ethological paradigms align naturally with the wiki's organizing principle. If i
 
 2AFC and related paradigms are not useless: they provide the precise parametric control needed to dissect specific computations (adaptation, discrimination thresholds, evidence accumulation). The argument is not that trial-based tasks should be abandoned but that they should be understood as one corner of behavioral space — and that the fast-learning, ethologically natural corner is where the most dramatic features of biological intelligence become visible.
 
+## Methodological link to the coding-metaphor critique
+
+[[brette-2018-coding-metaphor|Brette (2018)]] gives the deepest reason trial-based paradigms produce the appearance of clean coding results: tightly controlled experiments are precisely the conditions under which "the brain encodes parameter X" is most defensible — because the experimenter has fixed everything else. Outside that regime, [[neural-coding|tuning curves]] are context-dependent (orientation tuning depends on surround, on task, on locomotion, on prior auditory stimuli) and "encoding" claims fail. Ethological paradigms are not just behaviorally richer; they expose the *contextual fragility* of coding-style descriptions and force theory in the direction of full sensorimotor loops ([[sensorimotor-contingencies|sensorimotor contingencies]] / [[subjective-physics|subjective physics]]). The wiki's ethological thread and Brette's coding critique are the same critique at different levels: behavioral (Rosenberg, Meister) and theoretical (Brette).
+
 ## Sources
 
 - [[meister-2022-learning-fast-slow|Meister (2022)]] — literature-wide critique: learning rates span 10,000×, with slow 2AFC tasks as outliers
 - [[rosenberg-2021-labyrinth-learning|Rosenberg et al. (2021)]] — empirical demonstration: overnight labyrinth exposes learning phenomena invisible in 2AFC
+- [[brette-2018-coding-metaphor|Brette (2018)]] — theoretical complement: trial-based paradigms are the conditions under which coding-style descriptions are most plausible because everything is held fixed; ethological paradigms expose the context-dependence that makes coding-style descriptions fail outside the lab.

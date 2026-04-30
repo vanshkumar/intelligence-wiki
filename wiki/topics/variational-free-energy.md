@@ -2,9 +2,9 @@
 title: "Variational Free Energy"
 type: concept
 aliases: ["Helmholtz free energy", "ELBO", "evidence lower bound", "negative free energy"]
-tags: [variational-inference, information-theory, generative-model, predictive-coding, free-energy-principle]
-source_count: 1
-last_updated: 2026-04-18
+tags: [variational-inference, information-theory, generative-model, predictive-coding, free-energy-principle, maximum-entropy]
+source_count: 4
+last_updated: 2026-04-28
 confidence: established
 ---
 
@@ -57,12 +57,18 @@ summed over all units and layers. This is exactly the cross-entropy used in mode
 
 ## In the Free Energy Principle
 
-Friston's Free Energy Principle treats variational free energy as a candidate master quantity for cortical dynamics: neurons' activity and synapses are described as implementing gradient descent on `F` over both recognition (activation) and generative (weight) variables, with action added as a third variable that the agent can use to further reduce `F` by changing its own sensory distribution. In this framing:
+[[karl-friston|Friston]]'s [[free-energy-principle|Free Energy Principle]] (canonical review: [[friston-2010-free-energy-principle|Friston 2010]]) treats variational free energy as a candidate master quantity for cortical dynamics: neurons' activity and synapses are described as implementing gradient descent on `F` over both recognition (activation) and generative (weight) variables, with action added as a third variable that the agent can use to further reduce `F` by changing its own sensory distribution. In this framing:
 - perception = minimize F w.r.t. recognition (activation) variables,
 - learning = minimize F w.r.t. generative (weight) variables,
 - action = minimize F w.r.t. action (control) variables.
 
 This is the natural home for the wiki's control thesis: the same scalar loss unifies inference, learning, and action. The Helmholtz machine addresses the first two; [[Active Inference]] completes the triad.
+
+[[friston-2010-free-energy-principle|Friston (2010)]] sharpens the framing by giving three equivalent re-expressions of `F`: (i) energy minus entropy (statistical-thermodynamic form), (ii) surprise plus KL between recognition and posterior (Bayesian form), and (iii) complexity minus accuracy (model-comparison form). The third form is what links FEP to the [[efficient-coding-hypothesis|efficient/infomax]] principle: maximizing accuracy under a complexity bound is mutual-information maximization. The same `F`, three readings, three families of "rival" theories that fall out as special cases.
+
+## Free energy as a MaxEnt Lagrangian
+
+`F` is the Lagrangian whose stationary points are [[maximum-entropy-principle|maximum-entropy]] distributions. The variational problem "maximize `H[Q]` subject to a constraint on `⟨E⟩_Q`" — the form Jaynes (1957) uses to derive the canonical, grand-canonical, and pressure ensembles of statistical mechanics from inference principles — is exactly the variational problem of `F`-minimization (with `−H[Q]` minimized and `⟨E⟩_Q` constrained to match the data likelihood). Free-energy minimization is, in its general form, [[jaynes-1957-maxent-statistical-mechanics|MaxEnt inference]]: at the optimum, `Q` is the maximally noncommittal distribution consistent with the constraint imposed by the energy term. This identification matters because it places the free-energy framework on inference-theoretic foundations — there is nothing specifically neural about the objective; whatever cortex does that resembles `F`-minimization is, formally, MaxEnt inference under whichever constraints the cortex has registered (typically encoded by the energy landscape of its generative model).
 
 ## Relationship to other quantities
 
@@ -78,3 +84,6 @@ This is the natural home for the wiki's control thesis: the same scalar loss uni
 ## Sources
 
 - [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — introduces the Helmholtz free energy as the objective for connectionist generative learning; equation 5 gives the central variational identity.
+- [[rao-ballard-1999-predictive-coding|Rao & Ballard (1999)]] — specializes the variational-inference framework to continuous Gaussian latents in a hierarchical visual generative model. The optimization objective `E = (1/σ²)‖I − f(Ur)‖² + (1/σ²_td)‖r − r^td‖² + g(r) + h(U)` is a Gaussian-specialized variational free energy with explicit precision-weighting `(1/σ², 1/σ²_td)` of the prediction errors at each level — the precision-weighting that becomes central in Friston's later free-energy formulation of attention and salience.
+- [[jaynes-1957-maxent-statistical-mechanics|Jaynes (1957)]] — establishes that the variational form `⟨E⟩ − H` is the Lagrangian for [[maximum-entropy-principle|MaxEnt]] inference. Free-energy minimization is therefore not idiosyncratic to neuroscience but the local-recognition specialization of the general MaxEnt inference framework Jaynes derived for statistical mechanics.
+- [[friston-2010-free-energy-principle|Friston (2010)]] — the canonical review establishing variational free energy as the master quantity behind a [[free-energy-principle|unified brain theory]]. Gives the three equivalent re-expressions of `F` (energy − entropy; surprise + KL; complexity − accuracy), the canonical-microcircuit message-passing implementation (Box 2: forward errors, backward predictions, precision-weighted gradient on `F`), and the active-inference extension where action is a third variable minimizing `F`.

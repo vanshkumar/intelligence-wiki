@@ -1,0 +1,45 @@
+---
+title: "Marr's Levels of Analysis"
+type: theory
+aliases: ["Marr's three levels", "computational-algorithmic-implementational", "Marr-Poggio framework", "tri-level hypothesis"]
+tags: [philosophy-of-neuroscience, methodology, what-is-understanding, marr, vision, levels-of-explanation]
+source_count: 2
+last_updated: 2026-04-29
+status: established
+---
+
+David Marr and Tomaso Poggio's three-level framework (1976; codified in Marr's *Vision*, 1982) for analyzing information-processing systems. The claim is that a complete understanding requires coherent answers at three distinct, semi-independent levels:
+
+1. **Computational level** — *What problem is the system solving, and why?* Specifies the goal of the computation in terms of its input-output mapping and the constraints (often from the environment or the task) that make a particular mapping appropriate. For a stereo system: "recover depth from binocular disparity given the constraints that surfaces are mostly continuous and that disparity is uniquely determined by surface geometry."
+2. **Algorithmic level** — *What representations does the system use, and what procedures operate on them?* Specifies the data structures and the algorithms that transform input representations into output representations. For stereo: zero-crossing matching across spatial frequency channels with continuity constraints.
+3. **Implementational level** — *What physical machinery realizes the algorithm?* Specifies the hardware substrate — neurons, synapses, ion channels for biology; transistors, logic gates, memory cells for engineered systems.
+
+The levels are *semi-independent*: the same computational problem can be solved by many different algorithms, and the same algorithm can be implemented in many different physical substrates. But understanding is not complete until all three are accounted for and their relationships are explicit.
+
+## Why the framework matters for neuroscience
+
+Marr's levels supply a benchmark for what "understanding" means that is more demanding than "able to predict the next data point" and less demanding than "knowing every microscopic detail." [[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] use the framework explicitly to argue that we understand the MOS 6502 microprocessor at all three levels (computational: stored-program FSM; algorithmic: instruction fetch / decode / execute, ALU built from adders built from gates; implementational: transistor netlist), and to show that standard systems-neuroscience analyses applied to that processor recover none of the three cleanly. The framework lets the paper sharpen its methodological critique: it is not that we have *too little data* to understand the chip, it is that the methods we use do not produce explanations at the levels Marr identified.
+
+For the brain, the levels are unevenly populated. Sensory areas have partial computational-level accounts (efficient/sparse/predictive coding for early visual cortex; [[natural-image-statistics]] as the constraint), some algorithmic-level accounts (linear filtering, divisive normalization, generative inference), and detailed implementational-level data (spike trains, connectomes for some species). Higher cognitive functions are dominated by implementational data with comparatively weak computational-level commitments — which Marr would diagnose as the source of the field's interpretive difficulties.
+
+## Relationship to other frameworks in this wiki
+
+- **[[predictive-coding|Predictive coding]] and the [[free-energy-principle|free-energy principle]]** are computational-level proposals — they specify the *problem* the cortex is solving (minimize variational free energy / prediction error) and leave room for many algorithmic and implementational realizations. The dendritic credit-assignment lineage ([[kording-konig-2001-two-integration-sites|Kording & Konig 2001]] → [[francioni-2026-vectorized-dendritic-signals|Francioni et al. 2026]]) is the complementary algorithmic + implementational story.
+- **[[computation-through-dynamics|Computation Through Dynamics]]** is an *algorithmic*-level framework: the dynamics of a population *are* the computation. Marr would press the question of what *problem* those dynamics are solving — which CTD work increasingly answers by making the trained-RNN sufficiency proof load-bearing.
+- **[[degeneracy|Degeneracy]]** (control-theoretic reading) lives across levels: genes shape the implementational substrate such that a generic algorithmic-level structure (e.g., limit-cycle attractors for locomotion) emerges with high probability across realizations. The computational-level invariant is the behavioral attractor; the implementational variation is degeneracy.
+- **Lazebnik's "can you fix it?" test** ([[jonas-2017-microprocessor-critique|Jonas & Kording 2017]]) operationalizes Marr's framework: you have understood a system at the relevant level when you can identify how a damaged component breaks the algorithm and the computation. The replace-with-synthetic test is a stronger version: you have understood a region when a synthetic substitute can replace it without altering the global computation.
+
+## Caveats and critiques
+
+Marr's framework has been productively criticized:
+
+- **The levels are not independent in practice.** Implementation often constrains what algorithms are feasible; the algorithm shapes which problem formulations are tractable. The "neural networks revolution" partly amounts to recognizing that implementational details (parallel matrix-vector products, gradient flow through deep stacks) are computationally consequential.
+- **Three levels may be too coarse.** Some authors argue for finer subdivisions — for instance separating "task" from "computation" (Krakauer et al. 2017), or treating the dynamical-systems level as distinct from both the algorithmic and the implementational levels.
+- **Computational-level accounts can be vacuous.** "Maximize fitness" is technically a computational-level account but does not constrain anything. Productive computational-level theories have to identify *specific* problems with *specific* environmental constraints.
+
+For the wiki's purposes, Marr's levels are most useful as a diagnostic — when an analysis stalls, it is often because it has results at one level (usually implementational) that do not connect to commitments at the others. The Jonas-Kording chip experiment is the cleanest illustration: every method recovered implementational-level structure (cell types, lesion deficits, tuning, correlations, spectra), but none reconstructed the algorithmic or computational level even with ground truth available.
+
+## Sources
+
+- [[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] — uses Marr's levels as the explicit benchmark for "understanding" in evaluating standard neuroscience methods on a known artificial system.
+- [[brette-2018-coding-metaphor|Brette (2018)]] — argues that the algorithmic-level descriptions favored by [[neural-coding|coding-style theories]] (encoding → transformation → decoding chains) are a *category mistake* — algorithms have a discrete sequential temporal structure, but the brain is a continuous-time dynamical system, and dynamical systems cannot in general be mapped onto algorithmic descriptions (van Gelder 1995). For Marr's levels, this means the algorithmic level needs to be conceived as *dynamical-systems algorithms*, not as encoder/decoder chains over coding variables. The computational level remains intact; the algorithmic level needs reframing. Provides a bridge from Brette's coding critique back to the Marr framework: the alternative to coding is not abandoning the levels but specifying the algorithmic level as continuous-time dynamics rather than discrete-time symbol manipulation.

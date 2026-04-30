@@ -1,10 +1,10 @@
 ---
 title: "Analysis-by-Synthesis"
 type: theory
-aliases: ["analysis by synthesis", "perception as inference", "vision as inverse graphics"]
-tags: [perception, inference, generative-model, predictive-coding]
-source_count: 1
-last_updated: 2026-04-18
+aliases: ["analysis by synthesis", "perception as inference", "vision as inverse graphics", "Bayesian brain hypothesis", "Bayesian brain"]
+tags: [perception, inference, generative-model, predictive-coding, bayesian-brain]
+source_count: 4
+last_updated: 2026-04-29
 status: established
 ---
 
@@ -26,8 +26,8 @@ Two computational moves define the framework:
 - **Grenander's pattern theory (1976–1981)**: mathematical framework for representing and inverting hierarchical generative models, influential on Mumford's (1994) cortical proposals.
 - **Carpenter & Grossberg (ART, 1987), Ullman (Counter-Streams, 1994), Kawato (forward-inverse models, 1993)**: connectionist proposals with bottom-up / top-down pathways, but generally non-probabilistic.
 - **[[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]]**: first fully probabilistic, variational implementation in a trainable connectionist network — the [[Helmholtz Machine]].
-- **Rao & Ballard (1999)**: hierarchical [[Predictive Coding]] for vision — specific instantiation with linear-Gaussian generative models.
-- **Friston (2005–)**: [[Active Inference]] / Free Energy Principle — generalization to embodied agents that act to shape their own sensory distribution.
+- **[[rao-ballard-1999-predictive-coding|Rao & Ballard (1999)]]**: hierarchical [[Predictive Coding]] for vision — specific instantiation with linear-Gaussian generative models. The continuous-latent specialization of the Helmholtz-machine framework, applied directly to natural-image input. Recovers V1 simple-cell receptive fields and reinterprets endstopping and other extra-classical RF effects as residual-error signatures.
+- **[[karl-friston|Friston]] (2005–)**: [[Active Inference]] / [[free-energy-principle|Free Energy Principle]] — generalization to embodied agents that act to shape their own sensory distribution. The canonical review ([[friston-2010-free-energy-principle|Friston 2010]]) places the **Bayesian brain hypothesis** (Knill, Pouget, Kersten-Mamassian-Yuille, Lee-Mumford) as one of nine "global" brain theories subsumed under FEP — analysis-by-synthesis under a variational free-energy objective.
 
 ## The computational challenge and the variational solution
 
@@ -58,3 +58,6 @@ This framing sharpens several threads in the wiki:
 ## Sources
 
 - [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — the first probabilistic connectionist implementation; introduces the [[Helmholtz Machine]] and [[Wake-Sleep Algorithm]].
+- [[rao-ballard-1999-predictive-coding|Rao & Ballard (1999)]] — the canonical cortical instantiation of analysis-by-synthesis; continuous-latent linear-Gaussian generative model with hierarchical structure; "synthesis" is the top-down prediction `f(Ur)`, "analysis" is gradient-descent inference of `r` from the residual error.
+- [[friston-2010-free-energy-principle|Friston (2010)]] — places the Bayesian-brain instantiation of analysis-by-synthesis inside the [[free-energy-principle|free-energy principle]]. Analysis-by-synthesis under variational free energy is the surprise + KL reading of `F`; FEP extends the framework to embodied agents (action as a third variable minimizing the same objective).
+- [[brette-2018-coding-metaphor|Brette (2018)]] — critique: analysis-by-synthesis is paradigmatic of the [[neural-coding|coding metaphor]] Brette argues against. The "synthesis" stage is a generative model mapping latent causes to observables; the "analysis" stage inverts the mapping. Both moves rest on the assumption that neural activity *represents* external causes — exactly the assumption Brette argues lacks grounding. The alternative is [[sensorimotor-contingencies|sensorimotor contingencies]] / [[subjective-physics|subjective physics]]: perception as engagement with lawful relations among observables and actions, with no inversion of a generative model required.
