@@ -2,6 +2,8 @@
 
 Content catalog for the intelligence wiki. Organized by category. Each entry links to a wiki page with a one-line summary.
 
+For *what the wiki argues*, see [[overview]]. For per-pillar evidence on the wiki's organizing thesis, see [[control-thesis-ledger]]. For sustained engagement with rival frameworks, see [[challenges-to-control-thesis]].
+
 ## Sources
 
 - [[li-2024-prediction-noise-reward|Li et al. (2024)]] — Local prediction + noise produces emergent reward-seeking behavior without a reward function (PaN algorithm)
@@ -97,6 +99,12 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 - [[force-learning|FORCE Learning]] — First-Order Reduced and Controlled Error: trains chaotic RNNs by keeping error small throughout via RLS; three architectures; constructive existence proof that CTD trained dynamics can be carved from the SCS chaotic reservoir
 - [[hopfield-network|Hopfield Network]] — Fully-connected recurrent network of binary neurons with symmetric Hebbian-stored couplings; energy function whose local minima are stored memories; capacity `α_c ≈ 0.138 N` (AGS via Parisi); founding model of attractor neural networks
 
+## Lineages
+
+- [[credit-assignment-lineage|Credit Assignment Lineage]] — Six-paper arc from Kording-König (2001) two-integration-sites concept to Francioni (2026) in vivo vectorized dendritic teaching signals; consolidates Guerguiev / Sacramento / Payeur / Greedy.
+- [[e-i-regimes|E-I Regimes Lineage]] — Wilson-Cowan → Sompolinsky-Crisanti-Sommers → Brunel; the regime taxonomy (silent / hysteretic / oscillatory / AI / SI / chaotic) selectable by mesoscopic parameters; the analytical substrate for "genes constrain dynamics, not circuits."
+- [[inference-lineage|Inference Lineage]] — Jaynes (MaxEnt) → Helmholtz machine → Rao-Ballard predictive coding → Friston FEP; what's established vs. what's normative-only; honest reckoning of whether the "inference as one side of the control loop" reading is derivation or selection.
+
 ## Theories
 
 - [[Predictive Coding]] — Theory that the brain minimizes prediction errors between predicted and actual neural activity
@@ -177,4 +185,6 @@ Content catalog for the intelligence wiki. Organized by category. Each entry lin
 
 ## Analyses
 
+- [[control-thesis-ledger|Control Thesis Ledger]] — The discipline scaffold. Six pillars (P1 sensorimotor substrate; P2 memory as control extension; P3 genes constrain dynamics; P4 inference as one side of the loop; P5 substrate-local credit assignment; P6 population dynamics implement control), each with support / resist evidence, status, falsifiers, and wanted ingests. Updated on every ingest.
+- [[challenges-to-control-thesis|Challenges to the Control Thesis]] — Sustained engagement with rival frameworks: Jonas-Kording's methodological critique; Brette's representational critique; embodiment-agnostic AI; bottom-up sensory development; symbolic / compositional generalization; cellular cognition predating neurons. The dedicated home for evidence that resists the thesis as a whole.
 - [[unified-picture-single-neuron-population-control|Unified picture: single-neuron biophysics + population dynamics for closed-loop control?]] — Partial unification. CTD + motor cortex on the population side; dendritic credit-assignment lineage on the single-neuron side; manifold-constrained learning as the cleanest junction; Wilson-Cowan/Brunel linking mesoscopic E-I parameters to attractor repertoire. Load-bearing gap: nobody has shown apical-dendrite events reshaping motor-cortex manifolds during adaptation.

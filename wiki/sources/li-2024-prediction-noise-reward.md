@@ -63,8 +63,8 @@ Environments tested: two-action bandits, six-action bandits with linearly spaced
 - Dopamine's role may be more subtle than RL assumes: not defining what's rewarding, but biasing *which* emergently-selected goals get preferred through learning rate modulation.
 - The inverted-U relationship between noise and performance (too little → fixation, too much → random, intermediate → optimal) connects to known roles of neuromodulators like norepinephrine in regulating the [[Explore-Exploit Tradeoff]].
 
-**For understanding evolution's investments:**
-- If prediction + noise gives you reward-seeking for free, evolution didn't need to invent goal-directed behavior — it needed to invent ways to *shape and control* it. Steering subsystems, neuromodulation, and specialized architectures are refinements on a baseline capability that may have been essentially free once nervous systems existed.
+**For understanding evolution's investments (the wiki's reading, not Li et al.'s claim):**
+- The paper demonstrates that *in their toy network*, prediction + noise produces reward-seeking-like behavior without a reward function. The wiki has at times generalized this to "evolution didn't need to invent goal-directed behavior — only to shape it." That extrapolation is interpretive, not stated in the paper. Whether the toy result scales to real organisms is open (the paper acknowledges this; see Open Questions below).
 
 **The paper proposes a new framework: [[Self-Supervised Behavior]] (SSB)**, defined by three features:
 1. Internal, local loss with no environmentally defined utility function

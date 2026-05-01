@@ -109,13 +109,15 @@ Top-down weights need not be precisely symmetric with feedforward weights. When 
 
 ## Implications
 
-### Unifying Predictive Coding and Credit Assignment
+### Bridging Predictive Coding and Credit Assignment
 
-This paper provides the most direct bridge between [[Predictive Coding]] and [[Credit Assignment]] in the wiki. The prediction error *is* the credit signal: the apical dendrite compares what higher areas are saying (top-down feedback) with what the local microcircuit expected them to say (lateral interneuron prediction). When the comparison fails, the resulting error is precisely the backpropagated gradient. This means predictive coding and backpropagation are not competing theories of cortical learning — they are two descriptions of the same dendritic microcircuit operating at different levels.
+The paper's analytical move: the apical-dendrite voltage deflection equals (in the weak-feedback limit) the backpropagated gradient. The same dendritic compartment that registers top-down prediction error also drives the local plasticity rule. Within the model's stated assumptions, the prediction-error signal *is* the credit signal.
+
+The wiki has read this as evidence that "predictive coding and backpropagation are two descriptions of the same circuit." That is a synthesis the wiki commits to, not a claim Sacramento et al. make in the paper — they show analytical equivalence under the weak-feedback approximation, not framework-level equivalence.
 
 ### The Self-Predicting State as Default
 
-The network's equilibrium is a self-predicting state where all errors are canceled. Learning is triggered by **perturbation** from this equilibrium — a novel teaching signal at the output creates a cascade of prediction errors that propagate backward. This is consistent with the control thesis: the system maintains a homeostatic equilibrium (all predictions satisfied = no action needed), and deviations from equilibrium drive corrective updates.
+The network's equilibrium is a self-predicting state where all errors are canceled. Learning is triggered by **perturbation** from this equilibrium — a novel teaching signal at the output creates a cascade of prediction errors that propagate backward. The homeostatic-baseline framing — equilibrium maintained, deviations drive corrective updates — is the cleanest control-flavored reading available in the credit-assignment lineage. It is one of the two papers in the lineage (with Greedy 2022) where the control framing is explicit in the source itself rather than retrofit by the wiki.
 
 ### Position in the Credit Assignment Lineage
 

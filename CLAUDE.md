@@ -11,11 +11,13 @@ This wiki explores **how the brain learns** — the biological mechanisms of int
 
 ### Organizing principle
 
-The wiki is organized around a specific thesis: **the most biologically grounded route to understanding intelligence begins with closed-loop sensorimotor control.** Memory, learning, and cognition are understood as extensions that improve control over longer timescales, more latent variables, and more counterfactual worlds — not as separate faculties bolted on top.
-
-When ingesting sources or synthesizing across pages, ask: *what does this tell us about control, and how does it extend the reach of that control?* Sources that speak to sensorimotor loops, feedback control, or the progression from immediate reactive control to longer-horizon planning and abstraction are central. Sources about plasticity, memory, or representation should be connected back to how they serve the organism's ability to act effectively.
+The wiki has a working thesis: **the most biologically grounded route to understanding intelligence begins with closed-loop sensorimotor control.** Memory, learning, and cognition are understood as extensions that improve control over longer timescales, more latent variables, and more counterfactual worlds — not as separate faculties bolted on top.
 
 A related working hypothesis motivates the evolutionary dimension: genes encode behavior not by specifying circuits directly, but by modifying neurons' nonlinear feedback control algorithms, producing conserved macroscopic dynamical structures (e.g., limit cycle attractors for locomotion) with high probability despite unique microscopic configurations. This is the control-theoretic reading of [[Degeneracy]].
+
+**The thesis is a lens, not an axiom.** The wiki is maintained to *test and refine* it — not to defend it. When ingesting a source, ask both *how does this support the thesis?* and *how does this complicate or contradict it?* Sources that resist the thesis are as valuable as those that support it. The discipline scaffolding lives in [[control-thesis-ledger|wiki/analyses/control-thesis-ledger.md]] (the per-pillar evidence ledger) and [[challenges-to-control-thesis|wiki/analyses/challenges-to-control-thesis.md]] (sustained engagement with rival frameworks). A pillar with only supporting evidence is a red flag, not a victory.
+
+Source-page voice should faithfully report what the paper claims. Thesis interpretation lives in a labeled **Thesis bearing** section on each source page and in the ledger — not woven into the source summary. This separation is structural: it prevents post-hoc framing from contaminating what the source actually says.
 
 ---
 
@@ -65,7 +67,10 @@ key_finding: "One-line summary of the main finding"
 ---
 ```
 
-**Required sections**: Overview, Key Findings, Methods, Implications, Connections to Existing Knowledge, Open Questions Raised.
+**Required sections**: Overview, Key Findings, Methods, Implications (paper's own), Thesis Bearing, Connections to Existing Knowledge, Open Questions Raised.
+
+- **Implications (paper's own)**: what the *authors* claim follows from the work. Do not extrapolate beyond their text.
+- **Thesis Bearing**: short paragraph stating bearing on the control thesis as **support / orthogonal / challenge / mixed**, with one or two sentences of justification grounded in specific paper claims (not in what the wiki would like the paper to claim). This is the only place where the wiki's interpretive voice belongs on a source page. If the source neither supports nor challenges the thesis, mark **orthogonal** and say so plainly.
 
 Link back to the raw file: `[PDF](../../raw/papers/filename.pdf)` or `[Source](../../raw/articles/filename.md)`.
 
@@ -216,15 +221,17 @@ prompted_by: "user query"
 Triggered when the user adds a source to `raw/` and asks to process it.
 
 1. **Read** the source document fully
-2. **Discuss** key findings and takeaways with the user — what's interesting, what's surprising, how it connects to existing knowledge
-3. **Create source summary** in `wiki/sources/` with all required sections
+2. **Discuss** key findings and takeaways with the user. Explicitly raise *both* sides: what does this support? what does it complicate or challenge? Surprises and tensions are as important as confirmations.
+3. **Create source summary** in `wiki/sources/` with all required sections (including the **Thesis Bearing** section — see schema above)
 4. **Update or create wiki pages** for each major concept, mechanism, theory, brain region, method, or person mentioned:
    - If page exists → integrate new information, add source to Sources section, increment `source_count`, update `last_updated`
    - If page doesn't exist → create it with initial content from this source
-5. **Update `index.md`** — add entries for any new pages
-6. **Append to `log.md`** — one entry with date, action type, and description
-7. **Update `overview.md`** if the source materially changes the overall synthesis
-8. **Update `open-questions.md`** if the source raises new questions or resolves existing ones
+5. **Update [[control-thesis-ledger|`wiki/analyses/control-thesis-ledger.md`]]**: add the source under the relevant pillar(s), in the **support / resist** column matching the source's Thesis Bearing. If the source materially shifts a pillar's status, update the status line. If the source has no bearing on any pillar, note it in the *orthogonal* section. Sources that resist a pillar are required entries — do not skip.
+6. **Update [[challenges-to-control-thesis|`wiki/analyses/challenges-to-control-thesis.md`]]** if the source provides sustained engagement with a rival framework or specific challenge to the thesis (not just a mild complication — those go in the ledger).
+7. **Update `index.md`** — add entries for any new pages
+8. **Append to `log.md`** — one entry with date, action type, and description
+9. **Update `overview.md`** only if the source materially changes a pillar's status or adds a new pillar / active tension. Most ingests should not touch overview.md; the ledger is the high-bandwidth tracker.
+10. **Update `open-questions.md`** if the source raises new questions or resolves existing ones
 
 ### Query
 

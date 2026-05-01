@@ -91,16 +91,23 @@ The unified picture exists in **sketch**:
 
 But the **load-bearing connection** — single-neuron dendritic events → low-dimensional control dynamics — is conjectural. [[francioni-2026-vectorized-dendritic-signals|Francioni et al. (2026)]] is the first experimental toehold. Filling this gap is the central empirical and theoretical project the wiki is watching for.
 
-## Implications for the control thesis
+## Bearing on the control thesis
 
-The wiki's organizing principle is that intelligence begins with closed-loop sensorimotor control and extends from there. The unification status above gives a concrete picture of what this looks like mechanistically at the motor-control foundation:
+What the literature *establishes* (with citations to source pages, not to this analysis):
+- CTD-style low-dimensional dynamics describe motor-cortex behavior during preparation and movement at the population level.
+- Burst-dependent dendritic plasticity approximates backpropagation in spiking networks at competitive accuracy and depth (in silico).
+- Mesoscopic E-I parameters select among silent / oscillatory / chaotic / AI / SI dynamical regimes in mean-field models.
+- Manifold-constrained BCI learning operates faster within the manifold than off it.
 
-- The control loop is *implemented* at the population level via CTD motifs in M1/PMd/SMA.
-- The loop is *tuned* by dendritic credit assignment at the single-cell level.
-- The loop is *selected* by mesoscopic E-I parameters under genetic and neuromodulatory control.
-- The loop is *reshapeable* by slow structural plasticity when fast manifold-constrained learning is insufficient.
+What the wiki *interprets* as evidence for the [[control-thesis-ledger|control thesis]] (this is a reading, not a derivation from any single paper):
+- That the population-level CTD motifs *implement* control rather than merely correlating with it.
+- That dendritic credit assignment *tunes the same loop* the population dynamics implement.
+- That the regime-selection picture from E-I theory *is* the mechanism by which "genes constrain dynamics, not circuits."
+- That fast (within-manifold) and slow (off-manifold) learning are *one system* operating at two timescales of the same loop.
 
-Each of these operates at a different level and together they describe the machinery. The research frontier is showing they interoperate *as one system* — the dendritic events on trial *n* predicting the manifold shift on trial *n+1*.
+Each of these readings is plausible and the wiki commits to them as working hypotheses; none is forced by the cited papers individually. The interpretive load belongs in the [[control-thesis-ledger|ledger]] (pillars P5 and P6) and in [[challenges-to-control-thesis|challenges to the control thesis]] (where [[brette-2018-coding-metaphor|Brette 2018]] and [[jonas-2017-microprocessor-critique|Jonas & Kording 2017]] articulate why these readings are not free).
+
+**The load-bearing empirical gap remains: nobody has shown how dendritic events on trial *n* predict manifold shifts on trial *n+1* during real motor adaptation.** [[francioni-2026-vectorized-dendritic-signals|Francioni et al. (2026)]] is the closest existing toehold — and is a neurofeedback BCI task, not natural reaching. Closing this gap is the central empirical project the wiki is watching for.
 
 ## Sources
 
