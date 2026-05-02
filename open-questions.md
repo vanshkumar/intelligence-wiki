@@ -100,6 +100,11 @@ See [[credit-assignment-lineage|credit-assignment lineage]] for the consolidated
 - Is the [[Mushroom Body]] → [[Hippocampus]] motif correspondence deep homology or convergent evolution? `open`
 - What is the mechanism of *sudden insight*? Candidates (attractor phase transitions, sparse-code emergence, consolidation-driven reorganization) are not mutually exclusive and are not yet experimentally distinguished. `open` Refs: [[rosenberg-2021-labyrinth-learning|Rosenberg 2021]].
 - Why does exploration remain dominant (75–95%) even in rewarded animals after learning? `open` — hedging, intrinsic reward, or default-mode persistence?
+- Is there a local plasticity rule that approximates EM/Baum–Welch on a [[clone-structured-cognitive-graph|cloned HMM]] with the right convergence properties? `open` Refs: [[george-2021-clone-structured-cognitive-graphs|George 2021]] — would close the gap between CSCG and the dendritic [[credit-assignment-lineage|credit-assignment lineage]].
+- How does the brain pick the *number of clones per observation* in a CSCG-style model? Constant (as in the paper) is a placeholder; biological plausibility likely requires growth or pruning tied to prediction error. `open`
+- Does CSCG-style structure learning improve, change, or fail when the agent's actions are produced by a controller that closes the loop with the model, rather than by an unconditional random walk? `open` — sharpest available test of P2 against a "memory as control extension" reading vs. a "memory as disembodied structure learning" reading.
+- CSCG vs. TEM (Whittington et al. 2020) head-to-head: which factorizations better predict observed neural representations in entorhinal cortex / hippocampus during structural transfer experiments? `open` — TEM not yet ingested in this wiki.
+- Does CSCG-style cloning predict observable neuronal correlates beyond splitter cells / ESRs — e.g., a specific number of "redundant" hidden states per observation, or a specific scaling with environment complexity? `open`
 
 ## Hopfield, attractor memory, capacity
 

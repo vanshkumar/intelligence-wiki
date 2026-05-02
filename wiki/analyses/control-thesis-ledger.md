@@ -80,6 +80,7 @@ Foundational triangulation: [[brette-2018-coding-metaphor|Brette (2018)]] (the p
 - [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — explicitly extends chemotaxis (immediate control) into cognitive navigation (control over latent goal locations).
 - [[meister-2022-learning-fast-slow|Meister (2022)]] — 10⁴-fold variation in learning rates explained by sparse codes; learning rate as a property of representational structure that determines how fast control can extend.
 - [[bennett-2023-history-intelligence-intro|Bennett (2023)]] — historical decomposition of memory systems as successive control elaborations.
+- [[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] — single learned object (CSCG) supports stitching disjoint episodes into a coherent global map (transitive inference), schema transfer between structurally identical environments with different observations, planning between locations never traversed end-to-end, and hierarchical planning via community detection. The model is action-augmented and trained on (sensation, action) streams; the canonical formal statement that "memory and learning extend control over latents and counterfactuals" is realized at the algorithmic level.
 
 **Resist / complicate**
 
@@ -87,6 +88,7 @@ Foundational triangulation: [[brette-2018-coding-metaphor|Brette (2018)]] (the p
 - [[hopfield-1982-collective-computational-abilities|Hopfield (1982)]] — content-addressable memory as fixed-point attractors of an energy function. Memory framed as **stable retrieval**, not as control. The Hopfield framing is an alternative organizing metaphor; the wiki's control reading must accommodate it.
 - [[lillicrap-kording-2019-understanding-neural-networks|Lillicrap & Kording (2019)]] — trained parameters are heavy-tailed and incompressible; the structure of memory may not be cleanly reducible to "extended control." The world being modeled is itself incompressible, and so is the memory of it.
 - [[parisi-1979-replica-symmetry-breaking|Parisi (1979)]] — hierarchical RSB describes ultrametric organization of memory states in disordered systems; memory framed as static energy-landscape geometry, not dynamic control.
+- [[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] — *also* a complication, despite the support entry above: the agent in the CSCG experiments performs uniform random walks; the closed loop between learned model and behavior is exercised only at test time (planning). Learning is decoupled from control. The model is *compatible* with closed-loop control but does not require it. A clean reading of the paper is "memory + planning extend control" (P2 support); a stricter reading is "the learned model is a representation that does not depend on the loop being closed during acquisition" — closer to disembodied unsupervised structure-learning than to control-theoretic memory.
 
 **Falsifiers**
 
@@ -188,6 +190,7 @@ See aggregator: [[credit-assignment-lineage|credit-assignment lineage]].
 - [[lillicrap-kording-2019-understanding-neural-networks|Lillicrap & Kording (2019)]] — the credit assignment *recipe* is compressible (good for P5); but the *parameters* it produces are incompressible (a methodological caution against treating "P5 is supported" as "we now understand cortical learning").
 - [[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] — even with full ground truth on dendritic compartments, current analytical methods may not recover the algorithmic-level meaning. The lineage shows what's *possible*; whether real cortex *uses* this mechanism is harder to confirm than it looks.
 - **Internal tensions** (see lineage page): error magnitude vs. derivative; SST⁺ vs. NDNF⁺ interneuron division of labor; full-silence vs. partial-cancellation baselines. The mechanism is supported; specific implementational details disagree across the six papers.
+- [[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] — CSCG learning is EM/Baum–Welch with a global forward-backward pass over the entire observed sequence. The paper asserts that EM is "approximated by STDP" without derivation or simulation. As an account of substrate-local credit assignment, this is on the wrong side of the dendritic-credit-assignment lineage: it works at the normative-algorithmic level but does not specify how the global E-step is realized in local plasticity. P5 is unaffected by CSCG itself; the entry is here to mark that the wiki's flagship paradigm (probabilistic graphical models) and its flagship credit-assignment story (dendritic compartments + burst multiplexing) are not yet reconciled.
 
 **Note on framing.** Two of the six lineage papers (Sacramento, Greedy) explicitly use control-flavored language for the homeostatic baseline. The other four do not. The wiki's reading of "credit assignment within the loop" is consistent with the lineage but partially retrofit. P5 is the wiki's best-supported pillar at the *mechanism* level; the *control* gloss is a slightly weaker claim.
 
@@ -258,6 +261,7 @@ Implication for this ledger: pillar statuses are **provisional reads**, not sett
 **To test P2 (memory/learning as control extension):**
 - Cellular cognition follow-ups (does the molecular substrate scale?)
 - Semantic / episodic memory in non-action contexts
+- Closed-loop CSCG: does CSCG-style structure learning improve, change, or fail when the agent's actions are produced by a controller that closes the loop with the model, rather than by an unconditional random walk?
 
 **To test P3 (genes → dynamics):**
 - Epigenetics, trans-generational inheritance
@@ -272,6 +276,7 @@ Implication for this ledger: pillar statuses are **provisional reads**, not sett
 - Temporal credit assignment in vivo
 - Neuromodulator–dendrite interaction
 - Feedback weight learning mechanisms
+- Local plasticity rule that provably approximates EM on a cloned HMM (would close the gap between CSCG and the dendritic credit-assignment lineage)
 
 **To test P6 (population dynamics implement control):**
 - Causal manipulations of manifold structure

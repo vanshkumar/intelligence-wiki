@@ -3,8 +3,8 @@ title: "Place Cells"
 type: concept
 aliases: ["place fields", "hippocampal place cells"]
 tags: [hippocampus, spatial-coding, navigation, memory]
-source_count: 4
-last_updated: 2026-04-29
+source_count: 5
+last_updated: 2026-05-01
 confidence: established
 ---
 
@@ -14,7 +14,7 @@ Place cells are neurons in the [[Hippocampus]] (primarily CA1 and CA3) that fire
 
 - **Location selectivity**: Each place cell has a preferred spatial location where it fires maximally
 - **Size gradient**: Place field size increases along the septotemporal axis — small fields septally (fine resolution), large fields temporally (coarse resolution). This gradient interacts with the theta travelling wave to produce a multi-resolution spatial representation ([[lubenov-2009-theta-travelling-waves|Lubenov & Siapas, 2009]])
-- **Remapping**: Place fields can remap when the environment changes, providing distinct spatial representations for different contexts
+- **Remapping**: Place fields can remap when the environment changes, providing distinct spatial representations for different contexts. [[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] derive **global, partial, and rate remapping** as different operating points of a single [[Clone-Structured Cognitive Graph|CSCG]] trained on multiple environments — global remapping from a partially trained model, partial remapping from a fully trained model, rate remapping from a fully trained model under high inference uncertainty.
 
 ## Spike Timing and Phase Precession
 
@@ -23,6 +23,10 @@ Place cells don't just encode position through firing rate — their spike timin
 ## Interaction with Theta Travelling Waves
 
 At any given septotemporal level, only place cells whose fields overlap the animal's current position are active. The travelling wave structure of theta means different septotemporal levels are at different local theta phases simultaneously. Combined with phase precession and the place field size gradient, this produces an instantaneous hippocampal output that sweeps from fine to coarse spatial resolution within each theta cycle.
+
+## Splitter Cells and Event-Specific Representations
+
+A substantial fraction of CA1 place cells fire differentially on physically identical maze segments depending on the route, the lap, or the goal. See [[Splitter Cells]] for the empirical phenomenon (Wood et al. 2000; Frank et al. 2000; Sun et al. 2019; Ginther et al. 2011; Grieves et al. 2016) and the [[Clone-Structured Cognitive Graph|CSCG]] account in which splitter cells, event-specific representations, lap cells, and chunking cells are all *clones* of the same observation allocated to different latent contexts. This places one observation → many hidden states at the heart of hippocampal place-cell coding, in tension with strict allocentric-position readings.
 
 ## Place-Field Size Gradient as Cell-Type Signature
 
@@ -50,3 +54,4 @@ The [[zhang-2024-endotaxis-neuromorphic-navigation|endotaxis circuit-level accou
 - [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — mechanistic account of the place-field size gradient as cell-type signature in an endotaxis circuit
 - [[jonas-2017-microprocessor-critique|Jonas & Kording (2017)]] — methodological caution that tuning curves do not, by themselves, reveal computational role; constructive mechanistic accounts of tuning are required to support computational claims
 - [[brette-2018-coding-metaphor|Brette (2018)]] — coding caveat: "place cells encode location" is a correspondence claim with experimental scope; the brain has only lawful covariations among place activations, head direction, vestibular signals, and actions, not access to "the animal at (x, y)." Position, for the brain, is the manipulable structure of these covariances.
+- [[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] — clones as place-cell-like neurons; one observation maps to many hidden states allocated by EM to distinguish contexts. Unifies splitter cells (Wood 2000), event-specific representations / lap cells (Sun 2019), chunking cells, and global / partial / rate remapping under a single mechanism (cloning + inference dynamics).

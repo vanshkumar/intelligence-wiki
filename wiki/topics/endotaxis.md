@@ -3,8 +3,8 @@ title: "Endotaxis"
 type: theory
 aliases: ["virtual odor navigation", "internal gradient ascent"]
 tags: [navigation, cognitive-map, chemotaxis, hebbian-learning, neuromorphic]
-source_count: 1
-last_updated: 2026-04-14
+source_count: 2
+last_updated: 2026-05-01
 status: emerging
 ---
 
@@ -55,6 +55,10 @@ This unifies the three navigation modes documented in [[rosenberg-2021-labyrinth
 
 When the agent first enters an environment, only the entrance point cell fires. A single goal synapse from that point cell to a "home" goal cell gets potentiated *before any map exists*. As the map fills in during subsequent exploration, the home goal signal spreads through the graph by the resolvent dynamics — so the animal can home directly from locations it has never returned to. Mice show exactly this behavior after a single inbound traversal.
 
+## Relation to CSCG
+
+[[Clone-Structured Cognitive Graph|CSCG]] ([[george-2021-clone-structured-cognitive-graphs|George et al. 2021]]) is the structural-learning complement to endotaxis. Endotaxis *assumes* a graph (the recurrent map-cell layer learns the adjacency matrix via plain Hebbian rules; the graph nodes correspond to observations, with no clone structure). CSCG *learns* a graph in which each observation has multiple clones, allowing aliased observations to be lifted into context-dependent latent states; planning is exact message passing rather than gradient ascent. Where endotaxis cannot disambiguate aliased observations or produce splitter-cell-like context-specific firing, CSCG does both as part of its core mechanism. Where CSCG requires expensive EM training and message-passing inference, endotaxis runs on Hebbian learning and feed-forward gradient ascent on a circuit that pre-existed the cognitive demand. The two are complementary readings of hippocampal function: endotaxis is the cheap reactive controller; CSCG is the structured planner that learns the graph by observing aliased sensorimotor streams.
+
 ## Relation to the Successor Representation
 
 The matrix `Y = (γ⁻¹I − A)⁻¹` is formally similar to the **successor representation** (Dayan 1993; Stachenfeld et al. 2017; Fang et al. 2023) — but the interpretation differs. In SR, γ is a *temporal discount factor* from RL theory. In endotaxis, γ is a *neural gain* — a parameter of circuit dynamics, with no time-horizon semantics. The agent has no time horizon; it wants the shortest path. See [[Successor Representation]].
@@ -75,3 +79,4 @@ The matrix `Y = (γ⁻¹I − A)⁻¹` is formally similar to the **successor re
 ## Sources
 
 - [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — introduces endotaxis as a circuit model of cognitive navigation
+- [[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] — graphical-model rival; lifts aliased observations into hidden state space and plans by message passing. Complementary to endotaxis at the substrate level; differs sharply on what the hippocampus is *doing* with the learned structure.

@@ -3,8 +3,8 @@ title: "Successor Representation"
 type: theory
 aliases: ["SR", "successor features"]
 tags: [reinforcement-learning, navigation, predictive-representation, hippocampus]
-source_count: 1
-last_updated: 2026-04-14
+source_count: 2
+last_updated: 2026-05-01
 status: established
 ---
 
@@ -44,6 +44,13 @@ Both produce a representation whose matrix elements are monotonic in graph dista
 
 The formal overlap between SR and endotaxis suggests the brain may have a single underlying representational primitive (a "resolvent-of-connectivity" signal) that can be read out either as a value function (in an RL interpretation) or as a goal gradient (in an endotaxis interpretation). The interpretation is determined by what downstream circuits do with the signal, not by the signal itself.
 
+## Limitation: SR Operates Over Observations
+
+[[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] press a sharp point against SR as a model of hippocampal cognitive maps: SR defined over **observations** is a first-order Markov object on the observation alphabet and inherits all the failures of first-order observation models when sensory input is aliased (different latent states producing identical observations, or identical latent states producing different observations across contexts). Splitter cells, event-specific representations, lap cells, and the disambiguation of overlapping rooms in transitive-inference tasks all require representations that distinguish *contexts within an observation* — which observation-level SR cannot do.
+
+The fix is to define SR over **lifted hidden states**, e.g., the clones of a [[Clone-Structured Cognitive Graph|CSCG]]. In that combined formulation, the lifting is done by EM on the cloned HMM, and SR runs on the resulting hidden-state graph for value-based readout. The two frameworks are complementary at that point — CSCG learns the structured graph, SR provides the value-discounted predictive readout — rather than competitive. The competition is only at the interpretation level: is the hippocampus "doing SR" (Stachenfeld et al. 2017) or "lifting observations and doing inference" ([[george-2021-clone-structured-cognitive-graphs|George et al. 2021]])? Empirical splitter-cell and ESR data favor the latter framing.
+
 ## Sources
 
 - [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — discusses formal similarity and interpretive differences between endotaxis and SR
+- [[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] — argues observation-level SR cannot represent aliased contexts; splitter cells and event-specific representations require lifting observations into hidden state space

@@ -3,8 +3,8 @@ title: "Hippocampus"
 type: brain-region
 aliases: ["hippocampal formation", "HPC"]
 tags: [limbic-system, memory, spatial-navigation, theta, learning]
-source_count: 3
-last_updated: 2026-04-14
+source_count: 4
+last_updated: 2026-05-01
 ---
 
 The hippocampus is a bilateral structure in the medial temporal lobe critical for spatial navigation, episodic memory formation, and learning. It is one of the most studied brain regions in neuroscience and a primary site for investigating biological learning mechanisms.
@@ -47,12 +47,19 @@ The hippocampus is central to:
 - **Episodic memory** — forming memories of specific events in context, extending control over contingencies that require remembering unique past episodes
 - **[[Memory Consolidation]]** — transferring information to cortical long-term storage (systems consolidation), involving sharp-wave ripples during sleep and rest. [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] show that during SWS, CA1 cells fire 0-100 ms before [[Prefrontal Cortex|mPFC]] cells in an SWR-driven, directional pattern — timing compatible with spike-timing-dependent [[Long-Term Potentiation|plasticity]]. These interactions are nearly abolished during REM sleep, suggesting distinct consolidation mechanisms across sleep stages.
 
-## Candidate Algorithm: Endotaxis
+## Candidate Algorithm 1: Endotaxis
 
 [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] propose that the hippocampus implements [[Endotaxis]] — a circuit that computes an internal "virtual odor" signal monotonic in graph distance to a chosen target, then feeds it into the ancient chemotaxis controller. In this view, the [[Place Cells|place-field size gradient]] along the septotemporal axis reflects functional differentiation: small-field point cells for location encoding, medium-field map cells for learned connectivity, and very-large-field goal cells for target proximity. The circuit motif — sparse place-selective population → convergent Hebbian readout — is the same motif realized in the insect [[Mushroom Body]], suggesting a shared computational solution for cognitive navigation across deeply divergent lineages.
+
+## Candidate Algorithm 2: Clone-Structured Cognitive Graph (CSCG)
+
+[[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] propose that the hippocampus implements a [[Clone-Structured Cognitive Graph|CSCG]] — a sparse over-complete HMM with action-conditioned transitions, trained by EM on (sensation, action) streams. Each clone is a neuron; lateral connections implement the transition matrix; sensory observations drive bottom-up input to all clones of that observation. The substrate is proposed to be CA3 (recurrent connectivity) and CA1 (output projections). The same model accounts for cognitive-map formation from aliased input, transitive inference across disjoint episodes, schema transfer between structurally identical environments, splitter cells / event-specific representations / lap cells (clones for context-dependent latent states), the global / partial / rate remapping spectrum (operating points of inference dynamics), replay (forward sampling from the model), and hierarchical planning (community detection on the learned transition matrix).
+
+CSCG and endotaxis are *not* mutually exclusive readings of the hippocampus — they make different commitments about what is learned, by what algorithm, and how planning works. Endotaxis is a Hebbian-learned graph + feed-forward gradient ascent on an internally-generated odor signal; CSCG is an EM-learned cloned HMM + exact message-passing planning. Endotaxis cannot natively disambiguate aliased observations or produce splitter-cell-like firing; CSCG does both. CSCG's "EM ≈ STDP" claim is a hand-wave where endotaxis has plain Hebbian rules. The two should be read as proposals at different levels: endotaxis is closer to a circuit-level mechanism, CSCG closer to an algorithmic-level model. See [[Cognitive Map]] for the broader taxonomy.
 
 ## Sources
 
 - [[lubenov-2009-theta-travelling-waves|Lubenov & Siapas (2009)]] — theta oscillations are travelling waves along the septotemporal axis
 - [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] — SWR-driven directional spike timing from CA1 to mPFC during SWS
 - [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — endotaxis as candidate computation for hippocampal cognitive navigation
+- [[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] — CSCG as candidate algorithmic-level model of hippocampal cognitive-map function; one model unifies map formation, transitive inference, schemas, splitter cells, remapping, replay, and hierarchical planning

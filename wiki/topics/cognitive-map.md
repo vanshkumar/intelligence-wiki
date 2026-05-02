@@ -3,8 +3,8 @@ title: "Cognitive Map"
 type: concept
 aliases: ["mental map", "spatial map", "internal map"]
 tags: [navigation, representation, hippocampus, latent-learning]
-source_count: 1
-last_updated: 2026-04-14
+source_count: 2
+last_updated: 2026-05-01
 confidence: established
 ---
 
@@ -30,8 +30,9 @@ Different theoretical proposals differ in how each is implemented.
 - **Successor representation** ([[Successor Representation|SR]]; Dayan 1993; Stachenfeld et al. 2017) — each state represented by a time-discounted prediction of future state occupancy; enables efficient value computation.
 - **Endotaxis** ([[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. 2024]]; see [[Endotaxis]]) — feed-forward gradient ascent on an internally computed "virtual odor" that decays with graph distance; reuses the ancient chemotaxis controller.
 - **Predictive map / transition model** (Fang et al. 2023) — learn transition probabilities, then do prospective rollouts.
+- **[[Clone-Structured Cognitive Graph|CSCG]]** ([[george-2021-clone-structured-cognitive-graphs|George et al. 2021]]) — sparse over-complete HMM with action-conditioned transitions; trained by EM on (sensation, action) streams; planning is message passing. Lifts aliased observations into a hidden state space, enabling transitive inference and schema reuse that pure observation-level models (including basic [[Successor Representation|SR]]) cannot support.
 
-The endotaxis proposal is distinctive in requiring no planning or backward-propagation step and in reusing a pre-existing sensorimotor module, making it the most parsimonious of the circuit-level accounts.
+Endotaxis is distinctive in requiring no planning or backward-propagation step and in reusing a pre-existing sensorimotor module — the most parsimonious of the *circuit-level* accounts. CSCG sits at the opposite end of the parsimony spectrum: heavier algorithmic machinery (EM, message passing) but a single mechanism explaining a much wider zoo of phenomena (splitter cells, ESRs, remapping, schemas, hierarchical planning) that endotaxis does not address. The two are not in direct competition — endotaxis is a cheap reactive controller assuming the graph; CSCG is the structured planner that learns the graph.
 
 ## Biological Substrates
 
@@ -46,3 +47,4 @@ The defining feature of cognitive-map learning is that it happens **without rewa
 ## Sources
 
 - [[zhang-2024-endotaxis-neuromorphic-navigation|Zhang et al. (2024)]] — endotaxis as circuit-level cognitive-map algorithm; explains one-shot homing, few-shot reward navigation, and efficient patrolling from a single Hebbian circuit
+- [[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] — CSCG as a graphical-model account of cognitive maps; one model unifies map formation from aliased observations, transitive inference across episodes, schema transfer, splitter cells / event-specific representations, place-cell remapping, replay, and hierarchical planning

@@ -3,14 +3,18 @@ title: "Memory Consolidation"
 type: concept
 aliases: ["systems consolidation", "sleep consolidation", "sharp-wave ripples", "SWR", "ripples", "cellular consolidation", "transcriptional consolidation"]
 tags: [memory, sleep, hippocampus, prefrontal-cortex, plasticity, oscillations, transcription, creb]
-source_count: 3
-last_updated: 2026-04-28
+source_count: 4
+last_updated: 2026-05-01
 confidence: established
 ---
 
 Memory consolidation is the process by which initially labile memories, dependent on the [[Hippocampus]], are gradually transferred to neocortical circuits for long-term storage. This transfer is thought to occur primarily during sleep, mediated by coordinated reactivation of hippocampal and cortical circuits.
 
 From a control perspective, consolidation extends the temporal reach of sensorimotor control. The hippocampus provides fast, one-shot storage of recent contingencies — what happened, where, what was nearby. Consolidation transfers this into cortical models that can inform action over days, weeks, and lifetimes. The organism's control loop gains access to a longer past, enabling it to act on regularities that span timescales far beyond the immediate sensory present.
+
+## Replay as Sampling From a Generative Model
+
+[[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] propose a graphical-model account of hippocampal replay: forward sampling from a learned [[Clone-Structured Cognitive Graph|CSCG]] generates plausible trajectories from prior experience, and Viterbi decoding of an observed sequence recovers the most likely hidden-state path. They suggest two roles for replay: (i) *consolidation* via Viterbi training (refining the model on the most likely interpretation of accumulated sequences) and (ii) *vicarious evaluation* (sampling forward trajectories from candidate goals to evaluate options before committing to action — sensu Redish 2016). This is complementary to the SWR-driven phenomenology: SWRs may be the temporal carrier; the CSCG framing supplies a computational story for what the carried content is *for*.
 
 ## Sharp-Wave/Ripple Events
 
@@ -63,3 +67,4 @@ This is a proposal, not a demonstrated fact — it predates detailed understandi
 - [[wierzynski-2009-sleep-hpc-pfc|Wierzynski et al. (2009)]] — SWR-driven directional spike timing from hippocampus to PFC during SWS; abolished during REM
 - [[dayan-hinton-1994-helmholtz-machine|Dayan, Hinton, Neal & Zemel (1994)]] — normative proposal: [[Wake-Sleep Algorithm|wake-sleep]] gives REM a distinct functional role as generative-phase tuning of recognition pathways
 - [[kukushkin-2024-massed-spaced-non-neural|Kukushkin et al. (2024)]] — cellular / transcriptional consolidation reproduced in non-neural human cells; the [[creb|CREB]]-dependent transcription that gates the conversion from transient cellular events to lasting molecular change is a conserved property of cellular signaling cascades, not unique to neurons. Locates the cellular component of consolidation below the synaptic level.
+- [[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] — replay as forward sampling / Viterbi training in a learned CSCG; two roles: consolidation (refining the model) and vicarious evaluation of candidate goals before action. Computational complement to the SWR-driven temporal carrier story.

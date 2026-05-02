@@ -3,8 +3,8 @@ title: "Hebbian Learning"
 type: theory
 aliases: ["Hebb's rule", "fire together wire together", "Hebbian plasticity"]
 tags: [learning-rule, plasticity, synapse, associative-learning]
-source_count: 11
-last_updated: 2026-04-28
+source_count: 12
+last_updated: 2026-05-01
 status: established
 ---
 
@@ -85,3 +85,4 @@ Hebbian learning is the mechanism by which the sensorimotor control loop modifie
 - [[rao-ballard-1999-predictive-coding|Rao & Ballard (1999)]] — Hebbian residual-error learning rule `dU/dt ∝ (I − f(Ur)) r^T − λU` for the basis matrix of a hierarchical predictive coder: presynaptic = activity, postsynaptic = residual prediction error. Trained on natural images, recovers V1 simple-cell receptive fields. Same `(error)(activity)^T` structure as the [[sacramento-2018-dendritic-microcircuits-backprop|Sacramento 2018]] dendritic predictive plasticity rule, the [[dayan-hinton-1994-helmholtz-machine|wake-sleep]] delta rule, and Olshausen-Field sparse coding — local prediction-error Hebbian plasticity is the lowest common denominator across the unsupervised-learning lineages
 - [[friston-2010-free-energy-principle|Friston (2010)]] — derives Hebbian plasticity from gradient descent on variational free energy: `θ̇ = −∂_θ ε^Tξ` is formally identical to a Hebbian rule with prediction-error postsynaptic factor. Subsumes cell-assembly / correlation theory (Hebb, von der Malsburg, Singer) as the synaptic-learning side of [[free-energy-principle|FEP]] minimization, with synchrony reading as a precision-encoding (gain-modulating) carrier on top of the basic Hebbian gradient.
 - [[kukushkin-2024-massed-spaced-non-neural|Kukushkin et al. (2024)]] — separates the two ingredients of synaptic Hebbian learning. The **temporal-pattern-decoding** half (cascade kinetics → [[creb|CREB]] → IEG transcription → lasting cellular change) is a conserved cellular property reproduced in non-neural human cells. The **pairwise activity-dependent specificity** (which connection changes given correlated pre/post activity) is *not* present in non-neural cells and is genuinely a synapse-level property. Hebbian learning at the synapse therefore has cellular and synaptic components that the [[cellular-cognition|cellular-cognition]] framework partitions cleanly.
+- [[george-2021-clone-structured-cognitive-graphs|George et al. (2021)]] — asserts that EM/Baum–Welch on a [[Clone-Structured Cognitive Graph|cloned HMM]] is "approximated by spike-timing-dependent plasticity" without derivation or simulation. Recorded here as a **claim with a caveat**: the CSCG framework is normative-algorithmic, and its biological story rests on this unproven STDP-approximates-EM bridge. The substantive question — does any local plasticity rule on lateral connections converge to EM-style sufficient statistics? — is open and would link CSCG to the [[credit-assignment-lineage|dendritic credit-assignment lineage]] if answered. As of 2021, CSCG sits with the [[Helmholtz Machine|Helmholtz machine]] / [[free-energy-principle|FEP]] family in the wiki's taxonomy: Hebbian-flavored learning rules at the abstract level, no concrete biophysical instantiation.
